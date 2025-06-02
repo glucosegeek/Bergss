@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface BlogCardProps {
   title: string;
@@ -34,13 +35,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, excerpt, imageUrl, slug }) =
           {excerpt}
         </p>
         
-        <a
-          href={`/blog/${slug}`}
+        <Link
+          to={`/blog/${slug}`}
           className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors duration-300 group/link"
         >
-          Read More
+          Czytaj więcej
           <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
-        </a>
+        </Link>
       </div>
     </article>
   );
