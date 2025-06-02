@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero/Hero';
 import { FloatingNotification } from './components/ui/FloatingNotification';
 
-// Lazy load non-critical components
+// Lazy load components
 const WhatWeDo = lazy(() => import('./components/WhatWeDo/WhatWeDo'));
 const Stats = lazy(() => import('./components/Stats/Stats'));
 const WhoIsThisFor = lazy(() => import('./components/WhoIsThisFor/WhoIsThisFor'));
@@ -14,6 +14,15 @@ const Testimonials = lazy(() => import('./components/Testimonials/Testimonials')
 const FinalCTA = lazy(() => import('./components/FinalCTA/FinalCTA'));
 const ContactForm = lazy(() => import('./components/ContactForm/ContactForm'));
 const Footer = lazy(() => import('./components/Footer/Footer'));
+
+// Lazy load pages
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const Services = lazy(() => import('./pages/Services'));
+const References = lazy(() => import('./pages/References'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Terms = lazy(() => import('./pages/Terms'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Cookies = lazy(() => import('./pages/Cookies'));
 
 function App() {
   return (
@@ -44,6 +53,48 @@ function App() {
           <Route path="/blog/:slug" element={
             <Suspense fallback={null}>
               <BlogPost />
+              <Footer />
+            </Suspense>
+          } />
+          <Route path="/o-nas" element={
+            <Suspense fallback={null}>
+              <AboutUs />
+              <Footer />
+            </Suspense>
+          } />
+          <Route path="/uslugi" element={
+            <Suspense fallback={null}>
+              <Services />
+              <Footer />
+            </Suspense>
+          } />
+          <Route path="/referencje" element={
+            <Suspense fallback={null}>
+              <References />
+              <Footer />
+            </Suspense>
+          } />
+          <Route path="/kontakt" element={
+            <Suspense fallback={null}>
+              <Contact />
+              <Footer />
+            </Suspense>
+          } />
+          <Route path="/regulamin" element={
+            <Suspense fallback={null}>
+              <Terms />
+              <Footer />
+            </Suspense>
+          } />
+          <Route path="/polityka-prywatnosci" element={
+            <Suspense fallback={null}>
+              <Privacy />
+              <Footer />
+            </Suspense>
+          } />
+          <Route path="/polityka-cookies" element={
+            <Suspense fallback={null}>
+              <Cookies />
               <Footer />
             </Suspense>
           } />
