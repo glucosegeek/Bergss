@@ -16,7 +16,6 @@ interface FormData {
   company: string;
   subject: string;
   description: string;
-  preferredTime: string;
   timezone: string;
 }
 
@@ -29,7 +28,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     company: '',
     subject: '',
     description: '',
-    preferredTime: '',
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
   });
 
@@ -44,15 +42,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     'Website Development',
     'Complete AI Sales Solution',
     'Other - Custom Solution'
-  ];
-
-  const timeSlots = [
-    '9:00 AM - 10:00 AM',
-    '10:00 AM - 11:00 AM',
-    '11:00 AM - 12:00 PM',
-    '2:00 PM - 3:00 PM',
-    '3:00 PM - 4:00 PM',
-    '4:00 PM - 5:00 PM'
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -94,7 +83,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         company: data.company.trim(),
         subject: data.subject,
         description: data.description.trim(),
-        preferred_time: data.preferredTime || null,
         timezone: data.timezone,
         status: 'pending' as const
       };
@@ -134,7 +122,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
   };
 
   const generateCalendlyLink = (data: FormData): string => {
-    const baseUrl = 'https://calendly.com/damianbergss';
+    const baseUrl = 'https://calendly.com/bergss';
     const fullName = `${data.firstName} ${data.lastName}`;
     
     // Use encodeURIComponent for URL parameters
@@ -156,7 +144,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
       company: data.company || null,
       subject: data.subject,
       description: data.description,
-      preferredTime: data.preferredTime || null,
       timezone: data.timezone,
       submittedAt: new Date().toISOString(),
       source: 'AI Sales Solutions - Book Call Form'
@@ -224,7 +211,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         company: '',
         subject: '',
         description: '',
-        preferredTime: '',
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
       });
       
@@ -394,28 +380,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                   {subjects.map((subject) => (
                     <option key={subject} value={subject} className="bg-indigo-950">
                       {subject}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Preferred Time */}
-              <div>
-                <label htmlFor="preferredTime" className="block text-sm font-medium text-blue-100 mb-2">
-                  <Calendar className="w-4 h-4 inline mr-2" />
-                  Preferowany czas
-                </label>
-                <select
-                  id="preferredTime"
-                  name="preferredTime"
-                  value={formData.preferredTime}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white"
-                >
-                  <option value="" className="bg-indigo-950">Wybierz preferowany czas</option>
-                  {timeSlots.map((slot) => (
-                    <option key={slot} value={slot} className="bg-indigo-950">
-                      {slot}
                     </option>
                   ))}
                 </select>

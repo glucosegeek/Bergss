@@ -19,7 +19,6 @@ export interface ConsultationRequest {
   company: string
   subject: string
   description: string
-  preferred_time?: string
   timezone: string
   status: 'pending' | 'contacted' | 'scheduled' | 'completed' | 'cancelled'
   created_at: string
