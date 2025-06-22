@@ -34,6 +34,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const subjects = [
     'Chatbot AI Implementation',
@@ -61,33 +62,79 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     });
   };
 
+  const sendWebhook = async (data: FormData) => {
+    const webhookUrl = 'https://hook.eu2.make.com/bsk9vd5wwnos0sciwhr331yrpecqmf7n';
+    
+    const payload = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      fullName: `${data.firstName} ${data.lastName}`,
+      email: data.email,
+      phone: data.phone || null,
+      company: data.company || null,
+      subject: data.subject,
+      description: data.description,
+      preferredTime: data.preferredTime || null,
+      timezone: data.timezone,
+      submittedAt: new Date().toISOString(),
+      source: 'AI Sales Solutions - Book Call Form'
+    };
+
+    try {
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error(`Webhook failed with status: ${response.status}`);
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Webhook error:', error);
+      throw error;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      // Send webhook to Make.com
+      await sendWebhook(formData);
+      
+      console.log('Form submitted successfully:', formData);
+      setIsSubmitted(true);
 
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          subject: '',
+          description: '',
+          preferredTime: '',
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        });
+        onClose();
+      }, 3000);
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        subject: '',
-        description: '',
-        preferredTime: '',
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
-      });
-      onClose();
-    }, 3000);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitError('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -145,6 +192,13 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Error Message */}
+                {submitError && (
+                  <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-4">
+                    <p className="text-red-300 text-sm">{submitError}</p>
+                  </div>
+                )}
+
                 {/* Personal Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
