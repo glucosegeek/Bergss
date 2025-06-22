@@ -1,8 +1,6 @@
 import React from 'react';
 import TestimonialCard from './TestimonialCard';
 import { Star } from 'lucide-react';
-import { LogoCarousel } from '../ui/logo-carousel';
-import { allLogos } from '../ui/company-logos';
 
 const Testimonials: React.FC = () => {
   const testimonials = [
@@ -50,10 +48,6 @@ const Testimonials: React.FC = () => {
               company={testimonial.company}
             />
           ))}
-        </div>
-
-        <div className="mt-20">
-          <LogoCarousel columnCount={6} logos={allLogos} />
         </div>
       </div>
     </section>
