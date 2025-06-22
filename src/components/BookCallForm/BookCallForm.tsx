@@ -272,12 +272,13 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                 {/* Company */}
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-blue-100 mb-2">
-                    Firma/Organizacja
+                    Firma/Organizacja *
                   </label>
                   <input
                     type="text"
                     id="company"
                     name="company"
+                    required
                     value={formData.company}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
