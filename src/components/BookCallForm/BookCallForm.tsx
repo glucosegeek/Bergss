@@ -96,7 +96,9 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     }
   };
 
- /* const sendWebhook = async (data: FormData) => {
+  // WEBHOOK CODE COMMENTED OUT TO ISOLATE RLS ISSUE
+  /*
+  const sendWebhook = async (data: FormData) => {
     const webhookUrl = 'https://hook.eu2.make.com/bsk9vd5wwnos0sciwhr331yrpecqmf7n';
     
     const payload = {
@@ -133,6 +135,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
       throw error;
     }
   };
+  */
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -140,9 +143,11 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     setSubmitError(null);
 
     try {
-      // Save to Supabase database first (primary storage)
+      // Save to Supabase database only (webhook commented out)
       await saveToSupabase(formData);
       
+      // WEBHOOK CALL COMMENTED OUT
+      /*
       // Send webhook to Make.com (secondary notification)
       try {
         await sendWebhook(formData);
@@ -150,6 +155,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         // Don't fail the entire submission if webhook fails
         console.warn('Webhook failed, but data was saved to database:', webhookError);
       }
+      */
       
       console.log('Form submitted successfully:', formData);
       setIsSubmitted(true);
