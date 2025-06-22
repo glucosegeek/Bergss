@@ -105,7 +105,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
       const { data: result, error } = await supabase
         .from('consultation_requests')
         .insert([insertData])
-        //.select();
+        .select();
 
       if (error) {
         console.error('Supabase error details:', {
