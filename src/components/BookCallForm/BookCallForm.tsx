@@ -122,7 +122,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
   };
 
   const generateCalendlyLink = (data: FormData): string => {
-    const baseUrl = 'https://calendly.com/damianbergss';
+    const baseUrl = 'https://calendly.com/konsultacje-bergss';
     const fullName = `${data.firstName} ${data.lastName}`;
     
     // Use encodeURIComponent for URL parameters
