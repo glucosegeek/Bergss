@@ -96,7 +96,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  const sendWebhook = async (data: FormData) => {
+ /* const sendWebhook = async (data: FormData) => {
     const webhookUrl = 'https://hook.eu2.make.com/bsk9vd5wwnos0sciwhr331yrpecqmf7n';
     
     const payload = {
