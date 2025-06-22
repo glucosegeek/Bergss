@@ -102,10 +102,10 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
 
       console.log('Attempting to save to Supabase:', insertData);
 
-      const { data: result, error } = await supabase
+      // Insert without select - this works with RLS allowing INSERT but not SELECT for anonymous users
+      const { error } = await supabase
         .from('consultation_requests')
-        .insert([insertData])
-        .select();
+        .insert([insertData]);
 
       if (error) {
         console.error('Supabase error details:', {
@@ -125,12 +125,9 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         }
       }
 
-      if (!result || result.length === 0) {
-        throw new Error('Nie udało się zapisać danych. Spróbuj ponownie.');
-      }
-
-      console.log('Successfully saved to Supabase:', result);
-      return result[0];
+      console.log('Successfully saved to Supabase');
+      // Return success indicator since we can't return the actual data
+      return { success: true };
     } catch (error) {
       console.error('Error in saveToSupabase:', error);
       throw error;
@@ -189,8 +186,8 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
       }
 
       // Save to Supabase database (primary storage)
-      const savedData = await saveToSupabase(formData);
-      console.log('Data saved successfully:', savedData);
+      const result = await saveToSupabase(formData);
+      console.log('Data saved successfully:', result);
       
       // Send webhook to Make.com (secondary notification)
       try {
