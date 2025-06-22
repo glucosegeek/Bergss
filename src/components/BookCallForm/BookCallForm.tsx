@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Calendar, User, Mail, Phone, MessageSquare, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { supabase } from '../../lib/supabase';
 
 interface BookCallFormProps {
   isOpen: boolean;
@@ -62,6 +63,39 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     });
   };
 
+  const saveToSupabase = async (data: FormData) => {
+    try {
+      const { data: result, error } = await supabase
+        .from('consultation_requests')
+        .insert([
+          {
+            first_name: data.firstName,
+            last_name: data.lastName,
+            email: data.email,
+            phone: data.phone || null,
+            company: data.company,
+            subject: data.subject,
+            description: data.description,
+            preferred_time: data.preferredTime || null,
+            timezone: data.timezone,
+            status: 'pending'
+          }
+        ])
+        .select();
+
+      if (error) {
+        console.error('Supabase error:', error);
+        throw new Error(`Database error: ${error.message}`);
+      }
+
+      console.log('Data saved to Supabase:', result);
+      return result;
+    } catch (error) {
+      console.error('Error saving to Supabase:', error);
+      throw error;
+    }
+  };
+
   const sendWebhook = async (data: FormData) => {
     const webhookUrl = 'https://hook.eu2.make.com/bsk9vd5wwnos0sciwhr331yrpecqmf7n';
     
@@ -106,8 +140,16 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     setSubmitError(null);
 
     try {
-      // Send webhook to Make.com
-      await sendWebhook(formData);
+      // Save to Supabase database first (primary storage)
+      await saveToSupabase(formData);
+      
+      // Send webhook to Make.com (secondary notification)
+      try {
+        await sendWebhook(formData);
+      } catch (webhookError) {
+        // Don't fail the entire submission if webhook fails
+        console.warn('Webhook failed, but data was saved to database:', webhookError);
+      }
       
       console.log('Form submitted successfully:', formData);
       setIsSubmitted(true);
