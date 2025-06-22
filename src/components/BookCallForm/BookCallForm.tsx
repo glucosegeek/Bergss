@@ -63,41 +63,80 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     });
   };
 
+  const validateForm = (data: FormData): string | null => {
+    if (!data.firstName.trim()) return 'Imię jest wymagane';
+    if (!data.lastName.trim()) return 'Nazwisko jest wymagane';
+    if (!data.email.trim()) return 'Email jest wymagany';
+    if (!data.company.trim()) return 'Nazwa firmy jest wymagana';
+    if (!data.subject.trim()) return 'Temat konsultacji jest wymagany';
+    if (!data.description.trim()) return 'Opis potrzeb jest wymagany';
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) return 'Podaj prawidłowy adres email';
+    
+    return null;
+  };
+
   const saveToSupabase = async (data: FormData) => {
     try {
+      // Validate form data before submission
+      const validationError = validateForm(data);
+      if (validationError) {
+        throw new Error(validationError);
+      }
+
+      // Prepare data for database insertion
+      const insertData = {
+        first_name: data.firstName.trim(),
+        last_name: data.lastName.trim(),
+        email: data.email.trim().toLowerCase(),
+        phone: data.phone.trim() || null,
+        company: data.company.trim(),
+        subject: data.subject,
+        description: data.description.trim(),
+        preferred_time: data.preferredTime || null,
+        timezone: data.timezone,
+        status: 'pending' as const
+      };
+
+      console.log('Attempting to save to Supabase:', insertData);
+
       const { data: result, error } = await supabase
         .from('consultation_requests')
-        .insert([
-          {
-            first_name: data.firstName,
-            last_name: data.lastName,
-            email: data.email,
-            phone: data.phone || null,
-            company: data.company,
-            subject: data.subject,
-            description: data.description,
-            preferred_time: data.preferredTime || null,
-            timezone: data.timezone,
-            status: 'pending'
-          }
-        ])
+        .insert([insertData])
         .select();
 
       if (error) {
-        console.error('Supabase error:', error);
-        throw new Error(`Database error: ${error.message}`);
+        console.error('Supabase error details:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
+        
+        // Provide user-friendly error messages
+        if (error.code === '42501') {
+          throw new Error('Błąd uprawnień bazy danych. Skontaktuj się z administratorem.');
+        } else if (error.code === '23505') {
+          throw new Error('Ten email został już użyty. Sprawdź swoją skrzynkę odbiorczą.');
+        } else {
+          throw new Error(`Błąd bazy danych: ${error.message}`);
+        }
       }
 
-      console.log('Data saved to Supabase:', result);
-      return result;
+      if (!result || result.length === 0) {
+        throw new Error('Nie udało się zapisać danych. Spróbuj ponownie.');
+      }
+
+      console.log('Successfully saved to Supabase:', result);
+      return result[0];
     } catch (error) {
-      console.error('Error saving to Supabase:', error);
+      console.error('Error in saveToSupabase:', error);
       throw error;
     }
   };
 
-  // WEBHOOK CODE COMMENTED OUT TO ISOLATE RLS ISSUE
-  /*
   const sendWebhook = async (data: FormData) => {
     const webhookUrl = 'https://hook.eu2.make.com/bsk9vd5wwnos0sciwhr331yrpecqmf7n';
     
@@ -129,13 +168,13 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         throw new Error(`Webhook failed with status: ${response.status}`);
       }
 
+      console.log('Webhook sent successfully');
       return true;
     } catch (error) {
       console.error('Webhook error:', error);
       throw error;
     }
   };
-  */
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -143,21 +182,25 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     setSubmitError(null);
 
     try {
-      // Save to Supabase database only (webhook commented out)
-      await saveToSupabase(formData);
+      // Validate form before submission
+      const validationError = validateForm(formData);
+      if (validationError) {
+        throw new Error(validationError);
+      }
+
+      // Save to Supabase database (primary storage)
+      const savedData = await saveToSupabase(formData);
+      console.log('Data saved successfully:', savedData);
       
-      // WEBHOOK CALL COMMENTED OUT
-      /*
       // Send webhook to Make.com (secondary notification)
       try {
         await sendWebhook(formData);
+        console.log('Webhook sent successfully');
       } catch (webhookError) {
         // Don't fail the entire submission if webhook fails
         console.warn('Webhook failed, but data was saved to database:', webhookError);
       }
-      */
       
-      console.log('Form submitted successfully:', formData);
       setIsSubmitted(true);
 
       // Reset form after 3 seconds
@@ -179,7 +222,8 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
 
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitError('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.');
+      const errorMessage = error instanceof Error ? error.message : 'Wystąpił nieoczekiwany błąd';
+      setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
