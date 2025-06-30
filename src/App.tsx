@@ -4,7 +4,6 @@ import Hero from './components/Hero/Hero';
 import { FloatingNotification } from './components/ui/FloatingNotification';
 
 // Lazy load components
-const WhatWeDo = lazy(() => import('./components/WhatWeDo/WhatWeDo'));
 const WhoIsThisFor = lazy(() => import('./components/WhoIsThisFor/WhoIsThisFor'));
 const FAQ = lazy(() => import('./components/FAQ/FAQ'));
 const FinalCTA = lazy(() => import('./components/FinalCTA/FinalCTA'));
@@ -34,7 +33,6 @@ function App() {
             <>
               <Hero />
               <Suspense fallback={null}>
-                <WhatWeDo />
                 <WhoIsThisFor />
                 <FAQ />
                 <FinalCTA />
