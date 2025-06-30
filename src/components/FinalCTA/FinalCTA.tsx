@@ -22,10 +22,6 @@ const FinalCTA: React.FC = () => {
             Gotowy na Transformację Biznesu z AI?
           </h2>
           
-          <p className="text-lg sm:text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
-           
-          </p>
-
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button 
               onClick={() => setIsBookCallOpen(true)}
