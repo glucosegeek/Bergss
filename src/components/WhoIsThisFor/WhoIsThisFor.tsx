@@ -31,7 +31,7 @@ const WhoIsThisFor: React.FC = () => {
     {
       icon: <Utensils className="w-6 h-6" />,
       type: "Restauracje/Salony piękności/Gabinety lekarskie",
-      description: ""
+      description: "asdfasdfaf"
     }
   ];
 
