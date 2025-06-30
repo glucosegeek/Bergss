@@ -39,7 +39,7 @@ const FinalCTA: React.FC = () => {
                 <span className="text-2xl">🎥</span>
               </div>
               <a href="#" className="text-white hover:text-blue-200 font-medium transition-colors duration-300">
-                Zobacz Demo (2 min)
+                Zobacz Demo chatbot (2 min)
               </a>
             </div>
           </div>
