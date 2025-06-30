@@ -43,10 +43,6 @@ const FinalCTA: React.FC = () => {
               </a>
             </div>
           </div>
-
-          <p className="mt-8 text-blue-100/80 text-sm">
-            Bez karty kredytowej • 14-dniowy okres próbny • Możliwość rezygnacji w dowolnym momencie
-          </p>
         </div>
       </section>
 
