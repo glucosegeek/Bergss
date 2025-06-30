@@ -13,7 +13,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Czy można to zintegrować z moim obecnym CRM?",
-      answer: "Tak! Nasze rozwiązania AI integrują się bezproblemowo z popularnymi platformami CRM, takimi jak Salesforce, HubSpot, Pipedrive i inne. Oferujemy również niestandardowe integracje API dla specjalistycznych systemów. Wszystkie dane o leadach, rozmowach i działaniach są automatycznie synchronizowane z Twoim CRM."
+      answer: "Tak! Nasze rozwiązania AI integrują się bezproblemowo z popularnymi platformami CRM. Oferujemy również niestandardowe integracje API dla specjalistycznych systemów. Wszystkie dane o leadach, rozmowach i działaniach są automatycznie synchronizowane z Twoim CRM."
     },
     {
       question: "Z jakimi branżami współpracujecie?",
