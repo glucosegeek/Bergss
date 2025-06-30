@@ -64,7 +64,7 @@ const HeroVisual: React.FC = () => {
             
             <div className="flex items-start gap-2 justify-end">
               <div className="bg-blue-600/20 rounded-lg p-3 text-sm text-blue-100 max-w-[80%]">
-                Czy możecie pomóc w zmniejsze czasu w poświęconego na obsługe klienta?
+                Czy możecie pomóc w zmniejszeniu czasu poświęconego na obsługe klienta?
               </div>
               <div className="w-7 h-7 rounded-full bg-blue-500 flex-shrink-0 flex items-center justify-center text-xs font-medium text-white">U</div>
             </div>
