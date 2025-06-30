@@ -16,7 +16,7 @@ const FAQ: React.FC = () => {
       answer: "Tak! Nasze rozwiązania AI integrują się bezproblemowo z popularnymi platformami CRM. Oferujemy również niestandardowe integracje API dla specjalistycznych systemów. Wszystkie dane o leadach, rozmowach i działaniach są automatycznie synchronizowane z Twoim CRM."
     },
     {
-      question: "Z jakimi branżami współpracujecie?",
+      question: "Czy moja branża nadaje się do zastosowania AI?",
       answer: "Nasze rozwiązania AI są wszechstronne, w tym SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, usługi gastronomiczne, edukacja i usługi profesjonalne. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
     },
     {
