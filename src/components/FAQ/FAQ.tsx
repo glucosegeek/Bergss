@@ -19,11 +19,10 @@ const FAQ: React.FC = () => {
       question: "Czy moja branża nadaje się do zastosowania AI?",
       answer: "Nasze rozwiązania AI są wszechstronne. Mogą z nich skorzystać: SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, usługi gastronomiczne, edukacja i freelancerzy. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
     }
-    {/*
     {
       question: "Jak mierzycie sukces?",
       answer: "Zapewniamy kompleksową analitykę śledzącą kluczowe wskaźniki, takie jak wskaźniki generowania leadów, jakość rozmów, czasy odpowiedzi i współczynniki konwersji. Otrzymasz dostęp do panelu w czasie rzeczywistym pokazującego ROI, metryki wydajności i obszary do optymalizacji. Przeprowadzamy również regularne sesje przeglądowe, aby upewnić się, że otrzymujesz maksymalną wartość."
-    }*/}
+    }
   ];
 
   return (
