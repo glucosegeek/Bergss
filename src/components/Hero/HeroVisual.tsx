@@ -72,7 +72,7 @@ const HeroVisual: React.FC = () => {
             <div className="flex items-start gap-2">
               <div className="w-7 h-7 rounded-full bg-indigo-600 flex-shrink-0 flex items-center justify-center text-xs font-medium text-white">AI</div>
               <div className="bg-indigo-800/30 rounded-lg p-3 text-sm text-blue-100 max-w-[80%]">
-                Oczywiście! Z naszymi rozwiązaniami jesteśmy w stanie pomóc Tobie i Twojemu biznesowi w zwiększeniu
+                Oczywiście! Nasz chatbot AI może zredukować obsługę klienta o 70%.
               </div>
             </div>
           </div>
