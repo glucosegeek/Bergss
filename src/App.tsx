@@ -55,12 +55,6 @@ function App() {
               <Footer />
             </Suspense>
           } />
-          <Route path="/referencje" element={
-            <Suspense fallback={null}>
-              <References />
-              <Footer />
-            </Suspense>
-          } />
           <Route path="/kontakt" element={
             <Suspense fallback={null}>
               <Contact />
