@@ -13,7 +13,7 @@ const WhatWeDo: React.FC = () => {
     {
       icon: <Users className="w-8 h-8" />,
       title: "Generowanie Leadów AI",
-      description: "Automatycznie pozyskuje wysokiej jakości leady z wielu platform, zapewniając stały napływ potencjalnych klientów."
+      description: "-->Automatycznie pozyskuje wysokiej jakości leady z wielu platform, zapewniając stały napływ potencjalnych klientów."
     },
     {
       icon: <Mail className="w-8 h-8" />,
