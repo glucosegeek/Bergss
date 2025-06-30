@@ -29,7 +29,7 @@ const WhoIsThisFor: React.FC = () => {
       description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     },
     {
-      icon: <Rocket className="w-6 h-6" />,
+      icon: <Users className="w-6 h-6" />,
       type: "Restauracje",
       description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     }
