@@ -25,7 +25,7 @@ const Cookies = lazy(() => import('./pages/Cookies'));
 function App() {
   return (
     <Router>
-      {/*} <div className="bg-indigo-950 min-h-screen">
+      {/* <div className="bg-indigo-950 min-h-screen">
         <FloatingNotification
           title="Witaj!"
           message="Odkryj, jak AI może zrewolucjonizować Twoją sprzedaż. Napisz do nas i omówimy razem jak możemy Ci pomóc."
