@@ -26,7 +26,7 @@ const WhoIsThisFor: React.FC = () => {
     {
       icon: <Users className="w-6 h-6" />,
       type: "Sklepy E-commerce",
-      description: "Usprawnij przebieg konwersacji między Tobą a klientem"
+      description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     }
   ];
 
