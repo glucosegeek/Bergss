@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
 
         <div className="pt-8 border-t border-white/10">
           <p className="text-center text-blue-100/60 text-sm">
-            © {new Date().getFullYear()} AI Sales Solutions. Wszelkie prawa zastrzeżone.
+            © {new Date().getFullYear()} Bergss. Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>
