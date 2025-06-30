@@ -11,7 +11,6 @@ const ContactForm: React.FC = () => {
 
   const services = [
     'Chatbot AI',
-    'Generowanie Leadów AI',
     'Automatyczny Outreach AI',
     'Rozmowy Telefoniczne AI',
     'Strona Internetowa'

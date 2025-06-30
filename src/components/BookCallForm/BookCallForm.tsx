@@ -36,7 +36,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
 
   const subjects = [
     'Chatbot AI Implementation',
-    'Lead Generation AI',
     'Automated Outreach AI',
     'AI Phone Calls',
     'Website Development',
