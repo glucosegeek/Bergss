@@ -29,7 +29,7 @@ function App() {
        {/*  <FloatingNotification
           title="Witaj!"
           message="Odkryj, jak AI może zrewolucjonizować Twoją sprzedaż. Napisz do nas i omówimy razem jak możemy Ci pomóc."
-          duration={7000} */}
+          duration={7000} }
         />
         <Routes>
           <Route path="/" element={
