@@ -29,24 +29,31 @@ const WhatWeDo: React.FC = () => {
   return (
     <section className="py-24 bg-gradient-to-br from-indigo-950/80 to-purple-950/80">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">
+        {/* Centered header section */}
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">
             Rozwiązania Oparte na AI
           </h2>
-          <p className="text-lg text-blue-100/80 max-w-2xl mx-auto">
+          <p className="text-lg text-blue-100/80 max-w-3xl mx-auto leading-relaxed">
             Przekształć swój proces sprzedaży dzięki naszym najnowocześniejszym narzędziom AI, które pracują całodobowo, aby rozwijać Twój biznes
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
+        {/* Centered services grid */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl w-full">
+            {services.map((service, index) => (
+              <div key={index} className="flex justify-center">
+                <div className="w-full max-w-sm">
+                  <ServiceCard
+                    icon={service.icon}
+                    title={service.title}
+                    description={service.description}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
