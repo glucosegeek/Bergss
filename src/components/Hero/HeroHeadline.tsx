@@ -36,7 +36,7 @@ const HeroHeadline: React.FC = () => {
       </span>
       <br />
       <span className="inline-block mb-2">
-        o 25% dzięki
+        o 26% dzięki
       </span>
       <br />
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
