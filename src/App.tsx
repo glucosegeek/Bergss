@@ -7,7 +7,6 @@ import { FloatingNotification } from './components/ui/FloatingNotification';
 const WhatWeDo = lazy(() => import('./components/WhatWeDo/WhatWeDo'));
 const WhoIsThisFor = lazy(() => import('./components/WhoIsThisFor/WhoIsThisFor'));
 const FAQ = lazy(() => import('./components/FAQ/FAQ'));
-const Testimonials = lazy(() => import('./components/Testimonials/Testimonials'));
 const FinalCTA = lazy(() => import('./components/FinalCTA/FinalCTA'));
 const ContactForm = lazy(() => import('./components/ContactForm/ContactForm'));
 const Footer = lazy(() => import('./components/Footer/Footer'));
@@ -38,7 +37,6 @@ function App() {
                 <WhatWeDo />
                 <WhoIsThisFor />
                 <FAQ />
-                <Testimonials />
                 <FinalCTA />
                 <ContactForm />
                 <Footer />
