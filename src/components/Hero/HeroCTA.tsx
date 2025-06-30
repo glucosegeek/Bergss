@@ -21,7 +21,7 @@ const HeroCTA: React.FC = () => {
         
         <div className="flex items-center gap-2 text-blue-200/80">
           <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
-          <span className="text-sm">Skusiz się?</span>
+          <span className="text-sm">Skusisz się?</span>
         </div>
       </div>
 
