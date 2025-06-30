@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Building2, Rocket, LineChart, Users, Armchair } from 'lucide-react';
+import { CheckCircle2, Building2, Rocket, LineChart, Users, Armchair, Utensils } from 'lucide-react';
 
 const WhoIsThisFor: React.FC = () => {
   const clientTypes = [
@@ -29,7 +29,7 @@ const WhoIsThisFor: React.FC = () => {
       description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     },
     {
-      icon: <Users className="w-6 h-6" />,
+      icon: <Utensils className="w-6 h-6" />,
       type: "Restauracje",
       description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     }
