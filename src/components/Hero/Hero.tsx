@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
         <FloatingNotification 
           icon={<Bot size={20} />}
           text="Nowi klienci pozyskani za pośrednictwem czatu AI"
-          position="left-[45%] top-[59%]"
+          position="left-[45%] top-[60%]"
           delay={0}
         />
         <FloatingNotification 
@@ -31,13 +31,13 @@ const Hero: React.FC = () => {
         <FloatingNotification 
           icon={<BarChart size={20} />}
           text="Ponad 25% transakcji zainicjowane przez AI"
-          position="left-[45%] top-[34%]"
+          position="left-[45%] top-[30%]"
           delay={0}
         />
         <FloatingNotification 
           icon={<Users size={20} />}
           text="Liczba wiadomości do BOK zmniejszona o 70%"
-          position="left-[45%] top-[41%]"
+          position="left-[45%] top-[40%]"
           delay={0}
         />
       </div>
