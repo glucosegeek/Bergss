@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Building2, Rocket, LineChart, Users } from 'lucide-react';
+import { CheckCircle2, Building2, Rocket, LineChart, Users, battery-full } from 'lucide-react';
 
 const WhoIsThisFor: React.FC = () => {
   const clientTypes = [
@@ -24,7 +24,7 @@ const WhoIsThisFor: React.FC = () => {
       description: "Zautomatyzuj generowanie leadów i skup się na pracy z klientami"
     },
     {
-      icon: <Rocket className="w-6 h-6" />,
+      icon: <battery-full className="w-6 h-6" />,
       type: "Sklepy E-commerce",
       description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     },
