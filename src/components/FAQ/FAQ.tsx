@@ -17,7 +17,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Czy moja branża nadaje się do zastosowania AI?",
-      answer: "Nasze rozwiązania AI są wszechstronne, w tym SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, usługi gastronomiczne, edukacja i freelancerzy. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
+      answer: "Nasze rozwiązania AI są wszechstronne. Mogą z nich skorzystać: SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, usługi gastronomiczne, edukacja i freelancerzy. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
     },
     {
       question: "Jak mierzycie sukces?",
