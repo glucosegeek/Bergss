@@ -11,9 +11,11 @@ const Footer: React.FC = () => {
 
   const quickLinks = [
     { text: 'O Nas', path: '/o-nas' },
-    { text: 'Usługi', path: '/uslugi' },
-    { text: 'Referencje', path: '/referencje' },
-    { text: 'Kontakt', path: '/kontakt' }
+    { 
+      text: 'Usługi', 
+      path: '/',
+      scrollTo: 'rozwiazania-ai'
+    }
   ];
 
   const legalLinks = [
@@ -21,6 +23,20 @@ const Footer: React.FC = () => {
     { text: 'Polityka Prywatności', path: '/polityka-prywatnosci' },
     { text: 'Polityka Cookies', path: '/polityka-cookies' }
   ];
+
+  const handleScrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleContactClick = () => {
+    const contactSection = document.getElementById('kontakt-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="bg-indigo-950/80 border-t border-white/10">
@@ -53,19 +69,25 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Kontakt</h3>
             <div className="space-y-3">
               <a
-                href="mailto:kontakt@aisales.com"
+                href="mailto:kontakt@bergss.pl"
                 className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
               >
                 <Mail className="w-4 h-4" />
                 <span>kontakt@bergss.pl</span>
               </a>
               <a
-                href="tel:+48123456789"
+                href="tel:+48530639369"
                 className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
               >
                 <Phone className="w-4 h-4" />
                 <span>+48 530 639 369</span>
               </a>
+              <button
+                onClick={handleContactClick}
+                className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg w-full text-left"
+              >
+                Skontaktuj się z Nami
+              </button>
             </div>
           </div>
 
@@ -74,12 +96,21 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.text}>
-                  <Link
-                    to={link.path}
-                    className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
-                  >
-                    {link.text}
-                  </Link>
+                  {link.scrollTo ? (
+                    <button
+                      onClick={() => handleScrollToSection(link.scrollTo)}
+                      className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg w-full text-left"
+                    >
+                      {link.text}
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
+                    >
+                      {link.text}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

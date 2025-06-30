@@ -27,7 +27,7 @@ const WhatWeDo: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-indigo-950/80 to-purple-950/80">
+    <section id="rozwiazania-ai" className="py-24 bg-gradient-to-br from-indigo-950/80 to-purple-950/80">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Centered header section */}
         <div className="text-center mb-16 max-w-4xl mx-auto">

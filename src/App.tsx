@@ -14,7 +14,6 @@ const Footer = lazy(() => import('./components/Footer/Footer'));
 // Lazy load pages
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const Services = lazy(() => import('./pages/Services'));
-const References = lazy(() => import('./pages/References'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Terms = lazy(() => import('./pages/Terms'));
 const Privacy = lazy(() => import('./pages/Privacy'));
@@ -24,11 +23,11 @@ function App() {
   return (
     <Router>
       <div className="bg-indigo-950 min-h-screen">
-        {/* <FloatingNotification
+        <FloatingNotification
           title="Witaj!"
           message="Odkryj, jak AI może zrewolucjonizować Twoją sprzedaż. Napisz do nas i omówimy razem jak możemy Ci pomóc."
           duration={7000}
-        /> */}
+        />
         <Routes>
           <Route path="/" element={
             <>

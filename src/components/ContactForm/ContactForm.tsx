@@ -30,7 +30,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-indigo-950/90 to-purple-950/90">
+    <section id="kontakt-section" className="py-24 bg-gradient-to-br from-indigo-950/90 to-purple-950/90">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
