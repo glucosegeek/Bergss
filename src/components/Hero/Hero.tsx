@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
         />
         <FloatingNotification 
           icon={<Phone size={20} />}
-          text="Nowy potencjalny klient pozyskany za pośrednictwem czatu AI."
+          text="Oszczędzone 30% kosztów obsługi klienta."
           position="right-[15%] top-[80%]"
           delay={2}
         />
