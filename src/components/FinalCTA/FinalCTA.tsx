@@ -43,6 +43,10 @@ const FinalCTA: React.FC = () => {
               </a>
             </div>
           </div>
+
+          <p className="mt-8 text-blue-100/80 text-sm">
+            Bergss.pl • Bergss.pl • Bergss.pl
+          </p>
         </div>
       </section>
 
