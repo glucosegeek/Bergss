@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-block">
-              <h3 className="text-xl font-semibold text-white mb-4">AI Sales Solutions</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">Bergss</h3>
             </Link>
             <p className="text-blue-100/80 mb-4">
               Transformujemy procesy sprzedaży dzięki najnowocześniejszej technologii AI.
