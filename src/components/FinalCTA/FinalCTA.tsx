@@ -19,7 +19,7 @@ const FinalCTA: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto">
-            Gotowy na Transformację Sprzedaży z AI?
+            Gotowy na Transformację Biznesu z AI?
           </h2>
           
           <p className="text-lg sm:text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
