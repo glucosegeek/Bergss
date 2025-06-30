@@ -32,15 +32,15 @@ const HeroHeadline: React.FC = () => {
       className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white mb-6 opacity-0 translate-y-8 transition-all duration-700 ease-out"
     >
       <span className="inline-block mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
-        Zwiększ sprzedaż
+        Wiesz już jak
       </span>
       <br />
       <span className="inline-block mb-2">
-        o 26% dzięki
+        może pomóc Ci
       </span>
       <br />
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
-        automatyzacji AI
+        w biznesie?
       </span>
     </h1>
   );
