@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
         <FloatingNotification 
           icon={<Users size={20} />}
           text="Liczba wiadomości do BOK zmniejszona o 70%"
-          position="left-[45%] top-[40%]"
+          position="left-[45%] top-[41%]"
           delay={0}
         />
       </div>
