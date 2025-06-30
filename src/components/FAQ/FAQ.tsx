@@ -17,7 +17,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Z jakimi branżami współpracujecie?",
-      answer: "Nasze rozwiązania AI są wszechstronne, w tym SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, edukacja i usługi profesjonalne. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
+      answer: "Nasze rozwiązania AI są wszechstronne, w tym SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, gastronomia,edukacja i usługi profesjonalne. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
     },
     {
       question: "Jak mierzycie sukces?",
