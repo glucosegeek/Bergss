@@ -7,8 +7,8 @@ const WhatWeDo: React.FC = () => {
     {
       icon: <Bot className="w-8 h-8" />,
       title: "Chatbot AI",
-      description: "-> Automatyzuje rozmowy.   " 
-        + "->Odpowiada na pytania i poprawia doświadczenia klientów dzięki całodobowej, inteligentnej obsłudze."
+      description: "-> Automatyzuje rozmowy. " 
+        + " ->Odpowiada na pytania i poprawia doświadczenia klientów dzięki całodobowej, inteligentnej obsłudze."
     },
     {
       icon: <Users className="w-8 h-8" />,
