@@ -33,7 +33,7 @@ const WhoIsThisFor: React.FC = () => {
             Dla Kogo Jest To Rozwiązanie?
           </h2>
           <p className="text-lg text-blue-100/80">
-            Nasze rozwiązania AI są idealne dla firm gotowych na skalowanie działań sprzedażowych
+            Nasze rozwiązania AI są przeznaczone dla firm gotowych na skalowanie działań sprzedażowych
           </p>
         </div>
 
