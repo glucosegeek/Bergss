@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               <h3 className="text-xl font-semibold text-white mb-4">Bergss</h3>
             </Link>
             <p className="text-blue-100/80 mb-4">
-              Transformujemy procesy sprzedaży dzięki najnowocześniejszej technologii AI.
+              Transformujemy biznesy dzięki najnowocześniejszej technologii AI.
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social, index) => (
