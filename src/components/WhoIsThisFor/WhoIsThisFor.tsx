@@ -29,7 +29,7 @@ const WhoIsThisFor: React.FC = () => {
       description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     },
     {
-      icon: <Utensils className="w-6 h-6" />,
+      icon: <Utensils className="w-7 h-7" />,
       type: "Restauracje/Salony piękności/Gabinety lekarskie",
       description: "Zautomatyzuj rezerwacje i wizyt"
     }
