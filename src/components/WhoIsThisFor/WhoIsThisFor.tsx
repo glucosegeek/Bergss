@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Building2, Rocket, LineChart, Users, Battery-Full, Utensils } from 'lucide-react';
+import { CheckCircle2, Building2, Rocket, LineChart, Users, Battery, Utensils } from 'lucide-react';
 
 const WhoIsThisFor: React.FC = () => {
   const clientTypes = [
