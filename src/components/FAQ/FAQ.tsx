@@ -18,10 +18,6 @@ const FAQ: React.FC = () => {
     {
       question: "Z jakimi branżami współpracujecie?",
       answer: "Nasze rozwiązania AI są wszechstronne i zostały skutecznie wdrożone w różnych branżach, w tym SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, edukacja i usługi profesjonalne. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
-    },
-    {
-      question: "Jak mierzycie sukces?",
-      answer: "Zapewniamy kompleksową analitykę śledzącą kluczowe wskaźniki, takie jak wskaźniki generowania leadów, jakość rozmów, czasy odpowiedzi i współczynniki konwersji. Otrzymasz dostęp do panelu w czasie rzeczywistym pokazującego ROI, metryki wydajności i obszary do optymalizacji. Przeprowadzamy również regularne sesje przeglądowe, aby upewnić się, że otrzymujesz maksymalną wartość."
     }
   ];
 
