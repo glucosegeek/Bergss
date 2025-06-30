@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
         />
         <FloatingNotification 
           icon={<BarChart size={20} />}
-          text="Sprzedaż wzrosła w tym miesiącu o 27%"
+          text="Ponad 25% transakcji zainicjowane przez AI"
           position="left-[5%] bottom-[5%]"
           delay={4}
         />
