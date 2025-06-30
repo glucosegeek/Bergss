@@ -34,13 +34,12 @@ const Hero: React.FC = () => {
           position="left-[5%] bottom-[5%]"
           delay={4}
         />
-        /* <FloatingNotification 
+        <FloatingNotification 
           icon={<Users size={20} />}
           text="Liczba email i telefonów do BOK zmniejszona o 70%"
           position="right-[50%] top-[20%]"
           delay={0}
         />
-        */
       </div>
 
       {/* Content container */}
