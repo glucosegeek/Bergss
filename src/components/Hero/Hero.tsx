@@ -26,13 +26,13 @@ const Hero: React.FC = () => {
           icon={<Phone size={20} />}
           text="Oszczędzone 30% kosztów obsługi klienta."
           position="left-[45%] top-[50%]"
-          delay={2}
+          delay={0}
         />
         <FloatingNotification 
           icon={<BarChart size={20} />}
           text="Ponad 25% transakcji zainicjowane przez AI"
           position="left-[45%] top-[30%]"
-          delay={4}
+          delay={0}
         />
         <FloatingNotification 
           icon={<Users size={20} />}
