@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
           icon={<Users size={20} />}
           text="Liczba wiadomości do BOK zmniejszona o 70%"
           position="right-[50%] top-[20%]"
-          delay={0}
+          delay={1}
         />
       </div>
 
