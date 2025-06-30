@@ -23,7 +23,7 @@ const FinalCTA: React.FC = () => {
           </h2>
           
           <p className="text-lg sm:text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
-            Dołącz do setek firm, które już korzystają z naszych rozwiązań AI do automatyzacji procesu sprzedaży i skalowania przychodów.
+           
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
