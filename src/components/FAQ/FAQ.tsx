@@ -9,7 +9,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Czy proces wdrożenia jest skomplikowany?",
-      answer: "Absolutnie nie! Zajmujemy się całym procesem wdrożenia. Nasz zespół konfiguruje AI, szkoli ją na danych Twojej firmy i integruje z istniejącymi systemami. Czas na wdrożenie jest ustalany indywidualnie z każdym klientem, z ciągłym wsparciem i optymalizacją ze strony naszego zespołu technicznego."
+      answer: "Absolutnie nie! Nasz zespół konfiguruje AI, szkoli ją na danych Twojej firmy i integruje z istniejącymi systemami. Czas na wdrożenie jest ustalany indywidualnie z każdym klientem, z ciągłym wsparciem i optymalizacją ze strony naszego zespołu technicznego."
     },
     {
       question: "Czy można to zintegrować z moim obecnym CRM?",
