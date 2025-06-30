@@ -5,7 +5,6 @@ import { FloatingNotification } from './components/ui/FloatingNotification';
 
 // Lazy load components
 const WhatWeDo = lazy(() => import('./components/WhatWeDo/WhatWeDo'));
-const Stats = lazy(() => import('./components/Stats/Stats'));
 const WhoIsThisFor = lazy(() => import('./components/WhoIsThisFor/WhoIsThisFor'));
 const FAQ = lazy(() => import('./components/FAQ/FAQ'));
 const Testimonials = lazy(() => import('./components/Testimonials/Testimonials'));
@@ -37,7 +36,6 @@ function App() {
               <Hero />
               <Suspense fallback={null}>
                 <WhatWeDo />
-                <Stats />
                 <WhoIsThisFor />
                 <FAQ />
                 <Testimonials />
