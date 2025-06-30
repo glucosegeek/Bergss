@@ -24,7 +24,7 @@ const WhoIsThisFor: React.FC = () => {
       description: "Zautomatyzuj generowanie leadów i skup się na pracy z klientami"
     },
     {
-      icon: <Building1 className="w-6 h-6" />,
+      icon: <Building2 className="w-6 h-6" />,
       type: "Sklepy E-commerce",
       description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     }
