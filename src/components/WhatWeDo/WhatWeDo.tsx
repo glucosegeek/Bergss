@@ -9,11 +9,11 @@ const WhatWeDo: React.FC = () => {
       title: "Chatbot AI",
       description: "Automatyzuje rozmowy. Odpowiada na pytania i poprawia doświadczenia klientów dzięki całodobowej, inteligentnej obsłudze."
     },
-    {/*{
+    {/*
       icon: <Users className="w-8 h-8" />,
       title: "Generowanie Leadów AI",
       description: "Automatycznie pozyskuje wysokiej jakości leady z wielu platform, zapewniając stały napływ potencjalnych klientów."
-    }, */}
+    */},
     {
       icon: <Mail className="w-8 h-8" />,
       title: "Automatyczny Outreach AI",
