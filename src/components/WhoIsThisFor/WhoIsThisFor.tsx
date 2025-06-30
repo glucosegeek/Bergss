@@ -29,7 +29,7 @@ const WhoIsThisFor: React.FC = () => {
       description: "Zadbaj o całodobową komunikację między Tobą a klientem"
     },
     {
-      icon: <Utensils className="w-7 h-7" />,
+      icon: <Utensils className="w-6 h-6" />,
       type: "Restauracje/Salony piękności/Gabinety lekarskie",
       description: "Zautomatyzuj rezerwacje i wizyt"
     }
@@ -62,7 +62,7 @@ const WhoIsThisFor: React.FC = () => {
                 
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-400" />
+                    <CheckCircle2 className="w-6 h-6 text-green-400" />
                     <h3 className="text-xl font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-colors duration-300">
                       {client.type}
                     </h3>
