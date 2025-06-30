@@ -36,11 +36,11 @@ const HeroHeadline: React.FC = () => {
       </span>
       <br />
       <span className="inline-block mb-2">
-        wdrożyłeś AI
+        wdrożyłeś AI w
       </span>
       <br />
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
-       w swoim biznesie?
+       swoim biznesie?
       </span>
     </h1>
   );
