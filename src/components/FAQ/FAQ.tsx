@@ -9,15 +9,15 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Czy proces wdrożenia jest skomplikowany?",
-      answer: "Absolutnie nie! Nasz zespół konfiguruje AI, szkoli ją na danych Twojej firmy i integruje z istniejącymi systemami. Czas na wdrożenie jest ustalany indywidualnie z każdym klientem."
+      answer: "Absolutnie nie! Zajmujemy się całym procesem wdrożenia. Nasz zespół konfiguruje AI, szkoli ją na danych Twojej firmy i integruje z istniejącymi systemami. Większość klientów jest gotowa do działania w ciągu 48 godzin, z ciągłym wsparciem i optymalizacją ze strony naszego zespołu technicznego."
     },
     {
       question: "Czy można to zintegrować z moim obecnym CRM?",
-      answer: "Tak! Nasze rozwiązania AI integrują się bezproblemowo z popularnymi platformami CRM. Oferujemy również niestandardowe integracje API dla specjalistycznych systemów. Wszystkie dane o leadach, rozmowach i działaniach są automatycznie synchronizowane z Twoim CRM."
+      answer: "Tak! Nasze rozwiązania AI integrują się bezproblemowo z popularnymi platformami CRM, takimi jak Salesforce, HubSpot, Pipedrive i inne. Oferujemy również niestandardowe integracje API dla specjalistycznych systemów. Wszystkie dane o leadach, rozmowach i działaniach są automatycznie synchronizowane z Twoim CRM."
     },
     {
-      question: "Czy moja branża nadaje się do zastosowania AI?",
-      answer: "Nasze rozwiązania AI są wszechstronne. Mogą z nich skorzystać: SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, usługi gastronomiczne, edukacja i freelancerzy. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
+      question: "Z jakimi branżami współpracujecie?",
+      answer: "Nasze rozwiązania AI są wszechstronne i zostały skutecznie wdrożone w różnych branżach, w tym SaaS, nieruchomości, usługi finansowe, opieka zdrowotna, edukacja i usługi profesjonalne. Dostosowujemy wiedzę i podejście AI do specyficznych wymagań Twojej branży."
     },
     {
       question: "Jak mierzycie sukces?",
