@@ -40,7 +40,7 @@ const HeroHeadline: React.FC = () => {
       </span>
       <br />
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
-       u siebie w biznesie?
+       w swoim biznesie?
       </span>
     </h1>
   );
