@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
                 className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
               >
                 <Mail className="w-4 h-4" />
-                <span>kontakt@aisales.com</span>
+                <span>kontakt@bergss.pl</span>
               </a>
               <a
                 href="tel:+48123456789"
