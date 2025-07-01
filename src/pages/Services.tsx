@@ -85,7 +85,7 @@ const Services = () => {
         'Wsparcie techniczne'
       ],
       benefits: [
-        'Zwiększenie konwersji o 180%',
+        'Zwiększenie konwersji',
         'Lepsze pozycje w Google',
         'Profesjonalny wizerunek',
         'Mobilna optymalizacja'
