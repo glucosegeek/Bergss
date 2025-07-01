@@ -1,32 +1,17 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Bot, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const Header: React.FC = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  const isHomePage = location.pathname === '/';
-  
   const navigationLinks = [
     { path: '/uslugi', label: 'Usługi' },
     { path: '/demo', label: 'Demo' },
     { path: '/kontakt', label: 'Kontakt' }
   ];
-
-  const scrollToSection = (sectionId: string) => {
-    if (location.pathname !== '/') {
-      // If not on homepage, navigate to homepage first
-      window.location.href = `/#${sectionId}`;
-      return;
-    }
-    
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-indigo-950/90 backdrop-blur-lg border-b border-white/10">
@@ -35,17 +20,25 @@ const Header: React.FC = () => {
           {/* Logo/Home Button */}
           <Link 
             to="/" 
-            className="flex items-center gap-2 sm:gap-3 group hover:scale-105 transition-all duration-300"
+            className="flex items-center gap-3 sm:gap-4 group hover:scale-105 transition-all duration-300"
             aria-label="Bergss - Strona główna"
+            style={{ padding: '20px' }}
           >
-            <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg p-2 sm:p-2.5 group-hover:shadow-lg group-hover:shadow-indigo-500/30 transition-all duration-300">
-              <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-responsive-lg sm:text-responsive-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
-                Bergss
-              </span>
-              <span className="text-xs text-blue-200/60 hidden sm:block">Rozwiązania AI</span>
+            <div className="relative">
+              <img 
+                src="/images/logo.png" 
+                alt="Bergss Logo - Rozwiązania AI dla biznesu"
+                className="w-[150px] h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                style={{ 
+                  maxWidth: '150px',
+                  height: 'auto',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))'
+                }}
+                loading="eager"
+                decoding="async"
+              />
+              {/* Subtle glow effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
             </div>
           </Link>
 
