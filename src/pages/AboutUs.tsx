@@ -1,4 +1,3 @@
-<!--
 import React from 'react';
 import { Users, Target, Award, Lightbulb, ArrowRight, CheckCircle } from 'lucide-react';
 import PageLayout from '../components/ui/PageLayout';
@@ -238,4 +237,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
--->
