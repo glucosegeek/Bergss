@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Play, Pause, Volume2, VolumeX, Maximize, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ConsultationButton from '../components/ui/ConsultationButton';
 
 interface VideoPlayerProps {
   videoId: string;
@@ -276,12 +277,7 @@ const Demo = () => {
                 Widziałeś jak działają nasze rozwiązania. Teraz porozmawiajmy o tym, jak możemy dostosować je do Twoich potrzeb biznesowych.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link
-                  to="/"
-                  className="btn-touch bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-responsive-base"
-                >
-                  Umów Bezpłatną Konsultację
-                </Link>
+                <ConsultationButton />
                 <Link
                   to="/kontakt"
                   className="btn-touch bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 text-responsive-base"
