@@ -37,7 +37,7 @@ const FinalCTA: React.FC = () => {
             </button>
 
             <div className="flex items-center gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+              <div className="w-15 h-15 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
                 <span className="text-xl sm:text-2xl">🎥</span>
               </div>
               <Link to="/demo" className="text-white hover:text-blue-200 font-medium transition-colors duration-300 text-responsive-sm sm:text-responsive-base">
