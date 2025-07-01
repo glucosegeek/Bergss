@@ -25,7 +25,7 @@ const Services = () => {
         'Natychmiastowe odpowiedzi'
       ],
       price: 'Do ustalenia na spotkaniu',
-      popular: false
+      popular: true
     },
     {
       icon: <Mail className="w-8 h-8" />,
@@ -47,7 +47,7 @@ const Services = () => {
         'Skalowalne kampanie'
       ],
       price: 'Do ustalenia na spotkaniu',
-      popular: true
+      popular: false
     },
     {
       icon: <Phone className="w-8 h-8" />,
