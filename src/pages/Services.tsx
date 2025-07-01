@@ -90,7 +90,7 @@ const Services = () => {
         'Mobilna optymalizacja'
       ],
       price: 'Do ustalenia na spotkaniu',
-      popular: false
+      popular: true
     }
   ];
 
