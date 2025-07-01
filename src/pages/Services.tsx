@@ -24,7 +24,7 @@ const Services = () => {
         'Dostępność 24/7 bez przerw',
         'Natychmiastowe odpowiedzi'
       ],
-      price: 'Od 299 zł/miesiąc',
+      price: 'Do ustalenia na spotkaniu',
       popular: false
     },
     {
