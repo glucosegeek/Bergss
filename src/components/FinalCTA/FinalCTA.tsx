@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BookCallForm from '../BookCallForm/BookCallForm';
 
@@ -36,15 +36,33 @@ const FinalCTA: React.FC = () => {
               </span>
             </button>
 
-            <div className="flex items-center gap-3 sm:gap-4">
-              <div className="w-15 h-15 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                <span className="text-xl sm:text-2xl">🎥</span>
+            <Link 
+              to="/demo" 
+              className="group relative btn-touch flex items-center gap-3 sm:gap-4 bg-gradient-to-r from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 rounded-xl px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/10"
+            >
+              {/* Animated Play Button */}
+              <div className="relative">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center group-hover:from-indigo-400 group-hover:to-purple-500 transition-all duration-300 group-hover:scale-110 shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50">
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white ml-0.5 group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                {/* Pulse animation */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 opacity-30 animate-ping group-hover:opacity-50"></div>
               </div>
-              <Link to="/demo" className="text-white hover:text-blue-200 font-medium transition-colors duration-300 text-responsive-sm sm:text-responsive-base">
-                <span className="mobile-only">Demo (2 min)</span>
-                <span className="tablet-only desktop-only">Zobacz Demo (2 min)</span>
-              </Link>
-            </div>
+              
+              {/* Text Content */}
+              <div className="flex flex-col items-start">
+                <span className="text-white font-semibold text-responsive-sm sm:text-responsive-base group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-200 group-hover:to-purple-200 transition-all duration-300">
+                  <span className="mobile-only">Demo (2 min)</span>
+                  <span className="tablet-only desktop-only">Zobacz Demo (2 min)</span>
+                </span>
+                <span className="text-blue-200/70 text-xs sm:text-sm group-hover:text-blue-100/80 transition-colors duration-300">
+                  Rozwiązania AI w akcji
+                </span>
+              </div>
+
+              {/* Hover glow effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500/0 via-purple-500/0 to-indigo-500/0 group-hover:from-indigo-500/10 group-hover:via-purple-500/10 group-hover:to-indigo-500/10 transition-all duration-300"></div>
+            </Link>
           </div>
 
           <p className="mt-6 sm:mt-8 text-blue-100/80 text-responsive-sm">
