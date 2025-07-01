@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           delay={0}
         />
         <FloatingNotification 
-          icon={<BarChart size={20} />}
+          icon={<BarChart size={15} />}
           text="Ponad 25% transakcji zainicjowane dzięki AI"
           position="left-[45%] top-[32%]"
           delay={0}
