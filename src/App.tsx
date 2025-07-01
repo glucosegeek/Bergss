@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero/Hero';
-import CookieConsent from './components/CookieConsent/CookieConsent';
 
 // Lazy load components
 const WhatWeDo = lazy(() => import('./components/WhatWeDo/WhatWeDo'));
@@ -74,9 +73,6 @@ function App() {
             </Suspense>
           } />
         </Routes>
-        
-        {/* Cookie Consent Banner */}
-        <CookieConsent />
       </div>
     </Router>
   );
