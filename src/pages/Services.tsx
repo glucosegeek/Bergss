@@ -59,8 +59,7 @@ const Services = () => {
         'Prezentacja produktów',
         'Umawianie spotkań',
         'Obsługa w języku polskim',
-        'Integracja z kalendarzem',
-        'Nagrywanie rozmów'
+        'Integracja z kalendarzem'
       ],
       benefits: [
         'Zwiększenie umówionych spotkań o 250%',
