@@ -9,6 +9,18 @@ const Footer: React.FC = () => {
     { icon: <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />, url: 'https://twitter.com/aisales', label: 'Twitter' }
   ];
 
+  const quickLinks = [
+    { text: 'O Nas', path: '/o-nas' },
+    { 
+      text: 'Usługi', 
+      path: '/uslugi'
+    }
+  ];
+
+  const legalLinks = [
+    { text: 'Polityka Prywatności', path: '/polityka-prywatnosci' }
+  ];
+
   const handleContactClick = () => {
     const contactSection = document.getElementById('kontakt-section');
     if (contactSection) {
@@ -19,7 +31,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-indigo-950/80 border-t border-white/10">
       <div className="container-responsive py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="inline-block">
               <h3 className="text-responsive-lg sm:text-responsive-xl font-semibold text-white mb-3 sm:mb-4">Bergss</h3>
@@ -70,16 +82,34 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
+            <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Szybkie Linki</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.text}>
+                  <Link
+                    to={link.path}
+                    className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
             <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Informacje Prawne</h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/polityka-prywatnosci"
-                  className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
-                >
-                  Polityka Prywatności
-                </Link>
-              </li>
+              {legalLinks.map((link) => (
+                <li key={link.text}>
+                  <Link
+                    to={link.path}
+                    className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
