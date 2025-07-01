@@ -160,26 +160,88 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Emergency Contact */}
-      <section className="py-8 sm:py-12">
-        <div className="container-responsive">
-          <div className="bg-gradient-to-r from-red-600/20 to-orange-600/20 rounded-xl spacing-responsive-lg border border-red-500/30 max-w-2xl mx-auto text-center">
-            <h3 className="text-responsive-lg font-bold text-white mb-4">
-              Pilny Problem?
-            </h3>
-            <p className="text-responsive-sm text-blue-100/80 mb-6">
-              Jeśli masz pilny problem techniczny z naszymi rozwiązaniami AI, skontaktuj się z nami natychmiast
+      {/* Contact Footer - New footer section specifically for kontakt page */}
+      <footer className="bg-indigo-950/90 border-t border-white/10 mt-8 sm:mt-12">
+        <div className="container-responsive py-8 sm:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+            {/* Company Info */}
+            <div className="sm:col-span-2 lg:col-span-1">
+              <h3 className="text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Bergss</h3>
+              <p className="text-responsive-sm text-blue-100/80 mb-3 sm:mb-4">
+                Transformujemy biznesy dzięki najnowocześniejszej technologii AI.
+              </p>
+              <div className="space-y-2">
+                <p className="text-responsive-xs text-blue-100/60">
+                  NIP: 5213641211
+                </p>
+                <p className="text-responsive-xs text-blue-100/60">
+                  ul. Żurawia 6/12, lok. 766<br />
+                  00-503 Warszawa
+                </p>
+              </div>
+            </div>
+
+            {/* Contact Details */}
+            <div>
+              <h4 className="text-responsive-base font-semibold text-white mb-3 sm:mb-4">Kontakt</h4>
+              <div className="space-y-2">
+                <a
+                  href="mailto:kontakt@bergss.pl"
+                  className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors text-responsive-sm"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>kontakt@bergss.pl</span>
+                </a>
+                <a
+                  href="tel:+48530639369"
+                  className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors text-responsive-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>+48 530 639 369</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Business Hours */}
+            <div>
+              <h4 className="text-responsive-base font-semibold text-white mb-3 sm:mb-4">Godziny pracy</h4>
+              <div className="space-y-1 text-responsive-sm text-blue-100/80">
+                <p>Poniedziałek - Piątek</p>
+                <p>9:00 - 17:00</p>
+                <p className="text-responsive-xs text-blue-100/60 mt-2">
+                  Weekendy: tylko pilne sprawy
+                </p>
+              </div>
+            </div>
+
+            {/* Legal Links */}
+            <div>
+              <h4 className="text-responsive-base font-semibold text-white mb-3 sm:mb-4">Informacje prawne</h4>
+              <div className="space-y-2">
+                <a
+                  href="/polityka-prywatnosci"
+                  className="block text-blue-100/80 hover:text-white transition-colors text-responsive-sm"
+                >
+                  Polityka Prywatności
+                </a>
+                <a
+                  href="/regulamin"
+                  className="block text-blue-100/80 hover:text-white transition-colors text-responsive-sm"
+                >
+                  Regulamin
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="pt-6 sm:pt-8 border-t border-white/10 text-center">
+            <p className="text-blue-100/60 text-responsive-xs">
+              © {new Date().getFullYear()} Bergss. Wszelkie prawa zastrzeżone.
             </p>
-            <a 
-              href="tel:+48530639369"
-              className="btn-touch inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              <Phone className="w-5 h-5" />
-              <span>Zadzwoń natychmiast</span>
-            </a>
           </div>
         </div>
-      </section>
+      </footer>
     </PageLayout>
   );
 };
