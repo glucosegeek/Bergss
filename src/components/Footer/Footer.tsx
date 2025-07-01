@@ -4,9 +4,9 @@ import { Linkedin, Instagram, Twitter, Mail, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { icon: <Linkedin className="w-5 h-5" />, url: 'https://linkedin.com/company/aisales', label: 'LinkedIn' },
-    { icon: <Instagram className="w-5 h-5" />, url: 'https://instagram.com/aisales', label: 'Instagram' },
-    { icon: <Twitter className="w-5 h-5" />, url: 'https://twitter.com/aisales', label: 'Twitter' }
+    { icon: <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />, url: 'https://linkedin.com/company/aisales', label: 'LinkedIn' },
+    { icon: <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />, url: 'https://instagram.com/aisales', label: 'Instagram' },
+    { icon: <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />, url: 'https://twitter.com/aisales', label: 'Twitter' }
   ];
 
   const quickLinks = [
@@ -40,16 +40,16 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-indigo-950/80 border-t border-white/10">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
-          <div className="col-span-2 md:col-span-1">
+      <div className="container-responsive py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="inline-block">
-              <h3 className="text-xl font-semibold text-white mb-4">Bergss</h3>
+              <h3 className="text-responsive-lg sm:text-responsive-xl font-semibold text-white mb-3 sm:mb-4">Bergss</h3>
             </Link>
-            <p className="text-blue-100/80 mb-4">
+            <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 mb-3 sm:mb-4">
               Transformujemy biznesy dzięki najnowocześniejszej technologii AI.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="text-blue-100/80 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
+                  className="text-blue-100/80 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full btn-touch"
                 >
                   {social.icon}
                 </a>
@@ -66,25 +66,25 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Kontakt</h3>
-            <div className="space-y-3">
+            <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Kontakt</h3>
+            <div className="space-y-2 sm:space-y-3">
               <a
                 href="mailto:kontakt@bergss.pl"
-                className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
+                className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>kontakt@bergss.pl</span>
               </a>
               <a
                 href="tel:+48530639369"
-                className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
+                className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>+48 530 639 369</span>
               </a>
               <button
                 onClick={handleContactClick}
-                className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg w-full text-left"
+                className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg w-full text-left btn-touch text-responsive-sm sm:text-responsive-base"
               >
                 Skontaktuj się z Nami
               </button>
@@ -92,21 +92,21 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Szybkie Linki</h3>
+            <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Szybkie Linki</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.text}>
                   {link.scrollTo ? (
                     <button
                       onClick={() => handleScrollToSection(link.scrollTo)}
-                      className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg w-full text-left"
+                      className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg w-full text-left btn-touch text-responsive-sm sm:text-responsive-base"
                     >
                       {link.text}
                     </button>
                   ) : (
                     <Link
                       to={link.path}
-                      className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
+                      className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
                     >
                       {link.text}
                     </Link>
@@ -117,13 +117,13 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Informacje Prawne</h3>
+            <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Informacje Prawne</h3>
             <ul className="space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.text}>
                   <Link
                     to={link.path}
-                    className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg"
+                    className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
                   >
                     {link.text}
                   </Link>
@@ -133,8 +133,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10">
-          <p className="text-center text-blue-100/60 text-sm">
+        <div className="pt-6 sm:pt-8 border-t border-white/10">
+          <p className="text-center text-blue-100/60 text-responsive-xs sm:text-responsive-sm">
             © {new Date().getFullYear()} Bergss. Wszelkie prawa zastrzeżone.
           </p>
         </div>

@@ -8,14 +8,14 @@ import FloatingNotification from './FloatingNotification';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden min-h-[calc(100vh-4rem)] flex items-center w-full px-4 py-12 md:py-16 lg:py-24">
+    <section className="relative overflow-hidden min-h-screen flex items-center w-full safe-area-top">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-indigo-900 to-purple-900 z-0">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utb3BhY2l0eT0iMC4wNCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIj48L3JlY3Q+PC9zdmc+')]"></div>
       </div>
 
-      {/* Floating notifications - Hidden on mobile */}
-      <div className="hidden md:block">
+      {/* Floating notifications - Hidden on mobile and tablet */}
+      <div className="desktop-only">
         <FloatingNotification 
           icon={<Bot size={20} />}
           text="Nowi klienci pozyskani za pośrednictwem czatu AI"
@@ -43,17 +43,17 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content container */}
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="container-responsive relative z-10 py-8 sm:py-12 md:py-16 lg:py-24">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Left column: Text content */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
             <HeroHeadline />
             <HeroSubheadline />
             <HeroCTA />
           </div>
           
           {/* Right column: Visual */}
-          <div className="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0">
+          <div className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2">
             <HeroVisual />
           </div>
         </div>

@@ -235,50 +235,53 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        className="modal-responsive bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       >
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-gradient-to-br from-indigo-950/95 to-purple-950/95 backdrop-blur-lg rounded-xl border border-white/10 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+          className="modal-content-responsive bg-gradient-to-br from-indigo-950/95 to-purple-950/95 backdrop-blur-lg border border-white/10"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-white/10">
+          <div className="flex items-center justify-between spacing-responsive-md border-b border-white/10">
             <div className="flex items-center gap-3">
               <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg p-2">
-                <Calendar className="w-6 h-6 text-white" />
+                <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-white">Umów Bezpłatną Konsultację</h2>
-                <p className="text-blue-100/80">Porozmawiajmy o Twoich potrzebach AI</p>
+                <h2 className="text-responsive-lg sm:text-responsive-2xl font-bold text-white">
+                  <span className="mobile-only">Umów Konsultację</span>
+                  <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
+                </h2>
+                <p className="text-blue-100/80 text-responsive-sm sm:text-responsive-base">Porozmawiajmy o Twoich potrzebach AI</p>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg"
+              className="btn-touch text-gray-400 hover:text-white transition-colors hover:bg-white/10 rounded-lg"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
           {/* Form */}
-          <div className="p-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="spacing-responsive-md">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Error Message */}
               {submitError && (
-                <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-4">
-                  <p className="text-red-300 text-sm">{submitError}</p>
+                <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-red-300 text-responsive-sm">{submitError}</p>
                 </div>
               )}
 
               {/* Personal Information */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-blue-100 mb-2">
-                    <User className="w-4 h-4 inline mr-2" />
+                  <label htmlFor="firstName" className="block text-responsive-sm font-medium text-blue-100 mb-2">
+                    <User className="w-3 h-3 sm:w-4 sm:h-4 inline mr-2" />
                     Imię *
                   </label>
                   <input
@@ -288,12 +291,12 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     required
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
+                    className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
                     placeholder="Twoje imię"
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-blue-100 mb-2">
+                  <label htmlFor="lastName" className="block text-responsive-sm font-medium text-blue-100 mb-2">
                     Nazwisko *
                   </label>
                   <input
@@ -303,17 +306,17 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     required
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
+                    className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
                     placeholder="Twoje nazwisko"
                   />
                 </div>
               </div>
 
               {/* Contact Information */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-blue-100 mb-2">
-                    <Mail className="w-4 h-4 inline mr-2" />
+                  <label htmlFor="email" className="block text-responsive-sm font-medium text-blue-100 mb-2">
+                    <Mail className="w-3 h-3 sm:w-4 sm:h-4 inline mr-2" />
                     Email *
                   </label>
                   <input
@@ -323,13 +326,13 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
+                    className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
                     placeholder="twoj@email.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-blue-100 mb-2">
-                    <Phone className="w-4 h-4 inline mr-2" />
+                  <label htmlFor="phone" className="block text-responsive-sm font-medium text-blue-100 mb-2">
+                    <Phone className="w-3 h-3 sm:w-4 sm:h-4 inline mr-2" />
                     Telefon
                   </label>
                   <input
@@ -338,7 +341,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
+                    className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
                     placeholder="+48 123 456 789"
                   />
                 </div>
@@ -346,7 +349,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
 
               {/* Company */}
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-blue-100 mb-2">
+                <label htmlFor="company" className="block text-responsive-sm font-medium text-blue-100 mb-2">
                   Firma/Organizacja *
                 </label>
                 <input
@@ -356,15 +359,15 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                   required
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
+                  className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
                   placeholder="Nazwa Twojej firmy"
                 />
               </div>
 
               {/* Subject */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-blue-100 mb-2">
-                  <MessageSquare className="w-4 h-4 inline mr-2" />
+                <label htmlFor="subject" className="block text-responsive-sm font-medium text-blue-100 mb-2">
+                  <MessageSquare className="w-3 h-3 sm:w-4 sm:h-4 inline mr-2" />
                   Temat konsultacji *
                 </label>
                 <select
@@ -373,7 +376,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white"
+                  className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white"
                 >
                   <option value="" className="bg-indigo-950">Wybierz temat</option>
                   {subjects.map((subject) => (
@@ -386,7 +389,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
 
               {/* Description */}
               <div>
-                <label htmlFor="description" className="block text-sm font-medium text-blue-100 mb-2">
+                <label htmlFor="description" className="block text-responsive-sm font-medium text-blue-100 mb-2">
                   Opis potrzeb *
                 </label>
                 <textarea
@@ -396,7 +399,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                   rows={4}
                   value={formData.description}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50 resize-none"
+                  className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50 resize-none min-h-[100px]"
                   placeholder="Opisz swoje potrzeby, cele biznesowe i jak możemy Ci pomóc..."
                 />
               </div>
@@ -405,22 +408,24 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg text-lg font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+                className="btn-touch w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    Zapisywanie i przekierowanie...
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <span className="mobile-only">Zapisywanie...</span>
+                    <span className="tablet-only desktop-only">Zapisywanie i przekierowanie...</span>
                   </>
                 ) : (
                   <>
-                    Umów Konsultację
-                    <Send className="w-5 h-5" />
+                    <span className="mobile-only">Umów Konsultację</span>
+                    <span className="tablet-only desktop-only">Umów Konsultację</span>
+                    <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                   </>
                 )}
               </button>
 
-              <p className="text-xs text-blue-100/60 text-center">
+              <p className="text-responsive-xs text-blue-100/60 text-center">
                 * Pola wymagane. Po wysłaniu formularza zostaniesz przekierowany do Calendly, aby wybrać termin spotkania.
               </p>
             </form>
