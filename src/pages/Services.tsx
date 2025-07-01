@@ -81,6 +81,7 @@ const Services = () => {
         'Szybkie ładowanie',
         'Integracja z AI',
         'Analityka konwersji',
+        'Technologia Shopify',
         'Wsparcie techniczne'
       ],
       benefits: [
