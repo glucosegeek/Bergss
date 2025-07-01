@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="inline-block">
-              <h3 className="text-responsive-lg sm:text-responsive-xl font-semibold text-white mb-3 sm:mb-4">Bergss -></h3>
+              <h3 className="text-responsive-lg sm:text-responsive-xl font-semibold text-white mb-3 sm:mb-4">Bergss</h3>
             </Link>
             <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 mb-3 sm:mb-4">
               Transformujemy biznesy dzięki najnowocześniejszej technologii AI.
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
 
           <div>
             <Link to="/kontakt" className="inline-block">
-            <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Kontakt -></h3>
+            <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Kontakt</h3>
             </Link>
               <div className="space-y-2 sm:space-y-3">
               <a
