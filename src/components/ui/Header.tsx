@@ -64,14 +64,6 @@ const Header: React.FC = () => {
                 {link.label}
               </Link>
             ))}
-            
-            {/* Services Dropdown */}
-            <button
-              onClick={() => scrollToSection('rozwiazania-ai')}
-              className="px-4 py-2 rounded-lg text-responsive-sm font-medium text-blue-200/80 hover:bg-white/10 hover:text-white transition-all duration-300"
-            >
-              Rozwiązania AI
-            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -106,16 +98,6 @@ const Header: React.FC = () => {
                   {link.label}
                 </Link>
               ))}
-              
-              <button
-                onClick={() => {
-                  scrollToSection('rozwiazania-ai');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="px-4 py-3 rounded-lg text-responsive-base font-medium text-blue-200/80 hover:bg-white/10 hover:text-white transition-all duration-300 text-left"
-              >
-                Rozwiązania AI
-              </button>
             </nav>
           </div>
         )}
