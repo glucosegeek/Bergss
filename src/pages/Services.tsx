@@ -12,9 +12,8 @@ const Services = () => {
       description: 'Zaawansowany chatbot AI, który automatyzuje rozmowy z klientami, odpowiada na pytania i poprawia doświadczenia użytkowników dzięki całodobowej, inteligentnej obsłudze.',
       features: [
         'Naturalne rozmowy z klientami',
-        'Automatyczna kwalifikacja leadów',
+        'Automatyczne pozyskiwanie leadów',
         'Integracja z systemami CRM',
-        'Wielojęzyczne wsparcie',
         'Analityka i raportowanie',
         'Personalizowane odpowiedzi'
       ],
