@@ -14,12 +14,13 @@ const Services = () => {
         'Naturalne rozmowy z klientami',
         'Automatyczne pozyskiwanie leadów',
         'Integracja z systemami CRM',
+        'Wielojęzyczne wsparcie',
         'Analityka i raportowanie',
         'Personalizowane odpowiedzi'
       ],
       benefits: [
-        'Redukcja kosztów obsługi klienta o 70%',
-        'Zwiększenie konwersji o 45%',
+        'Redukcja kosztów obsługi klienta o 60%',
+        'Zwiększenie konwersji o 35%',
         'Dostępność 24/7 bez przerw',
         'Natychmiastowe odpowiedzi'
       ],
