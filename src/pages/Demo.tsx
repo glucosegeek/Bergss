@@ -163,7 +163,7 @@ const Demo = () => {
       description: 'Zobacz jak nasz chatbot AI automatycznie odpowiada na pytania klientów, kwalifikuje leady i umawia spotkania. Demonstracja pokazuje naturalną konwersację z klientem zainteresowanym.',
       features: [
         'Naturalne rozmowy z klientami 24/7',
-        'Automatyczna kwalifikacja leadów',
+        'Automatyczna pozyskiwanie leadów',
         'Integracja z kalendarzem do umawiania spotkań',
         'Personalizowane odpowiedzi na podstawie kontekstu',
         'Przekazywanie skomplikowanych zapytań do zespołu'
