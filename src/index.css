@@ -45,13 +45,6 @@
   html {
     scroll-padding-top: 80px; /* Account for fixed header */
   }
-
-  /* Logo optimization */
-  img[src*="logo"] {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    image-rendering: optimize-contrast;
-  }
 }
 
 @layer components {
@@ -370,39 +363,6 @@
     object-fit: cover;
   }
 
-  /* Logo-specific responsive classes */
-  .logo-responsive {
-    @apply w-auto h-auto object-contain;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    image-rendering: optimize-contrast;
-  }
-
-  .logo-header {
-    width: 150px;
-    max-width: 150px;
-    height: auto;
-  }
-
-  .logo-card {
-    width: 120px;
-    max-width: 120px;
-    height: auto;
-  }
-
-  /* Mobile logo adjustments */
-  @media (max-width: 480px) {
-    .logo-header {
-      width: 120px;
-      max-width: 120px;
-    }
-    
-    .logo-card {
-      width: 100px;
-      max-width: 100px;
-    }
-  }
-
   /* Enhanced mobile-optimized forms */
   .form-input-mobile {
     @apply w-full px-4 py-3 text-base rounded-lg border transition-all duration-300;
@@ -554,25 +514,12 @@
     }
   }
 
-  @keyframes logoGlow {
-    0%, 100% {
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-    50% {
-      filter: drop-shadow(0 4px 8px rgba(99, 102, 241, 0.3));
-    }
-  }
-
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
   }
 
   .animate-slide-in-left {
     animation: slideInLeft 0.6s ease-out;
-  }
-
-  .animate-logo-glow {
-    animation: logoGlow 3s ease-in-out infinite;
   }
 
   /* Enhanced performance optimizations */
@@ -624,12 +571,6 @@
     color: black !important;
     background: none !important;
   }
-
-  /* Ensure logos print properly */
-  img[src*="logo"] {
-    filter: none !important;
-    -webkit-filter: none !important;
-  }
 }
 
 /* Enhanced high contrast mode support */
@@ -641,11 +582,6 @@
   .text-gradient {
     color: white !important;
     background: none !important;
-  }
-
-  /* High contrast logo adjustments */
-  img[src*="logo"] {
-    filter: contrast(1.5) brightness(1.2) !important;
   }
 }
 
@@ -667,10 +603,6 @@
   .hover\:translate-x-1:hover {
     transform: none !important;
   }
-
-  .animate-logo-glow {
-    animation: none !important;
-  }
 }
 
 /* Enhanced dark mode support */
@@ -690,20 +622,4 @@
 
 .loading-spinner {
   @apply animate-spin rounded-full border-2 border-white/30 border-t-white;
-}
-
-/* Logo loading optimization */
-.logo-loading {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
 }
