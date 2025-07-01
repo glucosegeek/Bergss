@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, Twitter, Mail, Phone } from 'lucide-react';
+import { Linkedin, Instagram, Twitter, Mail, Phone, Play } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const socialLinks = [
@@ -14,6 +14,14 @@ const Footer: React.FC = () => {
     { 
       text: 'Usługi', 
       path: '/uslugi'
+    }
+  ];
+
+  const demoLinks = [
+    { 
+      text: 'Demo', 
+      path: '/demo',
+      icon: <Play className="w-3 h-3 sm:w-4 sm:h-4" />
     }
   ];
 
@@ -31,7 +39,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-indigo-950/80 border-t border-white/10">
       <div className="container-responsive py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="inline-block">
               <h3 className="text-responsive-lg sm:text-responsive-xl font-semibold text-white mb-3 sm:mb-4">Bergss</h3>
@@ -91,6 +99,27 @@ const Footer: React.FC = () => {
                     className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
                   >
                     {link.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Demo</h3>
+            <ul className="space-y-2">
+              {demoLinks.map((link) => (
+                <li key={link.text}>
+                  <Link
+                    to={link.path}
+                    className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-all duration-300 p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base group hover:scale-105"
+                  >
+                    <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full p-1 group-hover:scale-110 transition-transform duration-300">
+                      {link.icon}
+                    </div>
+                    <span className="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
+                      {link.text}
+                    </span>
                   </Link>
                 </li>
               ))}
