@@ -45,7 +45,7 @@ const Header: React.FC = () => {
               <span className="text-responsive-lg sm:text-responsive-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
                 Bergss
               </span>
-              <span className="text-xs text-blue-200/60 hidden sm:block">AI Solutions</span>
+              <span className="text-xs text-blue-200/60 hidden sm:block">Rozwiązania AI</span>
             </div>
           </Link>
 
