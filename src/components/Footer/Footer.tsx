@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
 
           <div>
             <Link to="/kontakt" className="inline-block">
-            <u style="padding: 2px;"><h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Kontakt</h3></u>
+            <u><h3 style="padding: 2px;" className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Kontakt</h3></u>
             </Link>
               <div className="space-y-2 sm:space-y-3">
               <a
