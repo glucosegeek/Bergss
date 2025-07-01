@@ -46,7 +46,7 @@ const Services = () => {
         'Wyższa jakość leadów',
         'Skalowalne kampanie'
       ],
-      price: 'Od 499 zł/miesiąc',
+      price: 'Do ustalenia na spotkaniu',
       popular: true
     },
     {
@@ -68,7 +68,7 @@ const Services = () => {
         'Konsystentna jakość rozmów',
         'Skalowalność bez granic'
       ],
-      price: 'Od 799 zł/miesiąc',
+      price: 'Do ustalenia na spotkaniu',
       popular: false
     },
     {
@@ -90,7 +90,7 @@ const Services = () => {
         'Profesjonalny wizerunek',
         'Mobilna optymalizacja'
       ],
-      price: 'Od 2999 zł jednorazowo',
+      price: 'Do ustalenia na spotkaniu',
       popular: false
     }
   ];
