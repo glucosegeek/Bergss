@@ -97,6 +97,7 @@ const CookieConsent: React.FC = () => {
           <div className="bg-gradient-to-br from-indigo-950/95 to-purple-950/95 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl">
             {!showDetails ? (
               // Simple consent view
+              {/* 
               <div className="spacing-responsive-lg">
                 <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-2 sm:p-3 flex-shrink-0">
@@ -190,6 +191,7 @@ const CookieConsent: React.FC = () => {
                   </button>
                 </div>
               </div>
+              */}
             ) : (
               // Detailed preferences view
               <div className="spacing-responsive-lg">
