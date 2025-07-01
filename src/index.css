@@ -40,6 +40,11 @@
     outline: 2px solid #6366f1;
     outline-offset: 2px;
   }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-padding-top: 80px; /* Account for fixed header */
+  }
 }
 
 @layer components {
@@ -91,7 +96,7 @@
     }
   }
 
-  /* Responsive typography */
+  /* Enhanced responsive typography with better scaling */
   .text-responsive-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -246,7 +251,7 @@
     }
   }
 
-  /* Responsive spacing utilities */
+  /* Enhanced responsive spacing utilities */
   .spacing-responsive-xs {
     @apply p-2;
   }
@@ -291,7 +296,7 @@
     }
   }
 
-  /* Responsive grid utilities */
+  /* Enhanced responsive grid utilities */
   .grid-responsive-1 {
     @apply grid grid-cols-1;
   }
@@ -338,9 +343,9 @@
     }
   }
 
-  /* Touch-friendly buttons */
+  /* Enhanced touch-friendly buttons */
   .btn-touch {
-    @apply min-h-[44px] min-w-[44px] px-4 py-3 rounded-lg font-medium transition-all duration-200;
+    @apply min-h-[44px] min-w-[44px] px-4 py-3 rounded-lg font-medium transition-all duration-300;
     touch-action: manipulation;
   }
 
@@ -348,19 +353,27 @@
     transform: scale(0.98);
   }
 
-  /* Responsive images */
+  .btn-touch:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Enhanced responsive images */
   .img-responsive {
     @apply w-full h-auto max-w-full;
     object-fit: cover;
   }
 
-  /* Mobile-optimized forms */
+  /* Enhanced mobile-optimized forms */
   .form-input-mobile {
-    @apply w-full px-4 py-3 text-base rounded-lg border;
+    @apply w-full px-4 py-3 text-base rounded-lg border transition-all duration-300;
     font-size: 16px; /* Prevents zoom on iOS */
   }
 
-  /* Responsive modal */
+  .form-input-mobile:focus {
+    @apply ring-2 ring-indigo-500 border-transparent;
+  }
+
+  /* Enhanced responsive modal */
   .modal-responsive {
     @apply fixed inset-0 z-50 flex items-end justify-center p-0;
   }
@@ -380,6 +393,28 @@
       @apply max-w-2xl rounded-xl;
     }
   }
+
+  /* Enhanced card components */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10;
+  }
+
+  /* Enhanced button variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/30;
+  }
+
+  .btn-outline {
+    @apply border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white;
+  }
 }
 
 @layer utilities {
@@ -397,7 +432,7 @@
     display: none;
   }
 
-  /* Safe area padding for mobile devices */
+  /* Enhanced safe area padding for mobile devices */
   .safe-area-top {
     padding-top: env(safe-area-inset-top);
   }
@@ -414,7 +449,7 @@
     padding-right: env(safe-area-inset-right);
   }
 
-  /* Responsive visibility utilities */
+  /* Enhanced responsive visibility utilities */
   .mobile-only {
     @apply block;
   }
@@ -447,6 +482,7 @@
     }
   }
 
+  /* Enhanced animations */
   @keyframes shrink {
     from {
       width: 100%;
@@ -456,7 +492,37 @@
     }
   }
 
-  /* Performance optimizations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+  }
+
+  /* Enhanced performance optimizations */
   .will-change-transform {
     will-change: transform;
   }
@@ -470,9 +536,27 @@
     backface-visibility: hidden;
     perspective: 1000px;
   }
+
+  /* Enhanced text effects */
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Enhanced glass morphism effects */
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-lg border border-white/10;
+  }
 }
 
-/* Print styles */
+/* Enhanced print styles */
 @media print {
   .no-print {
     display: none !important;
@@ -482,16 +566,26 @@
     background: white !important;
     color: black !important;
   }
+
+  .text-gradient {
+    color: black !important;
+    background: none !important;
+  }
 }
 
-/* High contrast mode support */
+/* Enhanced high contrast mode support */
 @media (prefers-contrast: high) {
   .bg-gradient-to-br {
     background: #1e1b4b !important;
   }
+
+  .text-gradient {
+    color: white !important;
+    background: none !important;
+  }
 }
 
-/* Reduced motion support */
+/* Enhanced reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -501,9 +595,31 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  .hover\:scale-105:hover {
+    transform: none !important;
+  }
+
+  .hover\:translate-x-1:hover {
+    transform: none !important;
+  }
 }
 
-/* Dark mode support (if needed in future) */
+/* Enhanced dark mode support */
 @media (prefers-color-scheme: dark) {
-  /* Already dark by default */
+  /* Already optimized for dark mode */
+}
+
+/* Enhanced focus management */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-indigo-950;
+}
+
+/* Enhanced loading states */
+.loading-skeleton {
+  @apply bg-white/10 animate-pulse rounded;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full border-2 border-white/30 border-t-white;
 }

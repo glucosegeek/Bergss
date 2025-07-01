@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero/Hero';
+import Footer from './components/Footer/Footer';
 
 // Lazy load components
 const WhatWeDo = lazy(() => import('./components/WhatWeDo/WhatWeDo'));
@@ -8,7 +9,6 @@ const WhoIsThisFor = lazy(() => import('./components/WhoIsThisFor/WhoIsThisFor')
 const FAQ = lazy(() => import('./components/FAQ/FAQ'));
 const FinalCTA = lazy(() => import('./components/FinalCTA/FinalCTA'));
 const ContactForm = lazy(() => import('./components/ContactForm/ContactForm'));
-const Footer = lazy(() => import('./components/Footer/Footer'));
 
 // Lazy load pages
 const AboutUs = lazy(() => import('./pages/AboutUs'));
@@ -52,7 +52,6 @@ function App() {
           <Route path="/kontakt" element={
             <Suspense fallback={null}>
               <Contact />
-              <Footer />
             </Suspense>
           } />
           <Route path="/demo" element={
