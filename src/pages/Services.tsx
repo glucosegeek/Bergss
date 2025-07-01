@@ -41,7 +41,7 @@ const Services = () => {
         'Raportowanie skuteczności'
       ],
       benefits: [
-        'Zwiększenie odpowiedzi o 300%',
+        'Zwiększenie odpowiedzi o potencjalnych klientów',
         'Oszczędność 20 godzin tygodniowo',
         'Wyższa jakość leadów',
         'Skalowalne kampanie'
