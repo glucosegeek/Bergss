@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Play, Pause, Volume2, VolumeX, Maximize, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ConsultationButton from '../components/ui/ConsultationButton';
+import NavigationButton from '../components/ui/NavigationButton';
 
 interface VideoPlayerProps {
   videoId: string;
@@ -215,13 +216,14 @@ const Demo = () => {
         <div className="container-responsive relative py-12 sm:py-16 md:py-20 lg:py-24">
           {/* Back Button */}
           <div className="mb-6 sm:mb-8">
-            <Link 
-              to="/"
-              className="inline-flex items-center gap-2 text-blue-200 hover:text-white transition-colors duration-300 group"
+            <NavigationButton 
+              to="/" 
+              variant="home"
+              ariaLabel="Powrót do strony głównej"
+              className="text-blue-200 hover:text-white bg-transparent hover:bg-white/10 border-0 hover:border-white/20 px-0 hover:px-4 shadow-none hover:shadow-lg"
             >
-              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-1 transition-transform duration-300" />
-              <span className="text-responsive-sm sm:text-responsive-base">Powrót do strony głównej</span>
-            </Link>
+              Powrót do strony głównej
+            </NavigationButton>
           </div>
 
           <div className="text-center max-w-4xl mx-auto">
@@ -278,12 +280,13 @@ const Demo = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <ConsultationButton />
-                <Link
-                  to="/kontakt"
-                  className="btn-touch bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 text-responsive-base"
+                <NavigationButton 
+                  to="/kontakt" 
+                  variant="contact"
+                  ariaLabel="Przejdź do strony kontaktowej"
                 >
                   Skontaktuj się z Nami
-                </Link>
+                </NavigationButton>
               </div>
             </div>
           </div>
