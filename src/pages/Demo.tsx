@@ -200,7 +200,6 @@ const Demo = () => {
       features: [
         'Responsywny design na wszystkich urządzeniach',
         'Optymalizacja pod konwersję (CRO)',
-        'Szybkie ładowanie i SEO',
         'Integracja z systemami CRM',
         'Analityka i śledzenie konwersji'
       ]
