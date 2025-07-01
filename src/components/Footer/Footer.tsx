@@ -19,8 +19,7 @@ const Footer: React.FC = () => {
   ];
 
   const legalLinks = [
-    { text: 'Polityka Prywatności', path: '/polityka-prywatnosci' },
-    { text: 'Polityka Cookies', path: '/polityka-cookies' }
+    { text: 'Polityka Prywatności', path: '/polityka-prywatnosci' }
   ];
 
   const handleScrollToSection = (sectionId: string) => {
