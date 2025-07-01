@@ -10,7 +10,6 @@ const Header: React.FC = () => {
   const isHomePage = location.pathname === '/';
   
   const navigationLinks = [
-    { path: '/o-nas', label: 'O Nas' },
     { path: '/uslugi', label: 'Usługi' },
     { path: '/demo', label: 'Demo' },
     { path: '/kontakt', label: 'Kontakt' }
