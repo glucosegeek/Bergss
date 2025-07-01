@@ -13,7 +13,7 @@ Dane osobowe
 1.1. Administratorem danych osobowych Użytkowników serwisu jest firma Bergss działająca pod inkubatorem przedsiębiorczości Fundacja Rozwoju Przedsiębiorczości „Twój StartUp”, ul. Żurawia 6/12, lok. 766, 00-503 Warszawa, NIP: 5213641211.
 Dane kontaktowe:
 Bergss
-tel: 530 
+tel: 530 639 369 
 e‑mail: kontakt@bergss.pl
 
 
