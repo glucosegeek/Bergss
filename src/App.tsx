@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero/Hero';
-import { FloatingNotification } from './components/ui/FloatingNotification';
 
 // Lazy load components
 const WhatWeDo = lazy(() => import('./components/WhatWeDo/WhatWeDo'));
@@ -23,11 +22,6 @@ function App() {
   return (
     <Router>
       <div className="bg-indigo-950 min-h-screen">
-        <FloatingNotification
-          title="Witaj!"
-          message="Odkryj, jak AI może zrewolucjonizować Twoją sprzedaż. Napisz do nas i omówimy razem jak możemy Ci pomóc."
-          duration={7000}
-        />
         <Routes>
           <Route path="/" element={
             <>
