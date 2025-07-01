@@ -39,20 +39,7 @@ const Header: React.FC = () => {
             aria-label="Bergss - Strona główna"
           >
             <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg p-2 sm:p-2.5 group-hover:shadow-lg group-hover:shadow-indigo-500/30 transition-all duration-300">
-              <img 
-                src="/images/logo.png" 
-                alt="Bergss Logo" 
-                className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
-                style={{ maxHeight: '400px', maxWidth: '400px' }}
-                onError={(e) => {
-                  // Fallback to Bot icon if image fails to load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'block';
-                }}
-              />
-              <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-white hidden" />
+              <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div className="flex flex-col">
               <span className="text-responsive-lg sm:text-responsive-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
