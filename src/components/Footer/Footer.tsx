@@ -80,12 +80,6 @@ const Footer: React.FC = () => {
                 <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>+48 530 639 369</span>
               </a>
-              <button
-                onClick={handleContactClick}
-                className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg w-full text-left btn-touch text-responsive-sm sm:text-responsive-base"
-              >
-                Skontaktuj się z Nami
-              </button>
             </div>
           </div>
 
