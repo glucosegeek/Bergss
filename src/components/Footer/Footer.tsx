@@ -64,8 +64,10 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
+            <Link to="/kontakt" className="inline-block">
             <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Kontakt</h3>
-            <div className="space-y-2 sm:space-y-3">
+            </Link>
+              <div className="space-y-2 sm:space-y-3">
               <a
                 href="mailto:kontakt@bergss.pl"
                 className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
