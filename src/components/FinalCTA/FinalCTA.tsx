@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import BookCallForm from '../BookCallForm/BookCallForm';
 
 const FinalCTA: React.FC = () => {
@@ -39,10 +40,10 @@ const FinalCTA: React.FC = () => {
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
                 <span className="text-xl sm:text-2xl">🎥</span>
               </div>
-              <a href="#" className="text-white hover:text-blue-200 font-medium transition-colors duration-300 text-responsive-sm sm:text-responsive-base">
+              <Link to="/demo" className="text-white hover:text-blue-200 font-medium transition-colors duration-300 text-responsive-sm sm:text-responsive-base">
                 <span className="mobile-only">Demo (2 min)</span>
                 <span className="tablet-only desktop-only">Zobacz Demo (2 min)</span>
-              </a>
+              </Link>
             </div>
           </div>
 

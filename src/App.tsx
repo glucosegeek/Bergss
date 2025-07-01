@@ -14,6 +14,7 @@ const Footer = lazy(() => import('./components/Footer/Footer'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const Services = lazy(() => import('./pages/Services'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Demo = lazy(() => import('./pages/Demo'));
 const Terms = lazy(() => import('./pages/Terms'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Cookies = lazy(() => import('./pages/Cookies'));
@@ -51,6 +52,12 @@ function App() {
           <Route path="/kontakt" element={
             <Suspense fallback={null}>
               <Contact />
+              <Footer />
+            </Suspense>
+          } />
+          <Route path="/demo" element={
+            <Suspense fallback={null}>
+              <Demo />
               <Footer />
             </Suspense>
           } />
