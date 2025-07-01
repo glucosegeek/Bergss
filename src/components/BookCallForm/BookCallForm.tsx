@@ -35,7 +35,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const subjects = [
-    'Chatbot AI Implementation',
+    'Chatbot AI',
     'Automated Outreach AI',
     'AI Phone Calls',
     'Website Development',
