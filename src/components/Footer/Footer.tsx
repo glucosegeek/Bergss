@@ -13,21 +13,13 @@ const Footer: React.FC = () => {
     { text: 'O Nas', path: '/o-nas' },
     { 
       text: 'Usługi', 
-      path: '/',
-      scrollTo: 'rozwiazania-ai'
+      path: '/uslugi'
     }
   ];
 
   const legalLinks = [
     { text: 'Polityka Prywatności', path: '/polityka-prywatnosci' }
   ];
-
-  const handleScrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const handleContactClick = () => {
     const contactSection = document.getElementById('kontakt-section');
@@ -94,21 +86,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.text}>
-                  {link.scrollTo ? (
-                    <button
-                      onClick={() => handleScrollToSection(link.scrollTo)}
-                      className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg w-full text-left btn-touch text-responsive-sm sm:text-responsive-base"
-                    >
-                      {link.text}
-                    </button>
-                  ) : (
-                    <Link
-                      to={link.path}
-                      className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
-                    >
-                      {link.text}
-                    </Link>
-                  )}
+                  <Link
+                    to={link.path}
+                    className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
+                  >
+                    {link.text}
+                  </Link>
                 </li>
               ))}
             </ul>
