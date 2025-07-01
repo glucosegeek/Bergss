@@ -19,7 +19,6 @@ const Footer: React.FC = () => {
   ];
 
   const legalLinks = [
-    { text: 'Regulamin', path: '/regulamin' },
     { text: 'Polityka Prywatności', path: '/polityka-prywatnosci' },
     { text: 'Polityka Cookies', path: '/polityka-cookies' }
   ];
