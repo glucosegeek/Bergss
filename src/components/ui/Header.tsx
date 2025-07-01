@@ -43,7 +43,7 @@ const Header: React.FC = () => {
                 src="/images/logo.png" 
                 alt="Bergss Logo" 
                 className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
-                style={{ maxHeight: '24px', maxWidth: '24px' }}
+                style={{ maxHeight: '400px', maxWidth: '400px' }}
                 onError={(e) => {
                   // Fallback to Bot icon if image fails to load
                   const target = e.target as HTMLImageElement;
