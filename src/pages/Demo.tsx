@@ -160,7 +160,7 @@ const Demo = () => {
     {
       videoId: 'chatbot-demo',
       title: 'Chatbot AI',
-      description: 'Zobacz jak nasz chatbot AI automatycznie odpowiada na pytania klientów, kwalifikuje leady i umawia spotkania. Demonstracja pokazuje naturalną konwersację z potencjalnym klientem zainteresowanym usługami AI.',
+      description: 'Zobacz jak nasz chatbot AI automatycznie odpowiada na pytania klientów, kwalifikuje leady i umawia spotkania. Demonstracja pokazuje naturalną konwersację z klientem zainteresowanym.',
       features: [
         'Naturalne rozmowy z klientami 24/7',
         'Automatyczna kwalifikacja leadów',
