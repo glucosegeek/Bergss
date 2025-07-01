@@ -62,7 +62,7 @@ const Services = () => {
         'Integracja z kalendarzem'
       ],
       benefits: [
-        'Zwiększenie umówionych spotkań o 250%',
+        'Zwiększenie umówionych spotkań z potencjalnymi klientami',
         'Redukcja kosztów call center',
         'Konsystentna jakość rozmów',
         'Skalowalność bez granic'
