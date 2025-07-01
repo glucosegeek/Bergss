@@ -38,8 +38,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     'Chatbot AI',
     'Automatyczny Outreach AI',
     'Rozmowy Telefoniczne AI',
-    'Strona Internetowa',
-    'Other - Custom Solution'
+    'Strona Internetowa'
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
