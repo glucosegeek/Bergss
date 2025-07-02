@@ -163,7 +163,7 @@ const Contact = () => {
       {/* Contact Footer - New footer section specifically for kontakt page */}
       <footer className="bg-indigo-950/90 border-t border-white/10 mt-8 sm:mt-12">
         <div className="container-responsive py-8 sm:py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
             {/* Company Info */}
             <div className="sm:col-span-2 lg:col-span-1">
               <h3 className="text-responsive-lg font-semibold text-white mb-3 sm:mb-4">Bergss</h3>
@@ -211,25 +211,6 @@ const Contact = () => {
                 <p className="text-responsive-xs text-blue-100/60 mt-2">
                   Weekendy: tylko pilne sprawy
                 </p>
-              </div>
-            </div>
-
-            {/* Legal Links */}
-            <div>
-              <h4 className="text-responsive-base font-semibold text-white mb-3 sm:mb-4">Informacje prawne</h4>
-              <div className="space-y-2">
-                <a
-                  href="/polityka-prywatnosci"
-                  className="block text-blue-100/80 hover:text-white transition-colors text-responsive-sm"
-                >
-                  Polityka Prywatności
-                </a>
-                <a
-                  href="/regulamin"
-                  className="block text-blue-100/80 hover:text-white transition-colors text-responsive-sm"
-                >
-                  Regulamin
-                </a>
               </div>
             </div>
           </div>
