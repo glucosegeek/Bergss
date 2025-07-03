@@ -4,6 +4,9 @@ const HeroHeadline: React.FC = () => {
   const headlineRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
+    const element = headlineRef.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,14 +18,10 @@ const HeroHeadline: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (headlineRef.current) {
-      observer.observe(headlineRef.current);
-    }
+    observer.observe(element);
 
     return () => {
-      if (headlineRef.current) {
-        observer.unobserve(headlineRef.current);
-      }
+      observer.unobserve(element);
     };
   }, []);
 

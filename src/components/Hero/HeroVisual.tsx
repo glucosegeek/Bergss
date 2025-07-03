@@ -4,6 +4,9 @@ const HeroVisual: React.FC = () => {
   const visualRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const element = visualRef.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,14 +18,10 @@ const HeroVisual: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (visualRef.current) {
-      observer.observe(visualRef.current);
-    }
+    observer.observe(element);
 
     return () => {
-      if (visualRef.current) {
-        observer.unobserve(visualRef.current);
-      }
+      observer.unobserve(element);
     };
   }, []);
 
