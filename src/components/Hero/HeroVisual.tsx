@@ -1,35 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 const HeroVisual: React.FC = () => {
-  const visualRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const element = visualRef.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(element);
-
-    return () => {
-      observer.unobserve(element);
-    };
-  }, []);
-
   return (
-    <div 
-      ref={visualRef}
-      className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto opacity-0 translate-y-8 transition-all duration-700 delay-300 ease-out"
-    >
+    <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
       {/* Main dashboard frame */}
       <div className="relative bg-gradient-to-br from-indigo-900/90 to-purple-900/90 rounded-xl shadow-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/10">
         {/* Header */}
