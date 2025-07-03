@@ -1,23 +1,23 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 
-// Lazy load components
-const WhatWeDo = lazy(() => import('./components/WhatWeDo/WhatWeDo'));
-const WhoIsThisFor = lazy(() => import('./components/WhoIsThisFor/WhoIsThisFor'));
-const FAQ = lazy(() => import('./components/FAQ/FAQ'));
-const FinalCTA = lazy(() => import('./components/FinalCTA/FinalCTA'));
-const ContactForm = lazy(() => import('./components/ContactForm/ContactForm'));
+// Direct imports instead of lazy loading
+import WhatWeDo from './components/WhatWeDo/WhatWeDo';
+import WhoIsThisFor from './components/WhoIsThisFor/WhoIsThisFor';
+import FAQ from './components/FAQ/FAQ';
+import FinalCTA from './components/FinalCTA/FinalCTA';
+import ContactForm from './components/ContactForm/ContactForm';
 
-// Lazy load pages
-const AboutUs = lazy(() => import('./pages/AboutUs'));
-const Services = lazy(() => import('./pages/Services'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Demo = lazy(() => import('./pages/Demo'));
-const Terms = lazy(() => import('./pages/Terms'));
-const Privacy = lazy(() => import('./pages/Privacy'));
-const Cookies = lazy(() => import('./pages/Cookies'));
+// Direct imports for pages
+import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import Demo from './pages/Demo';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import Cookies from './pages/Cookies';
 
 function App() {
   return (
@@ -27,56 +27,52 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
-              <Suspense fallback={null}>
-                <WhatWeDo />
-                <WhoIsThisFor />
-                <FAQ />
-                <FinalCTA />
-                <ContactForm />
-                <Footer />
-              </Suspense>
+              <WhatWeDo />
+              <WhoIsThisFor />
+              <FAQ />
+              <FinalCTA />
+              <ContactForm />
+              <Footer />
             </>
           } />
           <Route path="/o-nas" element={
-            <Suspense fallback={null}>
+            <>
               <AboutUs />
               <Footer />
-            </Suspense>
+            </>
           } />
           <Route path="/uslugi" element={
-            <Suspense fallback={null}>
+            <>
               <Services />
               <Footer />
-            </Suspense>
+            </>
           } />
           <Route path="/kontakt" element={
-            <Suspense fallback={null}>
-              <Contact />
-            </Suspense>
+            <Contact />
           } />
           <Route path="/demo" element={
-            <Suspense fallback={null}>
+            <>
               <Demo />
               <Footer />
-            </Suspense>
+            </>
           } />
           <Route path="/regulamin" element={
-            <Suspense fallback={null}>
+            <>
               <Terms />
               <Footer />
-            </Suspense>
+            </>
           } />
           <Route path="/polityka-prywatnosci" element={
-            <Suspense fallback={null}>
+            <>
               <Privacy />
               <Footer />
-            </Suspense>
+            </>
           } />
           <Route path="/polityka-cookies" element={
-            <Suspense fallback={null}>
+            <>
               <Cookies />
               <Footer />
-            </Suspense>
+            </>
           } />
         </Routes>
       </div>
