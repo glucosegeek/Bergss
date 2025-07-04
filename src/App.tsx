@@ -1,19 +1,82 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Hero from './components/Hero/Hero';
+import Footer from './components/Footer/Footer';
+
+// Direct imports instead of lazy loading
+import WhatWeDo from './components/WhatWeDo/WhatWeDo';
+import WhoIsThisFor from './components/WhoIsThisFor/WhoIsThisFor';
+import FAQ from './components/FAQ/FAQ';
+import FinalCTA from './components/FinalCTA/FinalCTA';
+import ContactForm from './components/ContactForm/ContactForm';
+
+// Direct imports for pages
+import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import Demo from './pages/Demo';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import Cookies from './pages/Cookies';
 
 function App() {
   return (
-    <div style={{ 
-      padding: '20px', 
-      fontSize: '24px', 
-      color: 'white', 
-      backgroundColor: '#1e1b4b',
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}>
-      Hello, World!
-    </div>
+    <Router>
+      <div className="bg-indigo-950 min-h-screen">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <WhatWeDo />
+              <WhoIsThisFor />
+              <FAQ />
+              <FinalCTA />
+              <ContactForm />
+              <Footer />
+            </>
+          } />
+          <Route path="/o-nas" element={
+            <>
+              <AboutUs />
+              <Footer />
+            </>
+          } />
+          <Route path="/uslugi" element={
+            <>
+              <Services />
+              <Footer />
+            </>
+          } />
+          <Route path="/kontakt" element={
+            <Contact />
+          } />
+          <Route path="/demo" element={
+            <>
+              <Demo />
+              <Footer />
+            </>
+          } />
+          <Route path="/regulamin" element={
+            <>
+              <Terms />
+              <Footer />
+            </>
+          } />
+          <Route path="/polityka-prywatnosci" element={
+            <>
+              <Privacy />
+              <Footer />
+            </>
+          } />
+          <Route path="/polityka-cookies" element={
+            <>
+              <Cookies />
+              <Footer />
+            </>
+          } />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
