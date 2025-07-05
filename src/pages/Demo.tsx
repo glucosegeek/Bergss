@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Pause, Volume2, VolumeX, Maximize, ArrowLeft } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, Maximize, ArrowLeft, Mail } from 'lucide-react';
 import ConsultationButton from '../components/ui/ConsultationButton';
 import NavigationButton from '../components/ui/NavigationButton';
 import ScrollToTopLink from '../components/ui/ScrollToTopLink';
