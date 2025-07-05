@@ -212,18 +212,6 @@ const Demo = () => {
       <div className="relative overflow-hidden">
         
         <div className="container-responsive relative py-12 sm:py-16 md:py-20 lg:py-24">
-          {/* Back Button */}
-          <div className="mb-6 sm:mb-8">
-            <NavigationButton 
-              to="/" 
-              variant="home"
-              ariaLabel="Powrót do strony głównej"
-              className="text-slate-300 hover:text-brand-white bg-transparent hover:bg-slate-800/50 border-0 hover:border-slate-700/50 px-0 hover:px-4 shadow-none hover:shadow-lg"
-            >
-              Powrót do strony głównej
-            </NavigationButton>
-          </div>
-
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-3 glass px-4 py-2 rounded-full mb-6 sm:mb-8">
               <Play className="w-5 h-5 text-accent-blue" />
