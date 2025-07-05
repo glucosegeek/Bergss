@@ -15,14 +15,7 @@ const FinalCTA: React.FC = () => {
         </div>
 
         <div className="relative container-responsive text-center">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 glass px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8"
-          >
-          </motion.div>
+          
 
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
