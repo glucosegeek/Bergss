@@ -15,7 +15,7 @@ const HeroHeadline: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="inline-block mb-1 sm:mb-2 gradient-text-primary"
       >
-        A czy Ty
+        AI, które oszczędza.
       </motion.span>
       <br />
       <motion.span 
@@ -24,7 +24,7 @@ const HeroHeadline: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="inline-block mb-1 sm:mb-2"
       >
-        wdrożyłeś AI w
+        Strony, które zarabiają.
       </motion.span>
       <br />
       <motion.span 
@@ -33,7 +33,7 @@ const HeroHeadline: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.6 }}
         className="gradient-text-primary"
       >
-       swoim biznesie?
+        
       </motion.span>
     </motion.h1>
   );
