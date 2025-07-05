@@ -22,11 +22,6 @@ const FinalCTA: React.FC = () => {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 glass px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8"
           >
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            >
-            </motion.div>
           </motion.div>
 
           <motion.h2 
