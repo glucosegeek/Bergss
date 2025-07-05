@@ -49,7 +49,6 @@ const FinalCTA: React.FC = () => {
           <p className="mt-6 sm:mt-8 text-blue-100/80 text-responsive-sm">
             • Bergss.pl •
           </p>
-        </div>
       </section>
 
       <BookCallForm 
