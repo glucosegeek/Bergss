@@ -1,10 +1,8 @@
 import React from 'react';
-import { Bot, Phone, BarChart, Users } from 'lucide-react';
 import HeroHeadline from './HeroHeadline';
 import HeroSubheadline from './HeroSubheadline';
 import HeroVisual from './HeroVisual';
 import HeroCTA from './HeroCTA';
-import FloatingNotification from './FloatingNotification';
 
 const Hero: React.FC = () => {
   return (
@@ -12,34 +10,6 @@ const Hero: React.FC = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 gradient-secondary z-0">
         <div className="absolute inset-0 bg-grid-pattern"></div>
-      </div>
-
-      {/* Floating notifications - Hidden on mobile and tablet */}
-      <div className="desktop-only">
-        <FloatingNotification 
-          icon={<Bot size={20} />}
-          text="Nowi klienci pozyskani za pośrednictwem czatu AI"
-          position="left-[45%] top-[60%]"
-          delay={0}
-        />
-        <FloatingNotification 
-          icon={<Phone size={20} />}
-          text="Oszczędzone 30% kosztów obsługi klienta."
-          position="left-[45%] top-[50%]"
-          delay={0}
-        />
-        <FloatingNotification 
-          icon={<BarChart size={10} />}
-          text="Ponad 25% transakcji zainicjowane dzięki AI"
-          position="left-[45%] top-[32%]"
-          delay={0}
-        />
-        <FloatingNotification 
-          icon={<Users size={20} />}
-          text="Liczba wiadomości do BOK zmniejszona o 70%"
-          position="left-[45%] top-[40%]"
-          delay={0}
-        />
       </div>
 
       {/* Content container */}
