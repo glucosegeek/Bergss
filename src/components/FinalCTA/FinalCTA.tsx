@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles, Play } from 'lucide-react';
+import { motion } from 'framer-motion';
 import BookCallForm from '../BookCallForm/BookCallForm';
 import ScrollToTopLink from '../ui/ScrollToTopLink';
 
@@ -14,27 +15,57 @@ const FinalCTA: React.FC = () => {
         </div>
 
         <div className="relative container-responsive text-center">
-          <div className="inline-flex items-center gap-2 glass px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent-green" />
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 glass px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8"
+          >
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            >
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent-green" />
+            </motion.div>
             <span className="text-brand-light font-medium text-responsive-sm sm:text-responsive-base">Zacznij skalować już dziś</span>
-          </div>
+          </motion.div>
 
-          <h2 className="text-responsive-3xl sm:text-responsive-4xl md:text-responsive-5xl lg:text-responsive-6xl font-bold text-brand-white mb-6 sm:mb-8 max-w-4xl mx-auto px-4 sm:px-0">
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-responsive-3xl sm:text-responsive-4xl md:text-responsive-5xl lg:text-responsive-6xl font-bold text-brand-white mb-6 sm:mb-8 max-w-4xl mx-auto px-4 sm:px-0"
+          >
             Gotowy na Transformację Biznesu z AI?
-          </h2>
+          </motion.h2>
           
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0">
-            <button 
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0"
+          >
+            <motion.button 
               onClick={() => setIsBookCallOpen(true)}
-              className="btn-touch group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white rounded-lg text-responsive-base sm:text-responsive-lg font-semibold text-brand-primary shadow-brand hover:shadow-brand-lg transition-all duration-300 hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-touch group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white rounded-lg text-responsive-base sm:text-responsive-lg font-semibold text-brand-primary shadow-brand hover:shadow-brand-lg transition-all duration-300"
             >
               <span className="absolute inset-0 flex items-center justify-center w-full h-full rounded-lg opacity-0 gradient-primary group-hover:opacity-100 transition-opacity duration-300"></span>
               <span className="relative flex items-center justify-center">
                 <span className="mobile-only">Umów Konsultację</span>
                 <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 text-brand-primary group-hover:text-white" />
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-brand-primary group-hover:text-white transition-colors duration-300" />
+                </motion.div>
               </span>
-            </button>
+            </motion.button>
 
             <ScrollToTopLink 
               to="/demo" 
@@ -42,11 +73,18 @@ const FinalCTA: React.FC = () => {
             >
               {/* Animated Play Button */}
               <div className="relative">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-brand group-hover:shadow-brand-lg">
-                  <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white ml-0.5 group-hover:scale-110 transition-transform duration-300" />
-                </div>
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full gradient-primary flex items-center justify-center transition-all duration-300 shadow-brand group-hover:shadow-brand-lg"
+                >
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white ml-0.5" />
+                </motion.div>
                 {/* Pulse animation */}
-                <div className="absolute inset-0 rounded-full gradient-primary opacity-30 animate-ping group-hover:opacity-50"></div>
+                <motion.div 
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute inset-0 rounded-full gradient-primary"
+                ></motion.div>
               </div>
               
               {/* Text Content */}
@@ -63,11 +101,17 @@ const FinalCTA: React.FC = () => {
               {/* Hover glow effect */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-accent-purple/0 to-brand-primary/0 group-hover:from-brand-primary/10 group-hover:via-accent-purple/10 group-hover:to-brand-primary/10 transition-all duration-300"></div>
             </ScrollToTopLink>
-          </div>
+          </motion.div>
 
-          <p className="mt-6 sm:mt-8 text-brand-light text-responsive-sm">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="mt-6 sm:mt-8 text-brand-light text-responsive-sm"
+          >
             • Bergss.pl •
-          </p>
+          </motion.p>
         </div>
       </section>
 

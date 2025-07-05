@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import BookCallForm from '../BookCallForm/BookCallForm';
 
 const HeroCTA: React.FC = () => {
@@ -7,24 +8,45 @@ const HeroCTA: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start w-full sm:w-auto px-4 sm:px-0">
-        <button 
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.0 }}
+        className="flex flex-col sm:flex-row gap-4 items-center sm:items-start w-full sm:w-auto px-4 sm:px-0"
+      >
+        <motion.button 
           onClick={() => setIsBookCallOpen(true)}
-          className="btn-touch btn-primary group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300 hover:scale-105"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          className="btn-touch btn-primary group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300"
         >
           <span className="relative flex items-center justify-center">
             <span className="mobile-only text-sm">Umów Konsultację</span>
             <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
-            <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 text-white" />
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-white" />
+            </motion.div>
           </span>
-        </button>
+        </motion.button>
         
-        <div className="flex items-center gap-2 text-slate-300 text-responsive-sm">
-          <span className="w-1.5 h-1.5 bg-accent-green rounded-full"></span>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 1.2 }}
+          className="flex items-center gap-2 text-slate-300 text-responsive-sm"
+        >
+          <motion.span 
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1.5 h-1.5 bg-accent-green rounded-full"
+          ></motion.span>
           <span className="mobile-only">Bezpłatnie</span>
           <span className="tablet-only desktop-only">Bez karty kredytowej</span>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <BookCallForm 
         isOpen={isBookCallOpen} 

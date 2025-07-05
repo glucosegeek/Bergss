@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bot, Mail, Phone, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
 import ServiceCard from './ServiceCard';
 
 const WhatWeDo: React.FC = () => {
@@ -26,24 +27,78 @@ const WhatWeDo: React.FC = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section id="rozwiazania-ai" className="relative py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
       <div className="container-responsive">
         {/* Centered header section */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto">
-          <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto"
+        >
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary"
+          >
             Rozwiązania Oparte na AI
-          </h2>
-          <p className="text-responsive-lg text-brand-light max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-responsive-lg text-brand-light max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
+          >
             Przekształć swój proces sprzedaży dzięki naszym najnowocześniejszym narzędziom AI, które pracują całodobowo, aby rozwijać Twój biznes
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
         {/* Responsive services grid */}
-        <div className="grid-responsive-4 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid-responsive-4 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto"
+        >
           {services.map((service, index) => (
-            <div key={index} className="flex justify-center">
+            <motion.div 
+              key={index} 
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.05,
+                transition: { duration: 0.2 }
+              }}
+              className="flex justify-center"
+            >
               <div className="w-full max-w-sm">
                 <ServiceCard
                   icon={service.icon}
@@ -51,9 +106,9 @@ const WhatWeDo: React.FC = () => {
                   description={service.description}
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

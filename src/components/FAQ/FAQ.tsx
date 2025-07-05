@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import FAQItem from './FAQItem';
 
 const FAQ: React.FC = () => {
@@ -21,28 +22,78 @@ const FAQ: React.FC = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
       <div className="container-responsive">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
+        >
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary"
+          >
             Często Zadawane Pytania
-          </h2>
-          <p className="text-responsive-lg text-brand-light max-w-2xl mx-auto px-4 sm:px-0">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-responsive-lg text-brand-light max-w-2xl mx-auto px-4 sm:px-0"
+          >
             Poznaj odpowiedzi na najczęstsze pytania o nasze rozwiązania AI dla sprzedaży
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="max-w-3xl mx-auto"
+        >
           {faqs.map((faq, index) => (
-            <FAQItem
+            <motion.div
               key={index}
-              question={faq.question}
-              answer={faq.answer}
-            />
+              variants={itemVariants}
+            >
+              <FAQItem
+                question={faq.question}
+                answer={faq.answer}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

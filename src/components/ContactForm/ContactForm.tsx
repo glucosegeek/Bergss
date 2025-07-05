@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { supabase } from '../../lib/supabase';
 
 const ContactForm: React.FC = () => {
@@ -68,37 +69,88 @@ const ContactForm: React.FC = () => {
     });
   };
 
+  const formVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const fieldVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4 }
+    }
+  };
+
   return (
     <section id="kontakt-section" className="relative py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
       <div className="container-responsive">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <motion.h2 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary"
+            >
               Skontaktuj się z Nami
-            </h2>
-            <p className="text-responsive-lg text-brand-light px-4 sm:px-0">
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-responsive-lg text-brand-light px-4 sm:px-0"
+            >
               Gotowy na transformację procesu sprzedaży? Porozmawiajmy o Twoich potrzebach.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <form 
+          <motion.form 
             onSubmit={handleSubmit}
+            variants={formVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
             className="space-y-4 sm:space-y-6 glass rounded-xl spacing-responsive-lg border border-slate-700/50"
           >
             {submitStatus === 'success' && (
-              <div className="bg-accent-green/20 border border-accent-green/50 rounded-lg p-3 sm:p-4">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="bg-accent-green/20 border border-accent-green/50 rounded-lg p-3 sm:p-4"
+              >
                 <p className="text-accent-green text-responsive-sm">Dziękujemy! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.</p>
-              </div>
+              </motion.div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 sm:p-4">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 sm:p-4"
+              >
                 <p className="text-red-200 text-responsive-sm">Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.</p>
-              </div>
+              </motion.div>
             )}
 
-            <div>
+            <motion.div variants={fieldVariants}>
               <label htmlFor="name" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Imię i Nazwisko
               </label>
@@ -112,9 +164,9 @@ const ContactForm: React.FC = () => {
                 className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
                 placeholder="Twoje imię i nazwisko"
               />
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={fieldVariants}>
               <label htmlFor="email" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Email
               </label>
@@ -128,9 +180,9 @@ const ContactForm: React.FC = () => {
                 className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
                 placeholder="twoj@email.com"
               />
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={fieldVariants}>
               <label htmlFor="service" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Jaką usługą jesteś zainteresowany?
               </label>
@@ -148,9 +200,9 @@ const ContactForm: React.FC = () => {
                   </option>
                 ))}
               </select>
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={fieldVariants}>
               <label htmlFor="message" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Wiadomość
               </label>
@@ -164,12 +216,15 @@ const ContactForm: React.FC = () => {
                 className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 resize-none min-h-[100px]"
                 placeholder="Opowiedz nam o swoich potrzebach..."
               />
-            </div>
+            </motion.div>
 
-            <button
+            <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="btn-touch btn-primary w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+              variants={fieldVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-touch btn-primary w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group"
             >
               {isSubmitting ? (
                 <>
@@ -179,11 +234,16 @@ const ContactForm: React.FC = () => {
               ) : (
                 <>
                   Wyślij Wiadomość
-                  <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 text-white" />
+                  <motion.div
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <Send className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  </motion.div>
                 </>
               )}
-            </button>
-          </form>
+            </motion.button>
+          </motion.form>
         </div>
       </div>
     </section>
