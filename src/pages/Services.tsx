@@ -287,11 +287,13 @@ const Services = () => {
               mogą zrewolucjonizować Twój biznes już dziś.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <ConsultationButton />
               <ScrollToTopLink 
-                  to="/demo"
+                to="/demo"
                 className="btn-touch flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105"
               >
                 <span>Zobacz Demo</span>
+                <ArrowRight className="w-5 h-5" />
               </ScrollToTopLink>
             </div>
           </div>

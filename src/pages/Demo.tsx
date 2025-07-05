@@ -281,10 +281,9 @@ const Demo = () => {
                 <ConsultationButton />
                 <ScrollToTopLink 
                   to="/kontakt" 
-                  variant="contact"
-                  to="/demo"
-                  ariaLabel="Przejdź do strony kontaktowej"
+                  className="btn-touch flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105"
                 >
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   Skontaktuj się z Nami
                 </ScrollToTopLink>
               </div>

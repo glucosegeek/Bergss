@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
+import { supabase } from '../../lib/supabase';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ const ContactForm: React.FC = () => {
     service: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const services = [
     'Chatbot AI',
@@ -16,9 +19,46 @@ const ContactForm: React.FC = () => {
     'Strona Internetowa'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Split name into first and last name
+      const nameParts = formData.name.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      const { error } = await supabase
+        .from('consultation_requests')
+        .insert([{
+          first_name: firstName,
+          last_name: lastName,
+          email: formData.email,
+          company: 'Nie podano', // Default value since company is required
+          subject: formData.service || 'Ogólne zapytanie',
+          description: formData.message,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        }]);
+
+      if (error) {
+        throw error;
+      }
+
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        service: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -45,6 +85,18 @@ const ContactForm: React.FC = () => {
             onSubmit={handleSubmit}
             className="space-y-4 sm:space-y-6 bg-white/5 backdrop-blur-sm rounded-xl spacing-responsive-lg border border-white/10"
           >
+            {submitStatus === 'success' && (
+              <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 sm:p-4">
+                <p className="text-green-300 text-responsive-sm">Dziękujemy! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.</p>
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 sm:p-4">
+                <p className="text-red-300 text-responsive-sm">Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.</p>
+              </div>
+            )}
+
             <div>
               <label htmlFor="name" className="block text-responsive-sm sm:text-responsive-base font-medium text-blue-100 mb-2">
                 Imię i Nazwisko
@@ -115,10 +167,20 @@ const ContactForm: React.FC = () => {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="btn-touch w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
             >
-              Wyślij Wiadomość
-              <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              {isSubmitting ? (
+                <>
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  Wysyłanie...
+                </>
+              ) : (
+                <>
+                  Wyślij Wiadomość
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </>
+              )}
             </button>
           </form>
         </div>
