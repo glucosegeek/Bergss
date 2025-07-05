@@ -11,9 +11,10 @@ interface Message {
 
 interface TypingIndicatorProps {
   isVisible: boolean;
+  sender: 'user' | 'ai';
 }
 
-const TypingIndicator: React.FC<TypingIndicatorProps> = ({ isVisible }) => {
+const TypingIndicator: React.FC<TypingIndicatorProps> = ({ isVisible, sender }) => {
   return (
     <AnimatePresence>
       {isVisible && (
@@ -21,11 +22,25 @@ const TypingIndicator: React.FC<TypingIndicatorProps> = ({ isVisible }) => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="flex items-center gap-2 mb-4"
+          className={`flex items-center gap-2 mb-4 ${
+            sender === 'user' ? 'justify-end' : 'justify-start'
+          }`}
         >
-          <div className="flex items-center gap-2 bg-slate-700/50 rounded-2xl px-4 py-3 max-w-[200px]">
-            <div className="w-6 h-6 rounded-full bg-brand-primary flex items-center justify-center">
-              <Bot className="w-3 h-3 text-white" />
+          <div className={`flex items-center gap-2 rounded-2xl px-4 py-3 max-w-[200px] ${
+            sender === 'user' 
+              ? 'bg-brand-primary/80' 
+              : 'bg-slate-700/50'
+          }`}>
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+              sender === 'user' 
+                ? 'bg-accent-blue' 
+                : 'bg-brand-primary'
+            }`}>
+              {sender === 'user' ? (
+                <User className="w-3 h-3 text-white" />
+              ) : (
+                <Bot className="w-3 h-3 text-white" />
+              )}
             </div>
             <div className="flex items-center gap-1">
               <motion.div
@@ -54,6 +69,7 @@ const TypingIndicator: React.FC<TypingIndicatorProps> = ({ isVisible }) => {
 const ChatAnimation: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
+  const [typingSender, setTypingSender] = useState<'user' | 'ai'>('ai');
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -136,11 +152,14 @@ const ChatAnimation: React.FC = () => {
     }
 
     const timer = setTimeout(() => {
+      // Set the typing sender to match the next message sender
+      const nextMessage = conversationScript[currentMessageIndex];
+      setTypingSender(nextMessage.sender);
       setIsTyping(true);
 
       const typingTimer = setTimeout(() => {
         setIsTyping(false);
-        addMessage(conversationScript[currentMessageIndex]);
+        addMessage(nextMessage);
         setCurrentMessageIndex(prev => prev + 1);
       }, 1500); // Typing duration
 
@@ -245,7 +264,7 @@ const ChatAnimation: React.FC = () => {
         </AnimatePresence>
 
         {/* Typing Indicator */}
-        <TypingIndicator isVisible={isTyping} />
+        <TypingIndicator isVisible={isTyping} sender={typingSender} />
       </div>
 
       {/* Chat Footer */}
