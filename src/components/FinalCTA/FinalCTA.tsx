@@ -15,22 +15,6 @@ const FinalCTA: React.FC = () => {
         </div>
 
         <div className="relative container-responsive z-10 text-center">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 glass px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8"
-          >
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            >
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent-green" />
-            </motion.div>
-            <span className="text-brand-light font-medium text-responsive-sm sm:text-responsive-base">Zacznij skalować już dziś</span>
-          </motion.div>
-
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,25 +32,6 @@ const FinalCTA: React.FC = () => {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0"
           >
-            <motion.button 
-              onClick={() => setIsBookCallOpen(true)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="btn-touch group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white rounded-lg text-responsive-base sm:text-responsive-lg font-semibold text-brand-primary shadow-brand hover:shadow-brand-lg transition-all duration-300"
-            >
-              <span className="absolute inset-0 flex items-center justify-center w-full h-full rounded-lg opacity-0 gradient-primary group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative flex items-center justify-center">
-                <span className="mobile-only">Umów Konsultację</span>
-                <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-brand-primary group-hover:text-white transition-colors duration-300" />
-                </motion.div>
-              </span>
-            </motion.button>
-
             <ScrollToTopLink 
               to="/demo" 
               className="group relative btn-touch flex items-center gap-3 sm:gap-4 btn-secondary backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 rounded-xl px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand/10"
