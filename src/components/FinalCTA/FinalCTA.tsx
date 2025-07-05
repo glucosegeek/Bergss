@@ -76,8 +76,6 @@ const FinalCTA: React.FC = () => {
               {/* Text Content */}
               <div className="flex flex-col items-start">
                 <span className="text-brand-white font-semibold text-responsive-sm sm:text-responsive-base group-hover:gradient-text-primary transition-all duration-300">
-                  <span className="mobile-only">Demo (2 min)</span>
-                  <span className="tablet-only desktop-only">Zobacz Demo (2 min)</span>
                 </span>
                 <span className="text-slate-400 text-xs sm:text-sm group-hover:text-brand-light transition-colors duration-300">
                   Rozwiązania AI w akcji
