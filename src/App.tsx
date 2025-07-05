@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Navigation from './components/ui/Navigation';
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import { useEffect } from 'react';
@@ -36,10 +37,11 @@ function App() {
   return (
     <Router>
       <div className="bg-slate-900 min-h-screen">
+        <Navigation />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={
-            <>
+            <div className="pt-16 sm:pt-20">
               <Hero />
               <WhatWeDo />
               <WhoIsThisFor />
@@ -48,46 +50,48 @@ function App() {
               <ContactForm />
               <Footer />
               <SmartConsultationButton />
-            </>
+            </div>
           } />
           <Route path="/o-nas" element={
-            <>
+            <div className="pt-16 sm:pt-20">
               <AboutUs />
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/uslugi" element={
-            <>
+            <div className="pt-16 sm:pt-20">
               <Services />
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/kontakt" element={
-            <Contact />
+            <div className="pt-16 sm:pt-20">
+              <Contact />
+            </div>
           } />
           <Route path="/demo" element={
-            <>
+            <div className="pt-16 sm:pt-20">
               <Demo />
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/regulamin" element={
-            <>
+            <div className="pt-16 sm:pt-20">
               <Terms />
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/polityka-prywatnosci" element={
-            <>
+            <div className="pt-16 sm:pt-20">
               <Privacy />
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/polityka-cookies" element={
-            <>
+            <div className="pt-16 sm:pt-20">
               <Cookies />
               <Footer />
-            </>
+            </div>
           } />
         </Routes>
       </div>

@@ -6,7 +6,7 @@ import HeroCTA from './HeroCTA';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center w-full safe-area-top">
+    <section className="relative overflow-hidden min-h-screen flex items-center w-full">
       {/* Background gradient */}
       <div className="absolute inset-0 gradient-secondary z-0">
         <div className="absolute inset-0 bg-grid-pattern"></div>
