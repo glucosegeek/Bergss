@@ -43,8 +43,6 @@ const HeroCTA: React.FC = () => {
             transition={{ duration: 2, repeat: Infinity }}
             className="w-1.5 h-1.5 bg-accent-green rounded-full"
           ></motion.span>
-          <span className="mobile-only">Bezpłatnie</span>
-          <span className="tablet-only desktop-only">Bez karty kredytowej</span>
         </motion.div>
       </motion.div>
 
