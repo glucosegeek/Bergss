@@ -10,28 +10,23 @@ const WhoIsThisFor: React.FC = () => {
     },
     {
       icon: <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />,
-      type: "Startupy i software house'y",
-      description: "Przyspiesz wzrost bez powiększania zespołu sprzedaży"
+      type: "Startupy i software house'y"
     },
     {
       icon: <LineChart className="w-5 h-5 sm:w-6 sm:h-6" />,
-      type: "Zespoły sprzedaży B2B i SaaS",
-      description: "Kwalifikuj leady i umawiaj demo przez całą dobę"
+      type: "Zespoły sprzedaży B2B i SaaS"
     },
     {
       icon: <Users className="w-5 h-5 sm:w-6 sm:h-6" />,
-      type: "Freelancerzy i konsultanci",
-      description: "Zautomatyzuj generowanie leadów i skup się na pracy z klientami"
+      type: "Freelancerzy i konsultanci"
     },
     {
       icon: <Store className="w-5 h-5 sm:w-6 sm:h-6" />,
-      type: "Sklepy E-commerce",
-      description: "Zadbaj o całodobową komunikację między Tobą a klientem"
+      type: "Sklepy E-commerce"
     },
     {
       icon: <Utensils className="w-5 h-5 sm:w-6 sm:h-6" />,
-      type: "Restauracje/Salony piękności/Gabinety lekarskie",
-      description: "Zautomatyzuj rezerwacje i wizyt"
+      type: "Restauracje/Salony piękności/Gabinety lekarskie"
     }
   ];
 
