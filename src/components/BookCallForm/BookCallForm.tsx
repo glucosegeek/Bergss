@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Calendar, User, Mail, Phone, MessageSquare, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-// import { supabase } from '../../lib/supabase';
+import { supabase } from '../../lib/supabase';
 
 interface BookCallFormProps {
   isOpen: boolean;
@@ -63,60 +63,60 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     return null;
   };
 
-  // const saveToSupabase = async (data: FormData) => {
-  //   try {
-  //     // Validate form data before submission
-  //     const validationError = validateForm(data);
-  //     if (validationError) {
-  //       throw new Error(validationError);
-  //     }
+  const saveToSupabase = async (data: FormData) => {
+    try {
+      // Validate form data before submission
+      const validationError = validateForm(data);
+      if (validationError) {
+        throw new Error(validationError);
+      }
 
-  //     // Prepare data for database insertion
-  //     const insertData = {
-  //       first_name: data.firstName.trim(),
-  //       last_name: data.lastName.trim(),
-  //       email: data.email.trim().toLowerCase(),
-  //       phone: data.phone.trim() || null,
-  //       company: data.company.trim(),
-  //       subject: data.subject,
-  //       description: data.description.trim(),
-  //       timezone: data.timezone,
-  //       status: 'pending' as const
-  //     };
+      // Prepare data for database insertion
+      const insertData = {
+        first_name: data.firstName.trim(),
+        last_name: data.lastName.trim(),
+        email: data.email.trim().toLowerCase(),
+        phone: data.phone.trim() || null,
+        company: data.company.trim(),
+        subject: data.subject,
+        description: data.description.trim(),
+        timezone: data.timezone,
+        status: 'pending' as const
+      };
 
-  //     console.log('Attempting to save to Supabase:', insertData);
+      console.log('Attempting to save to Supabase:', insertData);
 
-  //     // Insert without select - this works with RLS allowing INSERT but not SELECT for anonymous users
-  //     const { error } = await supabase
-  //       .from('consultation_requests')
-  //       .insert([insertData]);
+      // Insert without select - this works with RLS allowing INSERT but not SELECT for anonymous users
+      const { error } = await supabase
+        .from('consultation_requests')
+        .insert([insertData]);
 
-  //     if (error) {
-  //       console.error('Supabase error details:', {
-  //         message: error.message,
-  //         details: error.details,
-  //         hint: error.hint,
-  //         code: error.code
-  //       });
+      if (error) {
+        console.error('Supabase error details:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
         
-  //       // Provide user-friendly error messages
-  //       if (error.code === '42501') {
-  //         throw new Error('Błąd uprawnień bazy danych. Skontaktuj się z administratorem.');
-  //       } else if (error.code === '23505') {
-  //         throw new Error('Ten email został już użyty. Sprawdź swoją skrzynkę odbiorczą.');
-  //       } else {
-  //         throw new Error(`Błąd bazy danych: ${error.message}`);
-  //       }
-  //     }
+        // Provide user-friendly error messages
+        if (error.code === '42501') {
+          throw new Error('Błąd uprawnień bazy danych. Skontaktuj się z administratorem.');
+        } else if (error.code === '23505') {
+          throw new Error('Ten email został już użyty. Sprawdź swoją skrzynkę odbiorczą.');
+        } else {
+          throw new Error(`Błąd bazy danych: ${error.message}`);
+        }
+      }
 
-  //     console.log('Successfully saved to Supabase');
-  //     // Return success indicator since we can't return the actual data
-  //     return { success: true };
-  //   } catch (error) {
-  //     console.error('Error in saveToSupabase:', error);
-  //     throw error;
-  //   }
-  // };
+      console.log('Successfully saved to Supabase');
+      // Return success indicator since we can't return the actual data
+      return { success: true };
+    } catch (error) {
+      console.error('Error in saveToSupabase:', error);
+      throw error;
+    }
+  };
 
   const generateCalendlyLink = (data: FormData): string => {
     const baseUrl = 'https://calendly.com/konsultacje-bergss';
@@ -179,9 +179,9 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         throw new Error(validationError);
       }
 
-      // // Save to Supabase database (primary storage) - COMMENTED OUT FOR TESTING
-      // const result = await saveToSupabase(formData);
-      // console.log('Data saved successfully:', result);
+      // Save to Supabase database (primary storage)
+      const result = await saveToSupabase(formData);
+      console.log('Data saved successfully:', result);
       
       // Send webhook to Make.com (secondary notification)
       try {
