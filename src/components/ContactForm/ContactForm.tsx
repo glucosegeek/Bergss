@@ -69,7 +69,8 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="kontakt-section" className="py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary">
+    <section id="kontakt-section" className="relative py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
       <div className="container-responsive">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">

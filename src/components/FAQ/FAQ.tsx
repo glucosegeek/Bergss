@@ -22,7 +22,8 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary">
+    <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
       <div className="container-responsive">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary">

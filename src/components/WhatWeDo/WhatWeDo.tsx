@@ -27,7 +27,8 @@ const WhatWeDo: React.FC = () => {
   ];
 
   return (
-    <section id="rozwiazania-ai" className="py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary">
+    <section id="rozwiazania-ai" className="relative py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
       <div className="container-responsive">
         {/* Centered header section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto">
