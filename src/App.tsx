@@ -34,7 +34,7 @@ const ScrollToTop: React.FC = () => {
 function App() {
   return (
     <Router>
-      <div className="bg-indigo-950 min-h-screen">
+      <div className="bg-slate-900 min-h-screen">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={

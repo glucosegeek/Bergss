@@ -2,8 +2,8 @@ import React from 'react';
 
 const HeroHeadline: React.FC = () => {
   return (
-    <h1 className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold leading-tight text-white mb-4 sm:mb-6">
-      <span className="inline-block mb-1 sm:mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
+    <h1 className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold leading-tight text-brand-white mb-4 sm:mb-6">
+      <span className="inline-block mb-1 sm:mb-2 gradient-text-primary">
         A czy Ty
       </span>
       <br />
@@ -11,7 +11,7 @@ const HeroHeadline: React.FC = () => {
         wdrożyłeś AI w
       </span>
       <br />
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+      <span className="gradient-text-primary">
        swoim biznesie?
       </span>
     </h1>
