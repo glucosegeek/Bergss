@@ -26,7 +26,7 @@ const WhoIsThisFor: React.FC = () => {
     },
     {
       icon: <Utensils className="w-5 h-5 sm:w-6 sm:h-6" />,
-      type: "Restauracje/Salony piękności/Gabinety lekarskie"
+      type: "Restauracje, Salony piękności, Gabinety lekarskie"
     }
   ];
 
