@@ -49,7 +49,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, title, description, 
   };
 
   return (
-    <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-300">
+    <div className="glass rounded-xl border border-slate-700/50 overflow-hidden group hover:border-slate-600/50 transition-all duration-300">
       {/* Video Container */}
       <div 
         className="relative aspect-video bg-black rounded-t-xl overflow-hidden"
@@ -73,12 +73,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, title, description, 
           <div className="absolute inset-0 flex items-center justify-center">
             <button
               onClick={togglePlay}
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full p-4 transition-all duration-300 hover:scale-110"
+              className="bg-slate-800/20 backdrop-blur-sm hover:bg-slate-700/30 rounded-full p-4 transition-all duration-300 hover:scale-110"
             >
               {isPlaying ? (
-                <Pause className="w-8 h-8 text-white" />
+                <Pause className="w-8 h-8 text-brand-white" />
               ) : (
-                <Play className="w-8 h-8 text-white ml-1" />
+                <Play className="w-8 h-8 text-brand-white ml-1" />
               )}
             </button>
           </div>
@@ -89,7 +89,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, title, description, 
               <div className="flex items-center gap-3">
                 <button
                   onClick={togglePlay}
-                  className="text-white hover:text-blue-300 transition-colors"
+                  className="text-brand-white hover:text-accent-blue transition-colors"
                 >
                   {isPlaying ? (
                     <Pause className="w-5 h-5" />
@@ -100,7 +100,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, title, description, 
                 
                 <button
                   onClick={toggleMute}
-                  className="text-white hover:text-blue-300 transition-colors"
+                  className="text-brand-white hover:text-accent-blue transition-colors"
                 >
                   {isMuted ? (
                     <VolumeX className="w-5 h-5" />
@@ -112,7 +112,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, title, description, 
 
               <button
                 onClick={toggleFullscreen}
-                className="text-white hover:text-blue-300 transition-colors"
+                className="text-brand-white hover:text-accent-blue transition-colors"
               >
                 <Maximize className="w-5 h-5" />
               </button>
@@ -121,31 +121,31 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, title, description, 
         </div>
 
         {/* Duration Badge */}
-        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full">
-          <span className="text-white text-sm font-medium">2:00</span>
+        <div className="absolute top-4 right-4 bg-slate-900/60 backdrop-blur-sm px-3 py-1 rounded-full">
+          <span className="text-brand-white text-sm font-medium">2:00</span>
         </div>
       </div>
 
       {/* Content */}
       <div className="spacing-responsive-lg">
-        <h3 className="text-responsive-xl sm:text-responsive-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
+        <h3 className="text-responsive-xl sm:text-responsive-2xl font-bold text-brand-white mb-3 sm:mb-4 group-hover:gradient-text-primary transition-all duration-300">
           {title}
         </h3>
         
-        <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 leading-relaxed mb-4 sm:mb-6">
+        <p className="text-responsive-sm sm:text-responsive-base text-brand-light leading-relaxed mb-4 sm:mb-6">
           {description}
         </p>
 
         {/* Key Features */}
         <div className="space-y-2">
-          <h4 className="text-responsive-base font-semibold text-indigo-200 mb-3">
+          <h4 className="text-responsive-base font-semibold text-accent-blue mb-3">
             Kluczowe funkcje:
           </h4>
           <ul className="space-y-2">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-responsive-sm text-blue-100/70">{feature}</span>
+                <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-responsive-sm text-slate-400">{feature}</span>
               </li>
             ))}
           </ul>
@@ -207,10 +207,10 @@ const Demo = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-indigo-900 to-purple-900">
+    <div className="min-h-screen gradient-secondary">
       {/* Header Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utb3BhY2l0eT0iMC4wNCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIj48L3JlY3Q+PC9zdmc+')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utb3BhY2l0eT0iMC4wNCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIj48L3JlY3Q+PC9zdmc+')] opacity-10"></div>
         
         <div className="container-responsive relative py-12 sm:py-16 md:py-20 lg:py-24">
           {/* Back Button */}
@@ -219,23 +219,23 @@ const Demo = () => {
               to="/" 
               variant="home"
               ariaLabel="Powrót do strony głównej"
-              className="text-blue-200 hover:text-white bg-transparent hover:bg-white/10 border-0 hover:border-white/20 px-0 hover:px-4 shadow-none hover:shadow-lg"
+              className="text-slate-300 hover:text-brand-white bg-transparent hover:bg-slate-800/50 border-0 hover:border-slate-700/50 px-0 hover:px-4 shadow-none hover:shadow-lg"
             >
               Powrót do strony głównej
             </NavigationButton>
           </div>
 
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 sm:mb-8">
-              <Play className="w-5 h-5 text-indigo-300" />
-              <span className="text-indigo-200 font-medium text-responsive-sm">Demonstracje Produktów</span>
+            <div className="inline-flex items-center gap-3 glass px-4 py-2 rounded-full mb-6 sm:mb-8">
+              <Play className="w-5 h-5 text-accent-blue" />
+              <span className="text-brand-light font-medium text-responsive-sm">Demonstracje Produktów</span>
             </div>
             
-            <h1 className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">
+            <h1 className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold mb-4 sm:mb-6 gradient-text-primary">
               Demo Rozwiązań AI
             </h1>
             
-            <p className="text-responsive-lg text-blue-100/80 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+            <p className="text-responsive-lg text-brand-light max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
               Zobacz nasze rozwiązania AI w akcji. Każde demo trwa około 2 minut i pokazuje kluczowe funkcje oraz korzyści dla Twojego biznesu.
             </p>
           </div>
@@ -247,10 +247,10 @@ const Demo = () => {
         <div className="max-w-7xl mx-auto">
           {/* Introduction */}
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-responsive-2xl sm:text-responsive-3xl font-bold text-white mb-4 sm:mb-6">
+            <h2 className="text-responsive-2xl sm:text-responsive-3xl font-bold text-brand-white mb-4 sm:mb-6">
               Produkty w Akcji
             </h2>
-            <p className="text-responsive-base text-blue-100/80 max-w-2xl mx-auto">
+            <p className="text-responsive-base text-brand-light max-w-2xl mx-auto">
               Kliknij play, aby zobaczyć jak nasze rozwiązania AI mogą zrewolucjonizować Twój proces sprzedaży
             </p>
           </div>
@@ -270,18 +270,18 @@ const Demo = () => {
 
           {/* Call to Action */}
           <div className="text-center mt-12 sm:mt-16 lg:mt-20">
-            <div className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-xl spacing-responsive-lg border border-indigo-500/30 max-w-4xl mx-auto">
-              <h3 className="text-responsive-xl sm:text-responsive-2xl font-bold text-white mb-4 sm:mb-6">
+            <div className="bg-gradient-to-r from-brand-primary/20 to-accent-purple/20 rounded-xl spacing-responsive-lg border border-brand-primary/30 max-w-4xl mx-auto">
+              <h3 className="text-responsive-xl sm:text-responsive-2xl font-bold text-brand-white mb-4 sm:mb-6">
                 Gotowy na Wdrożenie?
               </h3>
-              <p className="text-responsive-base text-blue-100/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
+              <p className="text-responsive-base text-brand-light mb-6 sm:mb-8 max-w-2xl mx-auto">
                 Widziałeś jak działają nasze rozwiązania. Teraz porozmawiajmy o tym, jak możemy dostosować je do Twoich potrzeb biznesowych.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <ConsultationButton />
                 <ScrollToTopLink 
                   to="/kontakt" 
-                  className="btn-touch flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105"
+                  className="btn-touch btn-secondary flex items-center gap-2 text-brand-white px-6 py-3 rounded-lg border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:scale-105"
                 >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   Skontaktuj się z Nami

@@ -27,14 +27,14 @@ const WhatWeDo: React.FC = () => {
   ];
 
   return (
-    <section id="rozwiazania-ai" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-950/80 to-purple-950/80">
+    <section id="rozwiazania-ai" className="py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary">
       <div className="container-responsive">
         {/* Centered header section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16 max-w-4xl mx-auto">
-          <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">
+          <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary">
             Rozwiązania Oparte na AI
           </h2>
-          <p className="text-responsive-lg text-blue-100/80 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-responsive-lg text-brand-light max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Przekształć swój proces sprzedaży dzięki naszym najnowocześniejszym narzędziom AI, które pracują całodobowo, aby rozwijać Twój biznes
           </p>
         </div>

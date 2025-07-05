@@ -123,20 +123,20 @@ const Services = () => {
     <PageLayout>
       {/* Hero Section */}
       <section className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utb3BhY2l0eT0iMC4wNCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIj48L3JlY3Q+PC9zdmc+')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utb3BhY2l0eT0iMC4wNCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIj48L3JlY3Q+PC9zdmc+')] opacity-10"></div>
         
         <div className="container-responsive relative">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 sm:mb-8">
-              <Bot className="w-5 h-5 text-indigo-300" />
-              <span className="text-indigo-200 font-medium text-responsive-sm">Rozwiązania AI</span>
+            <div className="inline-flex items-center gap-3 glass px-4 py-2 rounded-full mb-6 sm:mb-8">
+              <Bot className="w-5 h-5 text-accent-blue" />
+              <span className="text-brand-light font-medium text-responsive-sm">Rozwiązania AI</span>
             </div>
             
-            <h1 className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">
+            <h1 className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold mb-4 sm:mb-6 gradient-text-primary">
               Nasze Usługi
             </h1>
             
-            <p className="text-responsive-lg text-blue-100/80 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 mb-8 sm:mb-12">
+            <p className="text-responsive-lg text-brand-light max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 mb-8 sm:mb-12">
               Kompleksowe rozwiązania AI, które zrewolucjonizują Twój proces sprzedaży i obsługi klienta. 
               Wybierz usługi dopasowane do potrzeb Twojego biznesu.
             </p>
@@ -155,13 +155,13 @@ const Services = () => {
                 key={index}
                 className={`group relative bg-white/5 backdrop-blur-sm rounded-xl border transition-all duration-300 hover:scale-105 ${
                   service.popular 
-                    ? 'border-indigo-500/50 shadow-lg shadow-indigo-500/20' 
-                    : 'border-white/10 hover:border-white/20'
+                    ? 'border-brand-primary/50 shadow-brand' 
+                    : 'border-slate-700/50 hover:border-slate-600/50'
                 }`}
               >
                 {service.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-1 rounded-full">
+                    <div className="gradient-primary px-4 py-1 rounded-full">
                       <span className="text-white text-xs font-medium flex items-center gap-1">
                         <Star className="w-3 h-3" />
                         Najpopularniejsze
@@ -173,34 +173,34 @@ const Services = () => {
                 <div className="spacing-responsive-lg">
                   {/* Header */}
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-3 group-hover:scale-110 transition-transform duration-300">
+                    <div className="gradient-primary rounded-lg p-3 group-hover:scale-110 transition-transform duration-300">
                       {service.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-responsive-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
+                      <h3 className="text-responsive-xl font-bold text-brand-white mb-2 group-hover:gradient-text-primary transition-all duration-300">
                         {service.title}
                       </h3>
-                      <p className="text-responsive-sm text-indigo-300">
+                      <p className="text-responsive-sm text-accent-blue">
                         {service.subtitle}
                       </p>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-responsive-sm text-blue-100/80 leading-relaxed mb-6">
+                  <p className="text-responsive-sm text-brand-light leading-relaxed mb-6">
                     {service.description}
                   </p>
 
                   {/* Features */}
                   <div className="mb-6">
-                    <h4 className="text-responsive-base font-semibold text-white mb-3">
+                    <h4 className="text-responsive-base font-semibold text-brand-white mb-3">
                       Funkcje:
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                          <span className="text-responsive-xs text-blue-100/70">{feature}</span>
+                          <CheckCircle className="w-4 h-4 text-accent-green flex-shrink-0 mt-0.5" />
+                          <span className="text-responsive-xs text-slate-400">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -208,23 +208,23 @@ const Services = () => {
 
                   {/* Benefits */}
                   <div className="mb-6">
-                    <h4 className="text-responsive-base font-semibold text-white mb-3">
+                    <h4 className="text-responsive-base font-semibold text-brand-white mb-3">
                       Korzyści:
                     </h4>
                     <div className="space-y-2">
                       {service.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-start gap-2">
-                          <ArrowRight className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5" />
-                          <span className="text-responsive-xs text-blue-100/70">{benefit}</span>
+                          <ArrowRight className="w-4 h-4 text-brand-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-responsive-xs text-slate-400">{benefit}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Price and CTA */}
-                  <div className="border-t border-white/10 pt-6">
+                  <div className="border-t border-slate-700/50 pt-6">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="text-responsive-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
+                      <div className="text-responsive-lg font-bold gradient-text-primary">
                         {service.price}
                       </div>
                     </div>
@@ -241,10 +241,10 @@ const Services = () => {
       <section className="py-8 sm:py-12 md:py-16">
         <div className="container-responsive">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold text-white mb-4">
+            <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold text-brand-white mb-4">
               Proces Wdrożenia
             </h2>
-            <p className="text-responsive-base text-blue-100/80 max-w-2xl mx-auto">
+            <p className="text-responsive-base text-brand-light max-w-2xl mx-auto">
               Sprawdzony proces, który gwarantuje sukces Twojego projektu AI
             </p>
           </div>
@@ -253,21 +253,21 @@ const Services = () => {
             {processSteps.map((step, index) => (
               <div 
                 key={index}
-                className="group relative bg-white/5 backdrop-blur-sm rounded-xl spacing-responsive-md border border-white/10 hover:border-white/20 transition-all duration-300 text-center"
+                className="group relative glass rounded-xl spacing-responsive-md border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-center"
               >
-                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="gradient-primary rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-white font-bold text-responsive-sm">{step.step}</span>
                 </div>
-                <h3 className="text-responsive-base font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
+                <h3 className="text-responsive-base font-semibold text-brand-white mb-3 group-hover:gradient-text-primary transition-all duration-300">
                   {step.title}
                 </h3>
-                <p className="text-responsive-sm text-blue-100/80 leading-relaxed">
+                <p className="text-responsive-sm text-brand-light leading-relaxed">
                   {step.description}
                 </p>
                 
                 {/* Connection line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-6 -right-3 w-6 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600"></div>
+                  <div className="hidden lg:block absolute top-6 -right-3 w-6 h-0.5 gradient-primary"></div>
                 )}
               </div>
             ))}
@@ -278,11 +278,11 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-8 sm:py-12 md:py-16">
         <div className="container-responsive">
-          <div className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-xl spacing-responsive-lg border border-indigo-500/30 max-w-4xl mx-auto text-center">
-            <h3 className="text-responsive-2xl sm:text-responsive-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-r from-brand-primary/20 to-accent-purple/20 rounded-xl spacing-responsive-lg border border-brand-primary/30 max-w-4xl mx-auto text-center">
+            <h3 className="text-responsive-2xl sm:text-responsive-3xl font-bold text-brand-white mb-4">
               Gotowy na Transformację?
             </h3>
-            <p className="text-responsive-base text-blue-100/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-responsive-base text-brand-light mb-8 max-w-2xl mx-auto">
               Nie czekaj dłużej! Umów bezpłatną konsultację i dowiedz się, jak nasze rozwiązania AI 
               mogą zrewolucjonizować Twój biznes już dziś.
             </p>
@@ -290,10 +290,10 @@ const Services = () => {
               <ConsultationButton />
               <ScrollToTopLink 
                 to="/demo"
-                className="btn-touch flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105"
+                className="btn-touch btn-secondary flex items-center gap-2 text-brand-white px-6 py-3 rounded-lg border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:scale-105"
               >
                 <span>Zobacz Demo</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 text-white" />
               </ScrollToTopLink>
             </div>
           </div>

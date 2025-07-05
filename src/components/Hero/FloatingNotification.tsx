@@ -59,11 +59,11 @@ const FloatingNotification: React.FC<FloatingNotificationProps> = ({
       ref={notificationRef}
       className={`absolute ${position} z-10 transition-all duration-1000 ease-out`}
     >
-      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg p-3 flex items-center gap-2 max-w-[200px]">
-        <div className="bg-indigo-600 rounded-full p-1.5 text-white">
+      <div className="glass border border-slate-700/50 rounded-lg shadow-brand p-3 flex items-center gap-2 max-w-[200px]">
+        <div className="bg-brand-primary rounded-full p-1.5 text-white">
           {icon}
         </div>
-        <p className="text-xs text-blue-100 font-medium">{text}</p>
+        <p className="text-xs text-brand-light font-medium">{text}</p>
       </div>
     </div>
   );

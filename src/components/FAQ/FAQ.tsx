@@ -22,13 +22,13 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-950/90 to-purple-950/90">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary">
       <div className="container-responsive">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">
+          <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary">
             Często Zadawane Pytania
           </h2>
-          <p className="text-responsive-lg text-blue-100/80 max-w-2xl mx-auto px-4 sm:px-0">
+          <p className="text-responsive-lg text-brand-light max-w-2xl mx-auto px-4 sm:px-0">
             Poznaj odpowiedzi na najczęstsze pytania o nasze rozwiązania AI dla sprzedaży
           </p>
         </div>

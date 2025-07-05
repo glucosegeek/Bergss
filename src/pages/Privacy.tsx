@@ -98,23 +98,23 @@ const Privacy = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-indigo-900 to-purple-900">
+    <div className="min-h-screen gradient-secondary">
       {/* Header Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utb3BhY2l0eT0iMC4wNCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIj48L3JlY3Q+PC9zdmc+')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utb3BhY2l0eT0iMC4wNCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIj48L3JlY3Q+PC9zdmc+')] opacity-10"></div>
         
         <div className="container-responsive relative py-12 sm:py-16 md:py-20 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 sm:mb-8">
-              <Shield className="w-5 h-5 text-indigo-300" />
-              <span className="text-indigo-200 font-medium text-responsive-sm">Ochrona Prywatności</span>
+            <div className="inline-flex items-center gap-3 glass px-4 py-2 rounded-full mb-6 sm:mb-8">
+              <Shield className="w-5 h-5 text-accent-blue" />
+              <span className="text-brand-light font-medium text-responsive-sm">Ochrona Prywatności</span>
             </div>
             
-            <h1 className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">
+            <h1 className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold mb-4 sm:mb-6 gradient-text-primary">
               Polityka Prywatności
             </h1>
             
-            <p className="text-responsive-lg text-blue-100/80 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+            <p className="text-responsive-lg text-brand-light max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
               Niniejszy dokument ma zastosowanie do serwisu www.bergss.pl. Otwieranie i przeglądanie witryny jest równoznaczne z zaakceptowaniem zasad poufności.
             </p>
           </div>
@@ -125,12 +125,12 @@ const Privacy = () => {
       <div className="container-responsive py-8 sm:py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
           {/* Introduction */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl spacing-responsive-lg border border-white/10 mb-6 sm:mb-8 lg:mb-12">
+          <div className="glass rounded-xl spacing-responsive-lg border border-slate-700/50 mb-6 sm:mb-8 lg:mb-12">
             <div className="text-center">
-              <h2 className="text-responsive-2xl sm:text-responsive-3xl font-bold text-white mb-4 sm:mb-6">
+              <h2 className="text-responsive-2xl sm:text-responsive-3xl font-bold text-brand-white mb-4 sm:mb-6">
                 Wprowadzenie
               </h2>
-              <p className="text-responsive-base text-blue-100/80 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-responsive-base text-brand-light leading-relaxed max-w-3xl mx-auto">
                 Firma Bergss dba o ochronę prywatności osób odwiedzających jej witrynę internetową. 
                 Zbierane automatycznie informacje nie mają charakteru danych osobowych. Dokładamy 
                 wszelkich starań, aby dane dotyczące osób odwiedzających Serwis pozostawały prywatne.
@@ -143,24 +143,24 @@ const Privacy = () => {
             {sections.map((section, index) => (
               <div 
                 key={section.id}
-                className="bg-white/5 backdrop-blur-sm rounded-xl spacing-responsive-lg border border-white/10 hover:border-white/20 transition-all duration-300"
+                className="glass rounded-xl spacing-responsive-lg border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-2 sm:p-3">
+                  <div className="gradient-primary rounded-lg p-2 sm:p-3">
                     {section.icon}
                   </div>
-                  <h2 className="text-responsive-xl sm:text-responsive-2xl font-bold text-white">
+                  <h2 className="text-responsive-xl sm:text-responsive-2xl font-bold text-brand-white">
                     {section.title}
                   </h2>
                 </div>
 
                 <div className="space-y-4 sm:space-y-6">
                   {section.content.map((item, itemIndex) => (
-                    <div key={itemIndex} className="border-l-2 border-indigo-500/30 pl-4 sm:pl-6">
-                      <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-indigo-200 mb-2 sm:mb-3">
+                    <div key={itemIndex} className="border-l-2 border-brand-primary/30 pl-4 sm:pl-6">
+                      <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-accent-blue mb-2 sm:mb-3">
                         {item.subtitle}
                       </h3>
-                      <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 leading-relaxed whitespace-pre-line">
+                      <p className="text-responsive-sm sm:text-responsive-base text-brand-light leading-relaxed whitespace-pre-line">
                         {item.text}
                       </p>
                     </div>
@@ -171,42 +171,42 @@ const Privacy = () => {
           </div>
 
           {/* Cookies Section */}
-          <div className="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 rounded-xl spacing-responsive-lg border border-white/10 mt-6 sm:mt-8 lg:mt-12">
+          <div className="glass-dark rounded-xl spacing-responsive-lg border border-slate-700/50 mt-6 sm:mt-8 lg:mt-12">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg p-2 sm:p-3">
+              <div className="bg-gradient-to-br from-accent-purple to-accent-blue rounded-lg p-2 sm:p-3">
                 <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h2 className="text-responsive-xl sm:text-responsive-2xl font-bold text-white">
+              <h2 className="text-responsive-xl sm:text-responsive-2xl font-bold text-brand-white">
                 Pliki cookies
               </h2>
             </div>
 
             <div className="space-y-4 sm:space-y-6">
-              <div className="border-l-2 border-purple-500/30 pl-4 sm:pl-6">
-                <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-purple-200 mb-2 sm:mb-3">
+              <div className="border-l-2 border-accent-purple/30 pl-4 sm:pl-6">
+                <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-accent-purple mb-2 sm:mb-3">
                   Wykorzystanie cookies
                 </h3>
-                <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 leading-relaxed">
+                <p className="text-responsive-sm sm:text-responsive-base text-brand-light leading-relaxed">
                   W serwisie używane są pliki „cookies". Pliki cookies są danymi informatycznymi, 
                   które są zapisywane oraz przechowywane na urządzeniach końcowych Użytkowników.
                 </p>
               </div>
 
-              <div className="border-l-2 border-purple-500/30 pl-4 sm:pl-6">
-                <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-purple-200 mb-2 sm:mb-3">
+              <div className="border-l-2 border-accent-purple/30 pl-4 sm:pl-6">
+                <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-accent-purple mb-2 sm:mb-3">
                   Cel wykorzystania
                 </h3>
-                <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 leading-relaxed">
+                <p className="text-responsive-sm sm:text-responsive-base text-brand-light leading-relaxed">
                   Pliki cookies pozwalają na optymalizację zawartości Serwisu do preferencji Użytkowników. 
                   Dzięki nim zbierane są dane statystyczne, co pozwala dokonywać ulepszeń zawartości Serwisu.
                 </p>
               </div>
 
-              <div className="border-l-2 border-purple-500/30 pl-4 sm:pl-6">
-                <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-purple-200 mb-2 sm:mb-3">
+              <div className="border-l-2 border-accent-purple/30 pl-4 sm:pl-6">
+                <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-accent-purple mb-2 sm:mb-3">
                   Zarządzanie cookies
                 </h3>
-                <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 leading-relaxed">
+                <p className="text-responsive-sm sm:text-responsive-base text-brand-light leading-relaxed">
                   Użytkownik w każdej chwili może zmienić ustawienia dotyczące plików cookies dzięki 
                   konfiguracji ustawień wykorzystywanej przeglądarki internetowej. Może to jednak 
                   wpłynąć na niektóre funkcjonalności dostępne w Serwisie.
@@ -217,22 +217,22 @@ const Privacy = () => {
 
           {/* Final Sections */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-6 sm:mt-8 lg:mt-12">
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl spacing-responsive-lg border border-white/10">
-              <h2 className="text-responsive-lg sm:text-responsive-xl font-bold text-white mb-4 sm:mb-6">
+            <div className="glass rounded-xl spacing-responsive-lg border border-slate-700/50">
+              <h2 className="text-responsive-lg sm:text-responsive-xl font-bold text-brand-white mb-4 sm:mb-6">
                 Zmiany polityki prywatności
               </h2>
-              <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 leading-relaxed">
+              <p className="text-responsive-sm sm:text-responsive-base text-brand-light leading-relaxed">
                 Firma Bergss zastrzega sobie prawo do zmiany treści niniejszej polityki prywatności. 
                 Wynika to z możliwości wprowadzania zmian, modyfikacji oraz wycofywania zawartości 
                 Serwisu bez uprzedzenia Użytkowników.
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl spacing-responsive-lg border border-white/10">
-              <h2 className="text-responsive-lg sm:text-responsive-xl font-bold text-white mb-4 sm:mb-6">
+            <div className="glass rounded-xl spacing-responsive-lg border border-slate-700/50">
+              <h2 className="text-responsive-lg sm:text-responsive-xl font-bold text-brand-white mb-4 sm:mb-6">
                 Akceptacja polityki prywatności
               </h2>
-              <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 leading-relaxed">
+              <p className="text-responsive-sm sm:text-responsive-base text-brand-light leading-relaxed">
                 Korzystanie z Serwisu przez Użytkownika jest równoznaczne z akceptacją polityki 
                 prywatności. W razie braku zgody, osoby te są proszone o niekorzystanie z Serwisu.
               </p>
@@ -240,25 +240,25 @@ const Privacy = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-xl spacing-responsive-lg border border-indigo-500/30 mt-6 sm:mt-8 lg:mt-12">
+          <div className="bg-gradient-to-r from-brand-primary/20 to-accent-purple/20 rounded-xl spacing-responsive-lg border border-brand-primary/30 mt-6 sm:mt-8 lg:mt-12">
             <div className="text-center">
-              <h2 className="text-responsive-lg sm:text-responsive-xl font-bold text-white mb-4 sm:mb-6">
+              <h2 className="text-responsive-lg sm:text-responsive-xl font-bold text-brand-white mb-4 sm:mb-6">
                 Masz pytania dotyczące prywatności?
               </h2>
-              <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 mb-4 sm:mb-6">
+              <p className="text-responsive-sm sm:text-responsive-base text-brand-light mb-4 sm:mb-6">
                 Skontaktuj się z nami, jeśli masz pytania dotyczące przetwarzania danych osobowych
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a 
                   href="mailto:kontakt@bergss.pl"
-                  className="btn-touch flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-colors duration-300"
+                  className="btn-touch flex items-center gap-2 bg-brand-primary hover:bg-accent-purple text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-colors duration-300"
                 >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span className="text-responsive-sm sm:text-responsive-base">kontakt@bergss.pl</span>
                 </a>
                 <a 
                   href="tel:+48530639369"
-                  className="btn-touch flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-colors duration-300"
+                  className="btn-touch flex items-center gap-2 bg-accent-purple hover:bg-accent-purple text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-colors duration-300"
                 >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span className="text-responsive-sm sm:text-responsive-base">+48 530 639 369</span>

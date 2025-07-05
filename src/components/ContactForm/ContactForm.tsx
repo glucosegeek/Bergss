@@ -69,36 +69,36 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="kontakt-section" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-950/90 to-purple-950/90">
+    <section id="kontakt-section" className="py-12 sm:py-16 md:py-20 lg:py-24 gradient-secondary">
       <div className="container-responsive">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">
+            <h2 className="text-responsive-3xl sm:text-responsive-4xl font-bold mb-4 sm:mb-6 gradient-text-primary">
               Skontaktuj się z Nami
             </h2>
-            <p className="text-responsive-lg text-blue-100/80 px-4 sm:px-0">
+            <p className="text-responsive-lg text-brand-light px-4 sm:px-0">
               Gotowy na transformację procesu sprzedaży? Porozmawiajmy o Twoich potrzebach.
             </p>
           </div>
 
           <form 
             onSubmit={handleSubmit}
-            className="space-y-4 sm:space-y-6 bg-white/5 backdrop-blur-sm rounded-xl spacing-responsive-lg border border-white/10"
+            className="space-y-4 sm:space-y-6 glass rounded-xl spacing-responsive-lg border border-slate-700/50"
           >
             {submitStatus === 'success' && (
-              <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 sm:p-4">
-                <p className="text-green-300 text-responsive-sm">Dziękujemy! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.</p>
+              <div className="bg-accent-green/20 border border-accent-green/50 rounded-lg p-3 sm:p-4">
+                <p className="text-accent-green text-responsive-sm">Dziękujemy! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.</p>
               </div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 sm:p-4">
-                <p className="text-red-300 text-responsive-sm">Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.</p>
+              <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 sm:p-4">
+                <p className="text-red-200 text-responsive-sm">Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.</p>
               </div>
             )}
 
             <div>
-              <label htmlFor="name" className="block text-responsive-sm sm:text-responsive-base font-medium text-blue-100 mb-2">
+              <label htmlFor="name" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Imię i Nazwisko
               </label>
               <input
@@ -108,13 +108,13 @@ const ContactForm: React.FC = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
+                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
                 placeholder="Twoje imię i nazwisko"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-responsive-sm sm:text-responsive-base font-medium text-blue-100 mb-2">
+              <label htmlFor="email" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Email
               </label>
               <input
@@ -124,13 +124,13 @@ const ContactForm: React.FC = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50"
+                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
                 placeholder="twoj@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="service" className="block text-responsive-sm sm:text-responsive-base font-medium text-blue-100 mb-2">
+              <label htmlFor="service" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Jaką usługą jesteś zainteresowany?
               </label>
               <select
@@ -138,11 +138,11 @@ const ContactForm: React.FC = () => {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white"
+                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white"
               >
-                <option value="" className="bg-indigo-950">Wybierz usługę</option>
+                <option value="" className="bg-slate-800">Wybierz usługę</option>
                 {services.map((service) => (
-                  <option key={service} value={service} className="bg-indigo-950">
+                  <option key={service} value={service} className="bg-slate-800">
                     {service}
                   </option>
                 ))}
@@ -150,7 +150,7 @@ const ContactForm: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-responsive-sm sm:text-responsive-base font-medium text-blue-100 mb-2">
+              <label htmlFor="message" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Wiadomość
               </label>
               <textarea
@@ -160,7 +160,7 @@ const ContactForm: React.FC = () => {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="form-input-mobile bg-white/10 border-white/20 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-white/50 resize-none min-h-[100px]"
+                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 resize-none min-h-[100px]"
                 placeholder="Opowiedz nam o swoich potrzebach..."
               />
             </div>
@@ -168,17 +168,17 @@ const ContactForm: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-touch w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+              className="btn-touch btn-primary w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
             >
               {isSubmitting ? (
                 <>
-                  <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 loading-spinner"></div>
                   Wysyłanie...
                 </>
               ) : (
                 <>
                   Wyślij Wiadomość
-                  <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 text-white" />
                 </>
               )}
             </button>
