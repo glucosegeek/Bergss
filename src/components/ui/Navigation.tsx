@@ -45,19 +45,24 @@ const Navigation: React.FC = () => {
       ariaLabel: 'Przejdź do strony głównej'
     },
     { 
-      path: '/o-nas', 
-      label: 'O nas',
-      ariaLabel: 'Przejdź do strony o nas'
+      path: '/demo', 
+      label: 'Demo',
+      ariaLabel: 'Przejdź do strony demo'
     },
     { 
       path: '/uslugi', 
-      label: 'Oferta',
-      ariaLabel: 'Przejdź do strony z ofertą'
+      label: 'Usługi',
+      ariaLabel: 'Przejdź do strony z usługami'
     },
     { 
       path: '/kontakt', 
       label: 'Kontakt',
       ariaLabel: 'Przejdź do strony kontaktowej'
+    },
+    { 
+      path: '/o-nas', 
+      label: 'O nas',
+      ariaLabel: 'Przejdź do strony o nas'
     }
   ];
 
@@ -87,16 +92,32 @@ const Navigation: React.FC = () => {
     }
   };
 
+  const linkVariants = {
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    },
+    tap: {
+      scale: 0.95,
+      transition: {
+        duration: 0.1
+      }
+    }
+  };
+
   return (
     <header 
       className="fixed top-0 left-0 right-0 z-[1000] w-full"
       style={{ zIndex: 1000 }}
     >
       <nav
-        className={`bg-white transition-all duration-300 ${
+        className={`transition-all duration-300 ${
           isScrolled 
-            ? 'shadow-lg border-b border-gray-200' 
-            : 'shadow-md'
+            ? 'bg-slate-900/95 backdrop-blur-lg border-b border-slate-700/50 shadow-lg shadow-slate-900/20' 
+            : 'bg-slate-900/90 backdrop-blur-sm border-b border-slate-700/30'
         }`}
         style={{ 
           height: window.innerWidth >= 768 ? '70px' : '60px'
@@ -104,99 +125,85 @@ const Navigation: React.FC = () => {
         role="navigation"
         aria-label="Główna nawigacja"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="container-responsive h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Logo/Brand - Left side with 20px margin */}
-            <div style={{ marginLeft: '20px' }}>
+            {/* Logo/Brand - Left side */}
+            <div className="flex items-center">
               <ScrollToTopLink 
                 to="/" 
-                className="flex items-center gap-3 group hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                className="flex items-center gap-3 group hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg p-1"
                 aria-label="Bergss - Przejdź do strony głównej"
               >
                 <motion.div 
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-2 group-hover:shadow-lg transition-all duration-300"
+                  className="gradient-primary rounded-lg p-2 group-hover:shadow-lg group-hover:shadow-brand/30 transition-all duration-300"
                 >
-                  <Bot className="w-6 h-6 text-white" />
+                  <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </motion.div>
                 <div className="flex flex-col">
-                  <span 
-                    className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300"
-                    style={{ 
-                      fontFamily: 'system-ui, -apple-system, sans-serif',
-                      maxHeight: '50px',
-                      fontSize: '1.25rem',
-                      fontWeight: 600
-                    }}
-                  >
+                  <span className="text-responsive-lg sm:text-responsive-xl font-bold text-brand-white group-hover:gradient-text-primary transition-all duration-300">
                     Bergss
                   </span>
+                  <span className="text-xs text-slate-400 hidden sm:block">Rozwiązania AI</span>
                 </div>
               </ScrollToTopLink>
             </div>
 
-            {/* Desktop Navigation - Right side with 40px margin */}
-            <div className="hidden md:flex items-center" style={{ marginRight: '40px' }}>
-              <ul className="flex items-center space-x-8" role="menubar">
-                {navigationLinks.map((link, index) => (
+            {/* Desktop Navigation - Right side */}
+            <div className="hidden md:flex items-center">
+              <ul className="flex items-center space-x-1" role="menubar">
+                {navigationLinks.map((link) => (
                   <li key={link.path} role="none">
-                    <ScrollToTopLink
-                      to={link.path}
-                      aria-label={link.ariaLabel}
-                      role="menuitem"
-                      className={`relative px-3 py-2 text-base font-medium transition-all duration-300 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md ${
-                        isActiveLink(link.path)
-                          ? 'text-blue-600 font-semibold' 
-                          : 'text-gray-700 hover:text-blue-600'
-                      }`}
-                      style={{
-                        fontFamily: 'system-ui, -apple-system, sans-serif',
-                        fontSize: '16px',
-                        fontWeight: isActiveLink(link.path) ? 600 : 500,
-                        marginRight: index < navigationLinks.length - 1 ? '30px' : '0'
-                      }}
+                    <motion.div
+                      variants={linkVariants}
+                      whileHover="hover"
+                      whileTap="tap"
                     >
-                      {link.label}
-                      
-                      {/* Hover underline effect */}
-                      <motion.div
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 origin-left"
-                        initial={{ scaleX: isActiveLink(link.path) ? 1 : 0 }}
-                        whileHover={{ scaleX: 1 }}
-                        transition={{ duration: 0.3 }}
-                        style={{
-                          transformOrigin: 'left center'
-                        }}
-                      />
-                      
-                      {/* Active page indicator */}
-                      {isActiveLink(link.path) && (
+                      <ScrollToTopLink
+                        to={link.path}
+                        aria-label={link.ariaLabel}
+                        role="menuitem"
+                        className={`relative px-4 py-2 text-responsive-sm font-medium transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 ${
+                          isActiveLink(link.path)
+                            ? 'text-brand-white bg-slate-800/50 font-semibold' 
+                            : 'text-slate-300 hover:text-brand-white hover:bg-slate-800/30'
+                        }`}
+                      >
+                        {link.label}
+                        
+                        {/* Hover underline effect */}
                         <motion.div
-                          layoutId="activeIndicator"
-                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"
-                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                          className="absolute bottom-1 left-4 right-4 h-0.5 bg-brand-primary origin-left"
+                          initial={{ scaleX: isActiveLink(link.path) ? 1 : 0 }}
+                          whileHover={{ scaleX: 1 }}
+                          transition={{ duration: 0.3 }}
                         />
-                      )}
-                    </ScrollToTopLink>
+                        
+                        {/* Active page indicator */}
+                        {isActiveLink(link.path) && (
+                          <motion.div
+                            layoutId="activeIndicator"
+                            className="absolute bottom-1 left-4 right-4 h-0.5 bg-brand-primary"
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                          />
+                        )}
+                      </ScrollToTopLink>
+                    </motion.div>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Mobile Menu Button - Top right with 20px margin */}
-            <div className="md:hidden" style={{ marginRight: '20px' }}>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="btn-touch text-brand-white hover:bg-slate-800/50 rounded-lg p-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900"
                 aria-label={isMobileMenuOpen ? 'Zamknij menu mobilne' : 'Otwórz menu mobilne'}
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-menu"
-                style={{
-                  minHeight: '44px',
-                  minWidth: '44px'
-                }}
               >
                 <AnimatePresence mode="wait">
                   {isMobileMenuOpen ? (
@@ -235,35 +242,41 @@ const Navigation: React.FC = () => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="md:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden"
+              className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-700/50 shadow-lg overflow-hidden"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="mobile-menu-button"
             >
-              <div className="px-4 py-4 space-y-2">
+              <div className="container-responsive py-4">
                 <ul role="none" className="space-y-2">
-                  {navigationLinks.map((link) => (
-                    <li key={link.path} role="none">
+                  {navigationLinks.map((link, index) => (
+                    <motion.li 
+                      key={link.path} 
+                      role="none"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ 
+                        opacity: 1, 
+                        x: 0,
+                        transition: { 
+                          delay: index * 0.1,
+                          duration: 0.3
+                        }
+                      }}
+                    >
                       <ScrollToTopLink
                         to={link.path}
                         onClick={() => setIsMobileMenuOpen(false)}
                         aria-label={link.ariaLabel}
                         role="menuitem"
-                        className={`block w-full px-4 py-3 text-left text-base font-medium rounded-lg transition-all duration-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                        className={`block w-full px-4 py-3 text-left text-responsive-base font-medium rounded-lg transition-all duration-300 hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 ${
                           isActiveLink(link.path)
-                            ? 'text-blue-600 bg-blue-50 font-semibold' 
-                            : 'text-gray-700 hover:text-blue-600'
+                            ? 'text-brand-white bg-slate-800/50 font-semibold border-l-4 border-brand-primary' 
+                            : 'text-slate-300 hover:text-brand-white'
                         }`}
-                        style={{
-                          fontFamily: 'system-ui, -apple-system, sans-serif',
-                          fontSize: '16px',
-                          fontWeight: isActiveLink(link.path) ? 600 : 500,
-                          minHeight: '44px'
-                        }}
                       >
                         {link.label}
                       </ScrollToTopLink>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
