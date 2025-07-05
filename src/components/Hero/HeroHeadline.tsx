@@ -33,7 +33,7 @@ const HeroHeadline: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.6 }}
         className="gradient-text-primary"
       >
-        |
+        Przekonaj się sam.
       </motion.span>
     </motion.h1>
   );
