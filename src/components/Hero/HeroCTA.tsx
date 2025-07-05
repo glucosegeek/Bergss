@@ -16,6 +16,7 @@ const HeroCTA: React.FC = () => {
       >
         <motion.button 
           onClick={() => setIsBookCallOpen(true)}
+          data-hero-consultation-button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
           className="btn-touch btn-primary group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300"

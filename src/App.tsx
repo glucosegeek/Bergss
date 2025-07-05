@@ -19,7 +19,7 @@ import Demo from './pages/Demo';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Cookies from './pages/Cookies';
-import FixedConsultationButton from './components/ui/FixedConsultationButton';
+import SmartConsultationButton from './components/ui/SmartConsultationButton';
 
 // Component to handle scroll to top on route change
 const ScrollToTop: React.FC = () => {
@@ -47,7 +47,7 @@ function App() {
               <FinalCTA />
               <ContactForm />
               <Footer />
-              <FixedConsultationButton />
+              <SmartConsultationButton />
             </>
           } />
           <Route path="/o-nas" element={
