@@ -520,6 +520,19 @@
     }
   }
 
+  /* Fixed button specific styles */
+  .fixed-button-safe {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+    left: calc(1.5rem + env(safe-area-inset-left));
+  }
+
+  @media (max-width: 480px) {
+    .fixed-button-safe {
+      bottom: calc(1rem + env(safe-area-inset-bottom));
+      left: calc(1rem + env(safe-area-inset-left));
+    }
+  }
+
   /* Enhanced animations */
   @keyframes shrink {
     from {
