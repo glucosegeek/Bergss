@@ -12,13 +12,6 @@ const FinalCTA: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utb3BhY2l0eT0iMC4xIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiPjwvcmVjdD48L3N2Zz4=')] opacity-20"></div>
         </div>
-
-        <div className="relative container-responsive text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full mb-6 sm:mb-8">
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
-            <span className="text-yellow-100 font-medium text-responsive-sm sm:text-responsive-base">Zacznij skalować już dziś</span>
-          </div>
-
           <h2 className="text-responsive-3xl sm:text-responsive-4xl md:text-responsive-5xl lg:text-responsive-6xl font-bold text-white mb-6 sm:mb-8 max-w-4xl mx-auto px-4 sm:px-0">
             Gotowy na Transformację Biznesu z AI?
           </h2>
