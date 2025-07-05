@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles, Play } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import BookCallForm from '../BookCallForm/BookCallForm';
+import ScrollToTopLink from '../ui/ScrollToTopLink';
 
 const FinalCTA: React.FC = () => {
   const [isBookCallOpen, setIsBookCallOpen] = useState(false);
@@ -36,7 +36,7 @@ const FinalCTA: React.FC = () => {
               </span>
             </button>
 
-            <Link 
+            <ScrollToTopLink 
               to="/demo" 
               className="group relative btn-touch flex items-center gap-3 sm:gap-4 bg-gradient-to-r from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 rounded-xl px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/10"
             >
@@ -62,7 +62,7 @@ const FinalCTA: React.FC = () => {
 
               {/* Hover glow effect */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500/0 via-purple-500/0 to-indigo-500/0 group-hover:from-indigo-500/10 group-hover:via-purple-500/10 group-hover:to-indigo-500/10 transition-all duration-300"></div>
-            </Link>
+            </ScrollToTopLink>
           </div>
 
           <p className="mt-6 sm:mt-8 text-blue-100/80 text-responsive-sm">

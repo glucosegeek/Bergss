@@ -2,6 +2,7 @@ import React from 'react';
 import { Bot, Mail, Phone, Globe, ArrowRight, CheckCircle, Star } from 'lucide-react';
 import PageLayout from '../components/ui/PageLayout';
 import ConsultationButton from '../components/ui/ConsultationButton';
+import ScrollToTopLink from '../components/ui/ScrollToTopLink';
 
 const Services = () => {
   const services = [
@@ -286,13 +287,13 @@ const Services = () => {
               mogą zrewolucjonizować Twój biznes już dziś.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ConsultationButton />
-              <a 
+                <ScrollToTopLink 
+                  to="/demo"
                 href="/demo"
                 className="btn-touch flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105"
               >
                 <span>Zobacz Demo</span>
-                <ArrowRight className="w-5 h-5" />
+                </ScrollToTopLink>
               </a>
             </div>
           </div>

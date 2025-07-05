@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Play, Pause, Volume2, VolumeX, Maximize, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import ConsultationButton from '../components/ui/ConsultationButton';
 import NavigationButton from '../components/ui/NavigationButton';
+import ScrollToTopLink from '../components/ui/ScrollToTopLink';
 
 interface VideoPlayerProps {
   videoId: string;
@@ -279,13 +279,14 @@ const Demo = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <ConsultationButton />
-                <NavigationButton 
+                <ScrollToTopLink 
                   to="/kontakt" 
                   variant="contact"
+                  to="/demo"
                   ariaLabel="Przejdź do strony kontaktowej"
                 >
                   Skontaktuj się z Nami
-                </NavigationButton>
+                </ScrollToTopLink>
               </div>
             </div>
           </div>

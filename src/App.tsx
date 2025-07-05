@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
+import { useEffect } from 'react';
 
 // Direct imports instead of lazy loading
 import WhatWeDo from './components/WhatWeDo/WhatWeDo';
@@ -19,10 +20,22 @@ import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Cookies from './pages/Cookies';
 
+// Component to handle scroll to top on route change
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <Router>
       <div className="bg-indigo-950 min-h-screen">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={
             <>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Home, Bot, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import ScrollToTopLink from './ScrollToTopLink';
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -33,7 +34,7 @@ const Header: React.FC = () => {
       <div className="container-responsive">
         <div className="flex items-center justify-between py-3 sm:py-4">
           {/* Logo/Home Button */}
-          <Link 
+          <ScrollToTopLink 
             to="/" 
             className="flex items-center gap-2 sm:gap-3 group hover:scale-105 transition-all duration-300"
             aria-label="Bergss - Strona główna"
@@ -47,12 +48,12 @@ const Header: React.FC = () => {
               </span>
               <span className="text-xs text-blue-200/60 hidden sm:block">Rozwiązania AI</span>
             </div>
-          </Link>
+          </ScrollToTopLink>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navigationLinks.map((link) => (
-              <Link
+              <ScrollToTopLink
                 key={link.path}
                 to={link.path}
                 className={`px-4 py-2 rounded-lg text-responsive-sm font-medium transition-all duration-300 hover:bg-white/10 hover:text-white ${
@@ -62,7 +63,7 @@ const Header: React.FC = () => {
                 }`}
               >
                 {link.label}
-              </Link>
+              </ScrollToTopLink>
             ))}
           </nav>
 
@@ -85,7 +86,7 @@ const Header: React.FC = () => {
           <div className="lg:hidden border-t border-white/10 py-4">
             <nav className="flex flex-col gap-2">
               {navigationLinks.map((link) => (
-                <Link
+                <ScrollToTopLink
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -96,7 +97,7 @@ const Header: React.FC = () => {
                   }`}
                 >
                   {link.label}
-                </Link>
+                </ScrollToTopLink>
               ))}
             </nav>
           </div>

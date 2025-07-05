@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Linkedin, Instagram, Twitter, Mail, Phone, Play } from 'lucide-react';
+import ScrollToTopLink from '../ui/ScrollToTopLink';
 
 const Footer: React.FC = () => {
   const socialLinks = [
@@ -41,9 +41,9 @@ const Footer: React.FC = () => {
       <div className="container-responsive py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="inline-block">
+            <ScrollToTopLink to="/" className="inline-block">
               <h3 className="text-responsive-lg sm:text-responsive-xl font-semibold text-white mb-3 sm:mb-4 underline">Bergss</h3>
-            </Link>
+            </ScrollToTopLink>
             <p className="text-responsive-sm sm:text-responsive-base text-blue-100/80 mb-3 sm:mb-4">
               Transformujemy biznesy dzięki najnowocześniejszej technologii AI.
             </p>
@@ -64,9 +64,9 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <Link to="/kontakt" className="inline-block">
+            <ScrollToTopLink to="/kontakt" className="inline-block">
               <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-white mb-3 sm:mb-4 underline p-0.5">Kontakt</h3>
-            </Link>
+            </ScrollToTopLink>
               <div className="space-y-2 sm:space-y-3">
               <a
                 href="mailto:kontakt@bergss.pl"
@@ -90,12 +90,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.text}>
-                  <Link
+                  <ScrollToTopLink
                     to={link.path}
                     className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
                   >
                     {link.text}
-                  </Link>
+                  </ScrollToTopLink>
                 </li>
               ))}
             </ul>
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {demoLinks.map((link) => (
                 <li key={link.text}>
-                  <Link
+                  <ScrollToTopLink
                     to={link.path}
                     className="flex items-center gap-2 text-blue-100/80 hover:text-white transition-all duration-300 p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base group hover:scale-105"
                   >
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
                     <span className="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
                       {link.text}
                     </span>
-                  </Link>
+                  </ScrollToTopLink>
                 </li>
               ))}
             </ul>
@@ -127,12 +127,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.text}>
-                  <Link
+                  <ScrollToTopLink
                     to={link.path}
                     className="block text-blue-100/80 hover:text-white transition-colors p-2 -ml-2 hover:bg-white/10 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
                   >
                     {link.text}
-                  </Link>
+                  </ScrollToTopLink>
                 </li>
               ))}
             </ul>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowLeft, Mail } from 'lucide-react';
+import ScrollToTopLink from './ScrollToTopLink';
 
 interface NavigationButtonProps {
   to: string;
@@ -28,7 +28,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
     : <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-1 transition-transform duration-300" />;
 
   return (
-    <Link 
+    <ScrollToTopLink 
       to={to}
       className={`${baseClasses} ${variantClasses} ${className} group`}
       aria-label={ariaLabel}
@@ -36,7 +36,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({
       {variant === 'home' && icon}
       <span className="text-center">{children}</span>
       {variant === 'contact' && icon}
-    </Link>
+    </ScrollToTopLink>
   );
 };
 
