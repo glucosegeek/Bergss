@@ -77,7 +77,6 @@ const WhatWeDo: React.FC = () => {
             viewport={{ once: true }}
             className="text-responsive-lg text-brand-light max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
           >
-            Przekształć swój proces sprzedaży dzięki naszym najnowocześniejszym narzędziom AI, które pracują całodobowo, aby rozwijać Twój biznes
           </motion.p>
         </motion.div>
         
