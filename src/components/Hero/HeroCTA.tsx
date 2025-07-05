@@ -38,11 +38,6 @@ const HeroCTA: React.FC = () => {
           transition={{ duration: 0.4, delay: 1.2 }}
           className="flex items-center gap-2 text-slate-300 text-responsive-sm"
         >
-          <motion.span 
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-accent-green rounded-full"
-          ></motion.span>
         </motion.div>
       </motion.div>
 
