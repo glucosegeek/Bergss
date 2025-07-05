@@ -28,7 +28,6 @@ const FinalCTA: React.FC = () => {
             >
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent-green" />
             </motion.div>
-            <span className="text-brand-light font-medium text-responsive-sm sm:text-responsive-base">Zacznij skalować już dziś</span>
           </motion.div>
 
           <motion.h2 
