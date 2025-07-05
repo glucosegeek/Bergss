@@ -79,7 +79,6 @@ const WhoIsThisFor: React.FC = () => {
             viewport={{ once: true }}
             className="text-responsive-lg text-brand-light px-4 sm:px-0"
           >
-            Nasze rozwiązania AI są przeznaczone dla firm gotowych na skalowanie działań sprzedażowych
           </motion.p>
         </motion.div>
 
