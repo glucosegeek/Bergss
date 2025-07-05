@@ -26,7 +26,6 @@ const FinalCTA: React.FC = () => {
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             >
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent-green" />
             </motion.div>
           </motion.div>
 
