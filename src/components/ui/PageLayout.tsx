@@ -8,9 +8,11 @@ interface PageLayoutProps {
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children, className = '' }) => {
   return (
-    <div className={`min-h-screen gradient-secondary ${className}`}>
+    <div className={`min-h-screen gradient-secondary relative ${className}`}>
+      {/* Grid background overlay */}
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
       <Header />
-      <main className="pt-16 sm:pt-20">
+      <main className="relative z-10 pt-16 sm:pt-20">
         {children}
       </main>
     </div>
