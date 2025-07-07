@@ -45,7 +45,7 @@ const FixedConsultationButton: React.FC = () => {
             className="hidden sm:block overflow-hidden whitespace-nowrap"
           >
             <span className="text-sm font-semibold">
-              Umów Konsultację
+              Umów Bezpłatną Konsultację
             </span>
           </motion.div>
 
@@ -86,7 +86,7 @@ const FixedConsultationButton: React.FC = () => {
           transition={{ duration: 0.3 }}
           className="sm:hidden absolute left-full ml-3 top-1/2 transform -translate-y-1/2 bg-slate-800/90 backdrop-blur-sm text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap border border-slate-700/50"
         >
-          Umów Konsultację
+          Umów Bezpłatną Konsultację
           <div className="absolute right-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-r-slate-800/90" />
         </motion.div>
       </motion.div>
