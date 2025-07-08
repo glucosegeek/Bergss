@@ -30,7 +30,7 @@ const ConsultationButton: React.FC<ConsultationButtonProps> = ({
         <span className="relative flex items-center justify-center">
           {children || (
             <>
-              <span className="mobile-only text-sm">Umów Konsultację</span>
+              <span className="mobile-only text-sm">Umów Bezpłatną Konsultację</span>
               <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
               <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 text-white" />
             </>
