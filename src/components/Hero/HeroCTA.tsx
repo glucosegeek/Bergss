@@ -22,7 +22,7 @@ const HeroCTA: React.FC = () => {
           className="btn-touch btn-primary group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300"
         >
           <span className="relative flex items-center justify-center">
-            <span className="mobile-only text-sm">Umów Konsultację</span>
+            <span className="mobile-only text-sm">Umów Bezpłatną Konsultację</span>
             <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
             <motion.div
               animate={{ x: [0, 5, 0] }}
