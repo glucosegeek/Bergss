@@ -251,7 +251,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
               </div>
               <div>
                 <h2 className="text-responsive-lg sm:text-responsive-2xl font-bold text-brand-white">
-                  <span className="mobile-only">Umów Konsultację</span>
+                  <span className="mobile-only">Umów Bezpłatną Konsultację</span>
                   <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
                 </h2>
                 <p className="text-brand-light text-responsive-sm sm:text-responsive-base">Porozmawiajmy o Twoich potrzebach AI</p>
