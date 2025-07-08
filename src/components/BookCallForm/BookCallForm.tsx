@@ -416,7 +416,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                   </>
                 ) : (
                   <>
-                    <span className="mobile-only">Umów Konsultację</span>
+                    <span className="mobile-only">Umów Bezpłatną Konsultację</span>
                     <span className="tablet-only desktop-only">Umów Konsultację</span>
                     <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                   </>
