@@ -12,7 +12,7 @@ const HeroCTA: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.0 }}
-        className="flex flex-col sm:flex-row gap-4 items-center sm:items-start w-full sm:w-auto px-4 sm:px-0"
+        className="flex flex-col sm:flex-row gap-4 items-center sm:items-start w-full sm:w-auto px-4 sm:px-0 hero-cta-mobile"
       >
         <motion.button 
           onClick={() => setIsBookCallOpen(true)}

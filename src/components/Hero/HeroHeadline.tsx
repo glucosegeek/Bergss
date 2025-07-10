@@ -7,7 +7,7 @@ const HeroHeadline: React.FC = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold leading-tight text-brand-white mb-4 sm:mb-6"
+      className="text-responsive-4xl sm:text-responsive-5xl lg:text-responsive-6xl font-bold leading-tight text-brand-white mb-4 sm:mb-6 hero-headline-mobile"
     >
       <motion.span 
         initial={{ opacity: 0, x: -20 }}
