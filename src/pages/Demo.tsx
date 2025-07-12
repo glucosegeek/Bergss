@@ -203,19 +203,6 @@ const Demo = () => {
         'Integracja z systemami CRM',
         'Analityka i śledzenie konwersji'
       ]
-    },
-    {
-      videoId: 'website-builder-demo',
-      title: 'AI Buduje Strony',
-      description: 'Zobacz jak sztuczna inteligencja automatycznie projektuje i buduje profesjonalne strony internetowe. Demonstracja pokazuje proces od koncepcji do gotowej strony w czasie rzeczywistym.',
-      features: [
-        'Automatyczne generowanie layoutu na podstawie treści',
-        'Inteligentny dobór kolorów i typografii',
-        'Responsywny design bez kodowania',
-        'SEO optymalizacja wbudowana w proces',
-        'Automatyczne testowanie użyteczności',
-        'Integracja z popularnymi CMS-ami'
-      ]
     }
   ];
 
