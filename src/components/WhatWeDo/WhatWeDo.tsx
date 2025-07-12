@@ -13,7 +13,7 @@ const WhatWeDo: React.FC = () => {
     {
       icon: <Phone className="w-6 h-6 sm:w-8 sm:h-8" />,
       title: "Agent AI",
-      description: "To inteligenty asystent cyfrowy, który automatyzuje rutynowe zadania, podejmuje decyzje na podstawie danych."
+      description: "To inteligenty asystent cyfrowy, który automatyzuje rutynowe zadania oraz podejmuje decyzje na podstawie danych."
     },
     {
       icon: <Globe className="w-6 h-6 sm:w-8 sm:h-8" />,
