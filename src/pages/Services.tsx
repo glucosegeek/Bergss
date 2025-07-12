@@ -47,7 +47,7 @@ const Services = () => {
         'Skalowalność bez granic'
       ],
       price: 'Do ustalenia na spotkaniu',
-      popular: false
+      popular: true
     },
     {
       icon: <Globe className="w-8 h-8" />,
