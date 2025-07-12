@@ -29,32 +29,10 @@ const Services = () => {
       popular: true
     },
     {
-      icon: <Mail className="w-8 h-8" />,
-      title: 'Automatyczny Outreach AI',
-      subtitle: 'Spersonalizowane kampanie na dużą skalę',
-      description: 'System automatycznego outreach\'u, który wysyła spersonalizowane cold maile i wiadomości na dużą skalę, utrzymując naturalną komunikację z potencjalnymi klientami.',
-      features: [
-        'Spersonalizowane cold maile',
-        'Automatyczne follow-up',
-        'A/B testing kampanii',
-        'Analiza profili LinkedIn',
-        'Segmentacja odbiorców',
-        'Raportowanie skuteczności'
-      ],
-      benefits: [
-        'Zwiększenie odpowiedzi o potencjalnych klientów',
-        'Oszczędność 20 godzin tygodniowo',
-        'Wyższa jakość leadów',
-        'Skalowalne kampanie'
-      ],
-      price: 'Do ustalenia na spotkaniu',
-      popular: false
-    },
-    {
       icon: <Phone className="w-8 h-8" />,
-      title: 'Rozmowy Telefoniczne AI',
-      subtitle: 'Inteligentne boty głosowe',
-      description: 'Zaawansowane boty głosowe wykonujące połączenia sprzedażowe lub wsparcia dla Twojej firmy 24/7, prowadzące naturalne i efektywne rozmowy z klientami.',
+      title: 'Agenci AI',
+      subtitle: 'Inteligentni asystenci cyfrowi',
+      description: 'Potrafią analizować informacje, zarządzać procesami i integrować się z Twoimi narzędziami.',
       features: [
         'Naturalne rozmowy głosowe',
         'Prezentacja produktów',
