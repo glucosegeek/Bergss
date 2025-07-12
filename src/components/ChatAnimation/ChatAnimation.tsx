@@ -85,30 +85,6 @@ const ChatAnimation: React.FC = () => {
     {
       text: "Oczywiście! Nasz chatbot AI może zredukować czas obsługi klienta o 70%. Automatyzuje odpowiedzi na najczęstsze pytania i kwalifikuje leady 24/7.",
       sender: 'ai'
-    },
-    {
-      text: "To brzmi świetnie! Jak szybko można to wdrożyć?",
-      sender: 'user'
-    },
-    {
-      text: "Wdrożenie zajmuje zazwyczaj 48-72 godziny. Zajmujemy się całą konfiguracją, szkoleniem AI na danych Twojej firmy i integracją z istniejącymi systemami.",
-      sender: 'ai'
-    },
-    {
-      text: "Jakie są koszty takiego rozwiązania?",
-      sender: 'user'
-    },
-    {
-      text: "Koszty zależą od zakresu funkcjonalności. Oferujemy bezpłatną konsultację, podczas której omówimy Twoje potrzeby i przedstawimy spersonalizowaną ofertę. Chcesz umówić spotkanie?",
-      sender: 'ai'
-    },
-    {
-      text: "Tak, chciałbym umówić konsultację!",
-      sender: 'user'
-    },
-    {
-      text: "Świetnie! Przekierowuję Cię do kalendarza, gdzie możesz wybrać dogodny termin. Dziękuję za zainteresowanie naszymi rozwiązaniami AI! 🚀",
-      sender: 'ai'
     }
   ];
 
