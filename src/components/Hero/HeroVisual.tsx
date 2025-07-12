@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ChatAnimation from '../ChatAnimation/ChatAnimation';
+import WebsiteAnimation from '../WebsiteAnimation/WebsiteAnimation';
 
 const HeroVisual: React.FC = () => {
   return (
@@ -10,8 +10,8 @@ const HeroVisual: React.FC = () => {
       transition={{ duration: 0.8, delay: 0.4 }}
       className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto"
     >
-      {/* Chat Animation Component */}
-      <ChatAnimation />
+      {/* Website Animation Component */}
+      <WebsiteAnimation />
 
       {/* Decorative elements */}
       <motion.div 
