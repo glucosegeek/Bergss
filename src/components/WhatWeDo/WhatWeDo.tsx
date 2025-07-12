@@ -11,14 +11,9 @@ const WhatWeDo: React.FC = () => {
       description: "Automatyzuje rozmowy. Odpowiada na pytania i poprawia doświadczenia klientów dzięki całodobowej, inteligentnej obsłudze."
     },
     {
-      icon: <Mail className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Automatyczny Outreach AI",
-      description: "Wysyła spersonalizowane cold maile i wiadomości na dużą skalę, utrzymując naturalną komunikację z potencjalnymi klientami."
-    },
-    {
       icon: <Phone className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Rozmowy Telefoniczne AI",
-      description: "Boty głosowe wykonujące połączenia sprzedażowe lub wsparcia dla Twojej firmy 24/7, prowadzące naturalne i efektywne rozmowy."
+      title: "Agent AI",
+      description: "To inteligentni asystenci cyfrowi, którzy automatyzują rutynowe zadania, podejmują decyzje na podstawie danych."
     },
     {
       icon: <Globe className="w-6 h-6 sm:w-8 sm:h-8" />,
