@@ -52,8 +52,8 @@ const Services = () => {
     {
       icon: <Globe className="w-8 h-8" />,
       title: 'Strona Internetowa',
-      subtitle: 'Nowoczesne strony zoptymalizowane pod konwersję',
-      description: 'Tworzymy nowoczesne strony internetowe zoptymalizowane pod konwersję, z responsywnym designem i płynnym doświadczeniem użytkownika.',
+      subtitle: 'Nowoczesne i responsywne witryny dopasowane do potrzeb konkretnego biznesu',
+      description: 'Projektujemy i wdrażamy nowoczesne, responsywne strony internetowe dopasowane do rodzaju działalności oraz oczekiwań użytkowników.',
       features: [
         'Responsywny design',
         'Optymalizacja SEO',
