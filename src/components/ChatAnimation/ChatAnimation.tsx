@@ -79,7 +79,7 @@ const ChatAnimation: React.FC = () => {
       sender: 'ai'
     },
     {
-      text: "Czy możecie pomóc w zmniejszeniu czasu poświęconego na obsługę klienta?",
+      text: "Potrzebuję pomocy z obsługą klienta.",
       sender: 'user'
     },
     {
