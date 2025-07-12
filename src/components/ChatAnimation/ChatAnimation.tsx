@@ -83,7 +83,7 @@ const ChatAnimation: React.FC = () => {
       sender: 'user'
     },
     {
-      text: "Oczywiście! Nasz chatbot AI może zredukować czas obsługi klienta o 70%. Automatyzuje odpowiedzi na najczęstsze pytania i kwalifikuje leady 24/7.",
+      text: "Oczywiście! Nasz chatbot AI może zredukować czas obsługi klienta o 70%. Automatyzuje odpowiedzi na najczęstsze pytania 24/7.",
       sender: 'ai'
     }
   ];
