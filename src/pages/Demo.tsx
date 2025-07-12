@@ -3,7 +3,6 @@ import { Play, Pause, Volume2, VolumeX, Maximize, ArrowLeft, Mail } from 'lucide
 import ConsultationButton from '../components/ui/ConsultationButton';
 import NavigationButton from '../components/ui/NavigationButton';
 import ScrollToTopLink from '../components/ui/ScrollToTopLink';
-import WebsiteAnimation from '../components/WebsiteAnimation/WebsiteAnimation';
 
 interface VideoPlayerProps {
   videoId: string;
@@ -195,16 +194,14 @@ const Demo = () => {
       ]
     },
     {
-      videoId: 'website-animation-demo',
+      videoId: 'website-demo',
       title: 'Strona Internetowa',
-      description: 'Zobacz jak AI buduje nowoczesną stronę internetową krok po kroku. Demonstracja pokazuje proces od wireframe\'u do gotowej strony z animacjami i interaktywnymi elementami.',
+      description: 'Przegląd nowoczesnej strony internetowej zoptymalizowanej pod konwersję. Zobacz jak responsywny design, szybkie ładowanie i intuicyjna nawigacja przekładają się na lepsze wyniki sprzedażowe.',
       features: [
-        'Automatyczne generowanie wireframe\'ów',
-        'Inteligentne rozmieszczenie elementów UI',
-        'Responsywny design dostosowany do urządzenia',
-        'Optymalizacja pod konwersję w czasie rzeczywistym',
-        'Automatyczne testowanie A/B różnych wersji',
-        'Integracja z systemami analitycznymi'
+        'Responsywny design na wszystkich urządzeniach',
+        'Optymalizacja pod konwersję (CRO)',
+        'Integracja z systemami CRM',
+        'Analityka i śledzenie konwersji'
       ]
     }
   ];
@@ -248,49 +245,13 @@ const Demo = () => {
           {/* Video Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             {demoVideos.map((video, index) => (
-              <div key={video.videoId}>
-                {video.videoId === 'website-animation-demo' ? (
-                  <div className="glass rounded-xl border border-slate-700/50 overflow-hidden group hover:border-slate-600/50 transition-all duration-300">
-                    {/* Website Animation Container */}
-                    <div className="relative aspect-video bg-black rounded-t-xl overflow-hidden flex items-center justify-center">
-                      <WebsiteAnimation />
-                    </div>
-
-                    {/* Content */}
-                    <div className="spacing-responsive-lg">
-                      <h3 className="text-responsive-xl sm:text-responsive-2xl font-bold text-brand-white mb-3 sm:mb-4 group-hover:gradient-text-primary transition-all duration-300">
-                        {video.title}
-                      </h3>
-                      
-                      <p className="text-responsive-sm sm:text-responsive-base text-brand-light leading-relaxed mb-4 sm:mb-6">
-                        {video.description}
-                      </p>
-
-                      {/* Key Features */}
-                      <div className="space-y-2">
-                        <h4 className="text-responsive-base font-semibold text-accent-blue mb-3">
-                          Kluczowe funkcje:
-                        </h4>
-                        <ul className="space-y-2">
-                          {video.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-start gap-2">
-                              <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-responsive-sm text-slate-400">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <VideoPlayer
-                    videoId={video.videoId}
-                    title={video.title}
-                    description={video.description}
-                    features={video.features}
-                  />
-                )}
-              </div>
+              <VideoPlayer
+                key={video.videoId}
+                videoId={video.videoId}
+                title={video.title}
+                description={video.description}
+                features={video.features}
+              />
             ))}
           </div>
 
