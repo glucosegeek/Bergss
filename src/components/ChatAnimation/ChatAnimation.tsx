@@ -201,7 +201,7 @@ const ChatAnimation: React.FC = () => {
             <Bot className="w-4 h-4 text-white" />
           </div>
           <div>
-            <h3 className="text-brand-white font-semibold text-sm">Asystent AI</h3>
+            <h3 className="text-brand-white font-semibold text-sm">Demo asystenta AI</h3>
             <div className="flex items-center gap-1">
               <div className="w-2 h-2 bg-accent-green rounded-full"></div>
               <span className="text-xs text-slate-400">Online</span>
