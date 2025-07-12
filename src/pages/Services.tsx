@@ -41,10 +41,10 @@ const Services = () => {
         'Automatyzacja nawet 60–90% rutynowych zadań administracyjnych i back-office'
       ],
       benefits: [
-        'Zwiększenie umówionych spotkań z potencjalnymi klientami',
-        'Redukcja kosztów call center',
-        'Konsystentna jakość rozmów',
-        'Skalowalność bez granic'
+        'Automatyzacja i oszczędność czasu',
+        'Analiza i raportowanie',
+        'Obniżenie kosztów operacyjnych',
+        'Elastyczność i integracje'
       ],
       price: 'Do ustalenia na spotkaniu',
       popular: true
