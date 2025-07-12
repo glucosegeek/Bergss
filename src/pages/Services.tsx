@@ -34,7 +34,7 @@ const Services = () => {
       subtitle: 'Inteligentni asystenci cyfrowi',
       description: 'Potrafią analizować informacje, zarządzać procesami i integrować się z Twoimi narzędziami.',
       features: [
-        'Naturalne rozmowy głosowe',
+        'Automatyzacja procesów wewnętrznych',
         'Prezentacja produktów',
         'Umawianie spotkań',
         'Obsługa w języku polskim',
