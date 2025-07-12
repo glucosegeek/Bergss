@@ -35,10 +35,10 @@ const Services = () => {
       description: 'Potrafią analizować informacje, zarządzać procesami i integrować się z Twoimi narzędziami.',
       features: [
         'Automatyzacja procesów wewnętrznych',
-        'Prezentacja produktów',
-        'Umawianie spotkań',
-        'Obsługa w języku polskim',
-        'Integracja z kalendarzem'
+        'Zmniejszenie liczby błędów manualnych o 95%',
+        'Nawet 3x szybsze przygotowywanie raportów, analiz i dokumentów',
+        'Do 50% mniej spotkań i maili dzięki agentom, którzy koordynują i przekazują informacje między działami',
+        'Automatyzacja nawet 60–90% rutynowych zadań administracyjnych i back-office'
       ],
       benefits: [
         'Zwiększenie umówionych spotkań z potencjalnymi klientami',
