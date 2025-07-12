@@ -25,7 +25,7 @@ const Services = () => {
         'Natychmiastowe odpowiedzi'
       ],
       price: 'Do ustalenia na spotkaniu',
-      popular: true
+      popular: false
     },
     {
       icon: <Phone className="w-8 h-8" />,
@@ -45,7 +45,7 @@ const Services = () => {
         'Elastyczność i integracje'
       ],
       price: 'Do ustalenia na spotkaniu',
-      popular: true
+      popular: false
     },
     {
       icon: <Globe className="w-8 h-8" />,
@@ -67,7 +67,7 @@ const Services = () => {
         'Mobilna optymalizacja'
       ],
       price: 'Do ustalenia na spotkaniu',
-      popular: true
+      popular: false
     }
   ];
 
