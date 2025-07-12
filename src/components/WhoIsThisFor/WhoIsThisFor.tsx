@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Building2, Rocket, LineChart, Users, Store, Utensils } from 'lucide-react';
+import { CheckCircle2, Building2, Rocket, LineChart, Users, Store, Utensils, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const WhoIsThisFor: React.FC = () => {
@@ -26,7 +26,15 @@ const WhoIsThisFor: React.FC = () => {
     },
     {
       icon: <Utensils className="w-5 h-5 sm:w-6 sm:h-6" />,
-      type: "Restauracje, Salony piękności, Gabinety lekarskie"
+      type: "Restauracje"
+    },
+    {
+      icon: <Utensils className="w-5 h-5 sm:w-6 sm:h-6" />,
+      type: "Salony piękności"
+    },
+    {
+      icon: <Utensils className="w-5 h-5 sm:w-6 sm:h-6" />,
+      type: "Gabinety lekarskie"
     }
   ];
 
