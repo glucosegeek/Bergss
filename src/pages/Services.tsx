@@ -9,7 +9,6 @@ const Services = () => {
     {
       icon: <Bot className="w-8 h-8" />,
       title: 'Chatbot AI',
-      subtitle: 'Inteligentna obsługa klienta 24/7',
       description: 'Zaawansowany chatbot AI, który automatyzuje rozmowy z klientami, odpowiada na pytania i poprawia doświadczenia użytkowników dzięki całodobowej, inteligentnej obsłudze.',
       features: [
         'Naturalne rozmowy z klientami',
@@ -31,7 +30,6 @@ const Services = () => {
     {
       icon: <Phone className="w-8 h-8" />,
       title: 'Agenci AI',
-      subtitle: 'Inteligentni asystenci cyfrowi',
       description: 'Potrafią analizować informacje, zarządzać procesami i integrować się z Twoimi narzędziami.',
       features: [
         'Automatyzacja procesów wewnętrznych',
@@ -52,7 +50,6 @@ const Services = () => {
     {
       icon: <Globe className="w-8 h-8" />,
       title: 'Strona Internetowa',
-      subtitle: 'Nowoczesne i responsywne witryny dopasowane do potrzeb konkretnego biznesu',
       description: 'Projektujemy i wdrażamy nowoczesne, responsywne strony internetowe dopasowane do rodzaju działalności oraz oczekiwań użytkowników.',
       features: [
         'Responsywny design',
