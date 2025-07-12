@@ -14,6 +14,14 @@ interface TypingIndicatorProps {
   sender: 'user' | 'ai';
 }
 
+interface ChatAnimationProps {
+  script?: Omit<Message, 'id' | 'timestamp'>[];
+  headerTitle?: string;
+  footerText?: string;
+  aiIcon?: React.ReactNode;
+  userIcon?: React.ReactNode;
+}
+
 const TypingIndicator: React.FC<TypingIndicatorProps> = ({ isVisible, sender }) => {
   return (
     <AnimatePresence>
@@ -66,14 +74,21 @@ const TypingIndicator: React.FC<TypingIndicatorProps> = ({ isVisible, sender }) 
   );
 };
 
-const ChatAnimation: React.FC = () => {
+const ChatAnimation: React.FC<ChatAnimationProps> = ({ 
+  script,
+  headerTitle = "Demo asystenta AI",
+  footerText = "Demonstracja chatbota AI w akcji",
+  aiIcon = <Bot className="w-4 h-4 text-white" />,
+  userIcon = <User className="w-3 h-3 text-white" />
+}) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const [typingSender, setTypingSender] = useState<'user' | 'ai'>('ai');
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const conversationScript: Omit<Message, 'id' | 'timestamp'>[] = [
+  // Default conversation script for chatbot demo
+  const defaultScript: Omit<Message, 'id' | 'timestamp'>[] = [
     {
       text: "Cześć! Jestem Twoim asystentem AI. W czym mogę Ci dzisiaj pomóc?",
       sender: 'ai'
@@ -87,6 +102,8 @@ const ChatAnimation: React.FC = () => {
       sender: 'ai'
     }
   ];
+
+  const conversationScript = script || defaultScript;
 
   const formatTime = (date: Date): string => {
     return date.toLocaleTimeString('pl-PL', { 
@@ -143,7 +160,7 @@ const ChatAnimation: React.FC = () => {
     }, currentMessageIndex === 0 ? 500 : 2000); // Delay between messages
 
     return () => clearTimeout(timer);
-  }, [currentMessageIndex]);
+  }, [currentMessageIndex, conversationScript]);
 
   const messageVariants = {
     hidden: (sender: string) => ({
@@ -174,10 +191,10 @@ const ChatAnimation: React.FC = () => {
       >
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center">
-            <Bot className="w-4 h-4 text-white" />
+            {aiIcon}
           </div>
           <div>
-            <h3 className="text-brand-white font-semibold text-sm">Demo asystenta AI</h3>
+            <h3 className="text-brand-white font-semibold text-sm">{headerTitle}</h3>
             <div className="flex items-center gap-1">
               <div className="w-2 h-2 bg-accent-green rounded-full"></div>
               <span className="text-xs text-slate-400">Online</span>
@@ -208,7 +225,7 @@ const ChatAnimation: React.FC = () => {
             >
               {message.sender === 'ai' && (
                 <div className="w-6 h-6 rounded-full bg-brand-primary flex items-center justify-center flex-shrink-0">
-                  <Bot className="w-3 h-3 text-white" />
+                  {aiIcon}
                 </div>
               )}
               
@@ -232,7 +249,7 @@ const ChatAnimation: React.FC = () => {
 
               {message.sender === 'user' && (
                 <div className="w-6 h-6 rounded-full bg-accent-blue flex items-center justify-center flex-shrink-0 order-2">
-                  <User className="w-3 h-3 text-white" />
+                  {userIcon}
                 </div>
               )}
             </motion.div>
@@ -252,7 +269,7 @@ const ChatAnimation: React.FC = () => {
       >
         <div className="flex items-center gap-2 text-xs text-slate-400">
           <div className="w-2 h-2 bg-accent-green rounded-full animate-pulse"></div>
-          <span>Demonstracja chatbota AI w akcji</span>
+          <span>{footerText}</span>
         </div>
       </motion.div>
     </div>
