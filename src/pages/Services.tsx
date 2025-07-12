@@ -39,10 +39,10 @@ const Services = () => {
         'Przetwarzanie wiadomości e-mail i formularzy kontaktowych'
       ],
       benefits: [
-        'Automatyzacja nawet 60–90% rutynowych zadań administracyjnych i back-office',
-        'Zmniejszenie liczby błędów manualnych o 95%',
-        'Nawet 3x szybsze przygotowywanie raportów, analiz i dokumentów',
-        'Do 50% mniej spotkań i maili dzięki agentom, którzy koordynują i przekazują informacje między działami'
+        'Automatyzacja 60–90% zadań administracyjnych',
+        'Redukcja błędów manualnych o 95%',
+        'Raporty i analizy nawet 3x szybciej',
+        'Do 50% mniej spotkań i maili dzięki koordynacji Agenta'
       ],
       price: 'Do ustalenia na spotkaniu',
       popular: false
