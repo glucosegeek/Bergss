@@ -32,17 +32,17 @@ const Services = () => {
       title: 'Agenci AI',
       description: 'Potrafią analizować informacje, zarządzać procesami i integrować się z Twoimi narzędziami.',
       features: [
-        'Automatyzacja procesów wewnętrznych',
-        'Zmniejszenie liczby błędów manualnych o 95%',
-        'Nawet 3x szybsze przygotowywanie raportów, analiz i dokumentów',
-        'Do 50% mniej spotkań i maili dzięki agentom, którzy koordynują i przekazują informacje między działami',
-        'Automatyzacja nawet 60–90% rutynowych zadań administracyjnych i back-office'
+        'Automatyzacja powtarzalnych zadań',
+        'Integracja z zewnętrznymi systemami (CRM, e-mail, Google Sheets)',
+        'Obsługa webhooków i API',
+        'Wysyłanie automatycznych powiadomień i przypomnień',
+        'Przetwarzanie wiadomości e-mail i formularzy kontaktowych'
       ],
       benefits: [
-        'Automatyzacja i oszczędność czasu',
-        'Analiza i raportowanie',
-        'Obniżenie kosztów operacyjnych',
-        'Elastyczność i integracje'
+        'Automatyzacja nawet 60–90% rutynowych zadań administracyjnych i back-office',
+        'Zmniejszenie liczby błędów manualnych o 95%',
+        'Nawet 3x szybsze przygotowywanie raportów, analiz i dokumentów',
+        'Do 50% mniej spotkań i maili dzięki agentom, którzy koordynują i przekazują informacje między działami'
       ],
       price: 'Do ustalenia na spotkaniu',
       popular: false
