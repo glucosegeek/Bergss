@@ -14,13 +14,6 @@ const Contact = () => {
       description: 'Odpowiadamy w ciągu 24 godzin'
     },
     {
-      icon: <Phone className="w-6 h-6" />,
-      title: 'Telefon',
-      value: '+48 530 639 369',
-      href: 'tel:+48530639369',
-      description: 'Pon-Pt: 9:00-17:00'
-    },
-    {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Adres',
       value: 'ul. Żurawia 6/12, lok. 766',
