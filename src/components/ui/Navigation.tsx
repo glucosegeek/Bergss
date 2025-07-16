@@ -236,18 +236,28 @@ const Navigation: React.FC = () => {
         {/* Mobile Navigation Menu - Smooth slide-in from top */}
         <AnimatePresence>
           {isMobileMenuOpen && (
+            <>
+              {/* Mobile overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="mobile-nav-overlay md:hidden"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+              
             <motion.div
               id="mobile-menu"
               variants={mobileMenuVariants}
               initial="closed"
               animate="open"
               exit="closed"
-              className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-700/50 shadow-lg overflow-hidden"
+              className="mobile-nav-menu md:hidden shadow-lg overflow-hidden"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="mobile-menu-button"
             >
-              <div className="container-responsive py-4">
+              <div className="container-responsive py-4 safe-area-bottom">
                 <ul role="none" className="space-y-2">
                   {navigationLinks.map((link, index) => (
                     <motion.li 
@@ -268,7 +278,7 @@ const Navigation: React.FC = () => {
                         onClick={() => setIsMobileMenuOpen(false)}
                         aria-label={link.ariaLabel}
                         role="menuitem"
-                        className={`block w-full px-4 py-3 text-left text-responsive-base font-medium rounded-lg transition-all duration-300 hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 ${
+                        className={`btn-touch block w-full px-4 py-4 text-left text-responsive-base font-medium rounded-lg transition-all duration-300 hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 ${
                           isActiveLink(link.path)
                             ? 'text-brand-white bg-slate-800/50 font-semibold border-l-4 border-brand-primary' 
                             : 'text-slate-300 hover:text-brand-white'
@@ -281,6 +291,7 @@ const Navigation: React.FC = () => {
                 </ul>
               </div>
             </motion.div>
+            </>
           )}
         </AnimatePresence>
       </nav>

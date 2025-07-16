@@ -240,11 +240,11 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="modal-content-responsive glass border border-slate-700/50"
+          className="modal-content-responsive modal-mobile glass border border-slate-700/50"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between spacing-responsive-md border-b border-slate-700/50">
+          <div className="modal-header-mobile flex items-center justify-between spacing-responsive-md border-b border-slate-700/50">
             <div className="flex items-center gap-3">
               <div className="gradient-primary rounded-lg p-2">
                 <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
@@ -259,14 +259,14 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
             </div>
             <button
               onClick={onClose}
-              className="btn-touch text-slate-400 hover:text-brand-white transition-colors hover:bg-slate-800/50 rounded-lg"
+              className="btn-touch text-slate-400 hover:text-brand-white transition-colors hover:bg-slate-800/50 rounded-lg focus-visible-mobile"
             >
               <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
           {/* Form */}
-          <div className="spacing-responsive-md">
+          <div className="modal-body-mobile spacing-responsive-md">
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Error Message */}
               {submitError && (
@@ -276,7 +276,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
               )}
 
               {/* Personal Information */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="form-grid-mobile sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-responsive-sm font-medium text-brand-light mb-2">
                     <User className="w-3 h-3 sm:w-4 sm:h-4 inline mr-2" />
@@ -289,7 +289,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     required
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
+                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
                     placeholder="Twoje imię"
                   />
                 </div>
@@ -304,14 +304,14 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     required
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
+                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
                     placeholder="Twoje nazwisko"
                   />
                 </div>
               </div>
 
               {/* Contact Information */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="form-grid-mobile sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label htmlFor="email" className="block text-responsive-sm font-medium text-brand-light mb-2">
                     <Mail className="w-3 h-3 sm:w-4 sm:h-4 inline mr-2" />
@@ -324,7 +324,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
+                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
                     placeholder="twoj@email.com"
                   />
                 </div>
@@ -339,7 +339,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
+                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
                     placeholder="+48 123 456 789"
                   />
                 </div>
@@ -357,7 +357,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                   required
                   value={formData.company}
                   onChange={handleChange}
-                  className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
+                  className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
                   placeholder="Nazwa Twojej firmy"
                 />
               </div>
@@ -374,7 +374,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white"
+                  className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white focus-visible-mobile"
                 >
                   <option value="" className="bg-slate-800">Wybierz temat</option>
                   {subjects.map((subject) => (
@@ -397,35 +397,37 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                   rows={4}
                   value={formData.description}
                   onChange={handleChange}
-                  className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 resize-none min-h-[100px]"
+                  className="form-input-mobile form-textarea-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 resize-none focus-visible-mobile"
                   placeholder="Opisz swoje potrzeby, cele biznesowe i jak możemy Ci pomóc..."
                 />
               </div>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="btn-touch btn-primary w-full px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-4 h-4 sm:w-5 sm:h-5 loading-spinner"></div>
-                    <span className="mobile-only">Zapisywanie...</span>
-                    <span className="tablet-only desktop-only">Zapisywanie i przekierowanie...</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="mobile-only">Umów Bezpłatną Konsultację</span>
-                    <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
-                    <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </>
-                )}
-              </button>
+              <div className="modal-footer-mobile">
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-touch btn-primary form-button-mobile transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2 focus-visible-mobile"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 loading-spinner"></div>
+                      <span className="mobile-only">Zapisywanie...</span>
+                      <span className="tablet-only desktop-only">Zapisywanie i przekierowanie...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="mobile-only">Umów Bezpłatną Konsultację</span>
+                      <span className="tablet-only desktop-only">Umów Bezpłatną Konsultację</span>
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </>
+                  )}
+                </button>
 
-              <p className="text-responsive-xs text-slate-400 text-center">
-                * Pola wymagane. Po wysłaniu formularza zostaniesz przekierowany do Calendly, aby wybrać termin spotkania.
-              </p>
+                <p className="text-responsive-xs text-slate-400 text-center mt-4">
+                  * Pola wymagane. Po wysłaniu formularza zostaniesz przekierowany do Calendly, aby wybrać termin spotkania.
+                </p>
+              </div>
             </form>
           </div>
         </motion.div>

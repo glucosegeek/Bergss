@@ -5,11 +5,15 @@ export default {
     extend: {
       screens: {
         'xs': '320px',
-        'sm': '481px',
-        'md': '769px',
+        'sm': '480px',
+        'md': '768px',
         'lg': '1025px',
         'xl': '1280px',
         '2xl': '1440px',
+        // Custom breakpoints for specific use cases
+        'mobile': {'max': '767px'},
+        'tablet': {'min': '768px', 'max': '1024px'},
+        'desktop': {'min': '1025px'},
       },
       colors: {
         // AI Startup Brand Colors

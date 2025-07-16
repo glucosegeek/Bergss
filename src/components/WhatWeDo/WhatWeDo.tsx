@@ -81,7 +81,7 @@ const WhatWeDo: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid-responsive-4 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto"
+          className="card-grid-mobile max-w-7xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div 
@@ -93,7 +93,7 @@ const WhatWeDo: React.FC = () => {
               }}
               className="flex justify-center"
             >
-              <div className="w-full max-w-sm">
+              <div className="w-full max-w-sm card-mobile">
                 <ServiceCard
                   icon={service.icon}
                   title={service.title}

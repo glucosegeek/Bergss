@@ -128,7 +128,7 @@ const ContactForm: React.FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="space-y-4 sm:space-y-6 glass rounded-xl spacing-responsive-lg border border-slate-700/50"
+            className="space-y-4 sm:space-y-6 glass rounded-xl spacing-responsive-lg border border-slate-700/50 card-mobile"
           >
             {submitStatus === 'success' && (
               <motion.div 
@@ -150,7 +150,7 @@ const ContactForm: React.FC = () => {
               </motion.div>
             )}
 
-            <motion.div variants={fieldVariants}>
+            <motion.div variants={fieldVariants} className="form-grid-mobile">
               <label htmlFor="name" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Imię i Nazwisko
               </label>
@@ -161,12 +161,12 @@ const ContactForm: React.FC = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
+                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
                 placeholder="Twoje imię i nazwisko"
               />
             </motion.div>
 
-            <motion.div variants={fieldVariants}>
+            <motion.div variants={fieldVariants} className="form-grid-mobile">
               <label htmlFor="email" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Email
               </label>
@@ -177,12 +177,12 @@ const ContactForm: React.FC = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400"
+                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
                 placeholder="twoj@email.com"
               />
             </motion.div>
 
-            <motion.div variants={fieldVariants}>
+            <motion.div variants={fieldVariants} className="form-grid-mobile">
               <label htmlFor="service" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Jaką usługą jesteś zainteresowany?
               </label>
@@ -191,7 +191,7 @@ const ContactForm: React.FC = () => {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white"
+                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white focus-visible-mobile"
               >
                 <option value="" className="bg-slate-800">Wybierz usługę</option>
                 {services.map((service) => (
@@ -202,7 +202,7 @@ const ContactForm: React.FC = () => {
               </select>
             </motion.div>
 
-            <motion.div variants={fieldVariants}>
+            <motion.div variants={fieldVariants} className="form-grid-mobile">
               <label htmlFor="message" className="block text-responsive-sm sm:text-responsive-base font-medium text-brand-light mb-2">
                 Wiadomość
               </label>
@@ -213,7 +213,7 @@ const ContactForm: React.FC = () => {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 resize-none min-h-[100px]"
+                className="form-input-mobile form-textarea-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 resize-none focus-visible-mobile"
                 placeholder="Opowiedz nam o swoich potrzebach..."
               />
             </motion.div>
@@ -224,7 +224,7 @@ const ContactForm: React.FC = () => {
               variants={fieldVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="btn-touch btn-primary w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base sm:text-responsive-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group"
+              className="btn-touch btn-primary form-button-mobile flex items-center justify-center gap-2 group focus-visible-mobile"
             >
               {isSubmitting ? (
                 <>
