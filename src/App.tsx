@@ -46,7 +46,8 @@ function App() {
               <WhatWeDo />
               <WhoIsThisFor />
               <FAQ />
-              <FinalCTA />
+              {/* TEMPORARILY HIDDEN: Final CTA section "Gotowy na Transformację Biznesu z AI?" */}
+              {/* <FinalCTA /> */}
               <ContactForm />
               <Footer />
               <SmartConsultationButton />
