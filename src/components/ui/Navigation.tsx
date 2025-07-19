@@ -278,19 +278,13 @@ const Navigation: React.FC = () => {
                         to={link.path}
                         onClick={() => setIsMobileMenuOpen(false)}
                         aria-label={link.ariaLabel}
-                        role="menuitem"
-                        className={`btn-touch block w-full px-4 py-4 text-left text-responsive-base font-medium rounded-lg transition-all duration-300 hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 ${
-                          isActiveLink(link.path)
-                            ? 'text-brand-white bg-slate-800/50 font-semibold border-l-4 border-brand-primary' 
-                            : 'text-slate-300 hover:text-brand-white'
-                        }`}
-                      >
-                        {link.label}
-                      </ScrollToTopLink>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+              <motion.img
+                src="/logo.png"
+                alt="Bergss - Rozwiązania AI"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                className="h-8 w-auto sm:h-10 md:h-12 object-contain group-hover:drop-shadow-lg transition-all duration-300"
+              />
             </motion.div>
             </>
           )}
