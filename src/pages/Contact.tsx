@@ -91,23 +91,25 @@ const Contact = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {contactMethods.map((method, index) => (
               <a
                 key={index}
                 href={method.href}
-                className="group glass rounded-xl spacing-responsive-md border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:scale-105 block"
+                className="group glass rounded-xl spacing-responsive-md border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-brand-primary/10 block"
               >
                 <div className="text-center">
                   <div className="gradient-primary rounded-lg p-3 inline-block mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="gradient-primary rounded-lg p-3 inline-block mb-4 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-brand-primary/30 transition-all duration-300">
                     {method.icon}
                   </div>
                   <h3 className="text-responsive-base font-semibold text-brand-white mb-2 group-hover:gradient-text-primary transition-all duration-300">
                     {method.title}
                   </h3>
-                  <p className="text-responsive-sm text-brand-light mb-1">
+                  <p className="text-responsive-sm text-brand-light mb-2 group-hover:text-white transition-colors duration-300">
                     {method.value}
                   </p>
-                  <p className="text-responsive-xs text-slate-400">
+                  <p className="text-responsive-xs text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
                     {method.description}
                   </p>
                 </div>
