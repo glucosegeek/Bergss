@@ -135,19 +135,13 @@ const Navigation: React.FC = () => {
                 className="flex items-center gap-3 group hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg p-1"
                 aria-label="Bergss - Przejdź do strony głównej"
               >
-                <motion.div 
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className="gradient-primary rounded-lg p-2 group-hover:shadow-lg group-hover:shadow-brand/30 transition-all duration-300"
-                >
-                  <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </motion.div>
-                <div className="flex flex-col">
-                  <span className="text-responsive-lg sm:text-responsive-xl font-bold text-brand-white group-hover:gradient-text-primary transition-all duration-300">
-                    Bergss
-                  </span>
-                  <span className="text-xs text-slate-400 hidden sm:block">Rozwiązania AI</span>
-                </div>
+                <motion.img
+                  src="/logo.png"
+                  alt="Bergss - Rozwiązania AI"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-8 w-auto sm:h-10 md:h-12 object-contain group-hover:drop-shadow-lg transition-all duration-300"
+                />
               </ScrollToTopLink>
             </div>
 
@@ -291,13 +285,6 @@ const Navigation: React.FC = () => {
                   ))}
                 </ul>
               </div>
-              <motion.img
-                src="/logo.png"
-                alt="Bergss - Rozwiązania AI"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                className="h-8 w-auto sm:h-10 md:h-12 object-contain group-hover:drop-shadow-lg transition-all duration-300"
-              />
             </motion.div>
             </>
           )}
