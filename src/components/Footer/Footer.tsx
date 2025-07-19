@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               <img
                 src="/logo.png"
                 alt="Bergss - Rozwiązania AI"
-                className="h-8 w-auto sm:h-10 object-contain mb-3 sm:mb-4 hover:scale-105 transition-transform duration-300"
+                className="h-10 w-auto sm:h-12 object-contain mb-3 sm:mb-4 hover:scale-105 transition-transform duration-300"
               />
             </ScrollToTopLink>
             <p className="text-responsive-sm sm:text-responsive-base text-brand-light mb-3 sm:mb-4">
