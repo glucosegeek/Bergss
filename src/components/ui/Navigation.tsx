@@ -140,7 +140,7 @@ const Navigation: React.FC = () => {
                   alt="Bergss - Rozwiązania AI"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
-                  className="h-8 w-auto sm:h-10 md:h-12 object-contain group-hover:drop-shadow-lg transition-all duration-300"
+                  className="h-14 w-auto sm:h-16 md:h-12 object-contain group-hover:drop-shadow-lg transition-all duration-300"
                 />
               </ScrollToTopLink>
             </div>
