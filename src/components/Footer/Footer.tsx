@@ -18,11 +18,12 @@ const Footer: React.FC = () => {
   ];
 
   const demoLinks = [
-    { 
-      text: 'Demo', 
-      path: '/demo',
-      icon: <Play className="w-3 h-3 sm:w-4 sm:h-4" />
-    }
+    // TEMPORARILY HIDDEN: Demo footer link - uncomment to restore
+    // { 
+    //   text: 'Demo', 
+    //   path: '/demo',
+    //   icon: <Play className="w-3 h-3 sm:w-4 sm:h-4" />
+    // }
   ];
 
   const legalLinks = [
@@ -103,23 +104,29 @@ const Footer: React.FC = () => {
 
           <div>
             <h3 className="text-responsive-base sm:text-responsive-lg font-semibold text-brand-white mb-3 sm:mb-4">Demo</h3>
-            <ul className="space-y-2">
-              {demoLinks.map((link) => (
-                <li key={link.text}>
-                  <ScrollToTopLink
-                    to={link.path}
-                    className="flex items-center gap-2 text-brand-light hover:text-brand-white transition-all duration-300 p-2 -ml-2 hover:bg-slate-800/50 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base group hover:scale-105"
-                  >
-                    <div className="gradient-primary rounded-full p-1 group-hover:scale-110 transition-transform duration-300">
-                      {link.icon}
-                    </div>
-                    <span className="group-hover:gradient-text-primary transition-all duration-300">
-                      {link.text}
-                    </span>
-                  </ScrollToTopLink>
-                </li>
-              ))}
-            </ul>
+            {/* TEMPORARILY HIDDEN: Demo section - uncomment to restore */}
+            {demoLinks.length > 0 && (
+              <ul className="space-y-2">
+                {demoLinks.map((link) => (
+                  <li key={link.text}>
+                    <ScrollToTopLink
+                      to={link.path}
+                      className="flex items-center gap-2 text-brand-light hover:text-brand-white transition-all duration-300 p-2 -ml-2 hover:bg-slate-800/50 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base group hover:scale-105"
+                    >
+                      <div className="gradient-primary rounded-full p-1 group-hover:scale-110 transition-transform duration-300">
+                        {link.icon}
+                      </div>
+                      <span className="group-hover:gradient-text-primary transition-all duration-300">
+                        {link.text}
+                      </span>
+                    </ScrollToTopLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {demoLinks.length === 0 && (
+              <p className="text-responsive-sm text-slate-400">Wkrótce dostępne</p>
+            )}
           </div>
 
           <div>

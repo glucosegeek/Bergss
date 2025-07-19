@@ -32,11 +32,11 @@ const FinalCTA: React.FC = () => {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0"
           >
-            <ScrollToTopLink 
+            {/* TEMPORARILY HIDDEN: Demo link - uncomment to restore */}
+            {/* <ScrollToTopLink 
               to="/demo" 
               className="group relative btn-touch flex items-center gap-3 sm:gap-4 btn-secondary backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 rounded-xl px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand/10"
             >
-              {/* Animated Play Button */}
               <div className="relative">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
@@ -44,7 +44,6 @@ const FinalCTA: React.FC = () => {
                 >
                   <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white ml-0.5" />
                 </motion.div>
-                {/* Pulse animation */}
                 <motion.div 
                   animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -52,7 +51,6 @@ const FinalCTA: React.FC = () => {
                 ></motion.div>
               </div>
               
-              {/* Text Content */}
               <div className="flex flex-col items-start">
                 <span className="text-brand-white font-semibold text-responsive-sm sm:text-responsive-base group-hover:gradient-text-primary transition-all duration-300">
                   <span className="mobile-only">Demo (2 min)</span>
@@ -63,9 +61,8 @@ const FinalCTA: React.FC = () => {
                 </span>
               </div>
 
-              {/* Hover glow effect */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-primary/0 via-accent-purple/0 to-brand-primary/0 group-hover:from-brand-primary/10 group-hover:via-accent-purple/10 group-hover:to-brand-primary/10 transition-all duration-300"></div>
-            </ScrollToTopLink>
+            </ScrollToTopLink> */}
           </motion.div>
 
           <motion.p 

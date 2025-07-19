@@ -44,11 +44,12 @@ const Navigation: React.FC = () => {
       label: 'Strona główna',
       ariaLabel: 'Przejdź do strony głównej'
     },
-    { 
-      path: '/demo', 
-      label: 'Demo',
-      ariaLabel: 'Przejdź do strony demo'
-    },
+    // TEMPORARILY HIDDEN: Demo navigation link - uncomment to restore
+    // { 
+    //   path: '/demo', 
+    //   label: 'Demo',
+    //   ariaLabel: 'Przejdź do strony demo'
+    // },
     { 
       path: '/uslugi', 
       label: 'Usługi',

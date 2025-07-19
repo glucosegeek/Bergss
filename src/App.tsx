@@ -69,12 +69,13 @@ function App() {
               <Contact />
             </div>
           } />
-          <Route path="/demo" element={
+          {/* TEMPORARILY HIDDEN: Demo route - uncomment to restore */}
+          {/* <Route path="/demo" element={
             <div className="pt-16 sm:pt-20">
               <Demo />
               <Footer />
             </div>
-          } />
+          } /> */}
           <Route path="/regulamin" element={
             <div className="pt-16 sm:pt-20">
               <Terms />

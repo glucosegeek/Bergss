@@ -261,13 +261,14 @@ const Services = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <ConsultationButton />
-              <ScrollToTopLink 
+              {/* TEMPORARILY HIDDEN: Demo link - uncomment to restore */}
+              {/* <ScrollToTopLink 
                 to="/demo"
                 className="btn-touch btn-secondary flex items-center gap-2 text-brand-white px-6 py-3 rounded-lg border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:scale-105"
               >
                 <span>Zobacz Demo</span>
                 <ArrowRight className="w-5 h-5 text-white" />
-              </ScrollToTopLink>
+              </ScrollToTopLink> */}
             </div>
           </div>
         </div>
