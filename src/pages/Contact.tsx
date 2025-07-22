@@ -66,13 +66,6 @@ const Contact = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <ConsultationButton />
-              <a 
-                href="tel:+48530639369"
-                className="btn-touch btn-secondary flex items-center gap-2 text-brand-white px-6 py-3 rounded-lg border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:scale-105"
-              >
-                <Phone className="w-5 h-5" />
-                <span>Zadzwoń teraz</span>
-              </a>
             </div>
           </div>
         </div>
