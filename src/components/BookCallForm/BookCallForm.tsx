@@ -12,7 +12,6 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  phone: string;
   company: string;
   subject: string;
   description: string;
@@ -24,7 +23,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
     company: '',
     subject: '',
     description: '',
@@ -75,7 +73,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         first_name: data.firstName.trim(),
         last_name: data.lastName.trim(),
         email: data.email.trim().toLowerCase(),
-        phone: data.phone.trim() || null,
+        phone: null, // Phone field removed from form
         company: data.company.trim(),
         subject: data.subject,
         description: data.description.trim(),
@@ -136,7 +134,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
       lastName: data.lastName,
       fullName: `${data.firstName} ${data.lastName}`,
       email: data.email,
-      phone: data.phone || null,
+      phone: null, // Phone field removed from form
       company: data.company || null,
       subject: data.subject,
       description: data.description,
@@ -203,7 +201,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
         firstName: '',
         lastName: '',
         email: '',
-        phone: '',
         company: '',
         subject: '',
         description: '',
@@ -310,7 +307,7 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
               </div>
 
               {/* Contact Information */}
-              <div className="form-grid-mobile sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="form-grid-mobile gap-3 sm:gap-4">
                 <div>
                   <label htmlFor="email" className="block text-responsive-sm font-medium text-brand-light mb-2">
                     <Mail className="w-3 h-3 sm:w-4 sm:h-4 inline mr-2" />
@@ -325,21 +322,6 @@ const BookCallForm: React.FC<BookCallFormProps> = ({ isOpen, onClose }) => {
                     onChange={handleChange}
                     className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
                     placeholder="twoj@email.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-responsive-sm font-medium text-brand-light mb-2">
-                    <Phone className="w-3 h-3 sm:w-4 sm:h-4 inline mr-2" />
-                    Telefon
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="form-input-mobile bg-slate-800/50 border-slate-700/50 focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-white placeholder-slate-400 focus-visible-mobile"
-                    placeholder="+48 123 456 789"
                   />
                 </div>
               </div>

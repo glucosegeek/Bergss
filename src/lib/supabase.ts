@@ -15,7 +15,7 @@ export interface ConsultationRequest {
   first_name: string
   last_name: string
   email: string
-  phone?: string
+  phone?: string | null // Keep for backward compatibility with existing data
   company: string
   subject: string
   description: string

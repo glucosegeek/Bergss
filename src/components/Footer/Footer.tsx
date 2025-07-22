@@ -80,13 +80,6 @@ const Footer: React.FC = () => {
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>kontakt@bergss.pl</span>
               </a>
-              <a
-                href="tel:+48530639369"
-                className="flex items-center gap-2 text-brand-light hover:text-brand-white transition-colors p-2 -ml-2 hover:bg-slate-800/50 rounded-lg btn-touch text-responsive-sm sm:text-responsive-base"
-              >
-                <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span>+48 530 639 369</span>
-              </a>
             </div>
           </div>
 
