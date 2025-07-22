@@ -177,13 +177,6 @@ const Contact = () => {
                   <Mail className="w-4 h-4" />
                   <span>kontakt@bergss.pl</span>
                 </a>
-                <a
-                  href="tel:+48530639369"
-                  className="flex items-center gap-2 text-brand-light hover:text-brand-white transition-colors text-responsive-sm"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>+48 530 639 369</span>
-                </a>
               </div>
             </div>
 
