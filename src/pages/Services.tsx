@@ -53,7 +53,7 @@ const Services = () => {
       description: 'Projektujemy i wdrażamy nowoczesne, responsywne strony internetowe dopasowane do rodzaju działalności oraz oczekiwań użytkowników.',
       features: [
         'Responsywny design',
-        'Szybkie ładowanie',
+        'Nowoczesne technologie',
         'Integracja z AI',
         'Wsparcie techniczne'
       ],
