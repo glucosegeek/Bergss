@@ -53,10 +53,8 @@ const Services = () => {
       description: 'Projektujemy i wdrażamy nowoczesne, responsywne strony internetowe dopasowane do rodzaju działalności oraz oczekiwań użytkowników.',
       features: [
         'Responsywny design',
-        'Optymalizacja SEO',
         'Szybkie ładowanie',
         'Integracja z AI',
-        'Technologia Shopify',
         'Wsparcie techniczne'
       ],
       benefits: [
