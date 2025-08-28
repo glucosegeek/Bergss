@@ -50,23 +50,6 @@ const AboutUs = () => {
                     Doświadczenie w programowaniu pomaga nam lepiej zrozumieć działanie sztucznej inteligencji, a w tym agentów AI. Dzięki temu jesteśmy w stanie projektować i wdrażać systemy dla naszych klientów, które mają realne przełożenie na ich oszczędności czasu oraz pieniędzy.
                   </p>
                 </div>
-
-                {/* Stats or Highlights */}
-                <div className="space-y-4">
-                  <div className="glass rounded-lg p-6 border border-slate-700/30">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold gradient-text-primary mb-2">100+</div>
-                      <p className="text-brand-light text-sm">Wdrożonych rozwiązań</p>
-                    </div>
-                  </div>
-                  <div className="glass rounded-lg p-6 border border-slate-700/30">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold gradient-text-primary mb-2">95%</div>
-                      <p className="text-brand-light text-sm">Zadowolonych klientów</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
               
               {/* Mission & Vision */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
