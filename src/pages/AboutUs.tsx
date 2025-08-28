@@ -16,7 +16,8 @@ const AboutUs = () => {
           <div className="glass rounded-xl spacing-responsive-lg border border-slate-700/50">
             <div className="prose prose-invert max-w-none">
               <p className="text-responsive-lg text-brand-light leading-relaxed mb-6">
-                Pomagamy firmom zwiększać efektywność i skalować działania sprzedażowe poprzez innowacyjne rozwiązania AI.
+                Nasz zespół tworzą eksperci w zakresie AI oraz automatyzacji. 
+Doświadczenie w programowaniu pomaga nam lepiej zrozumieć działanie sztucznej inteligencji, a w tym agentów AI. Dzięki temu jesteśmy w stanie projektować i wdrażać systemy dla naszych klientów, które mają realne przełożenie na ich oszczędności czasu oraz pieniędzy.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
