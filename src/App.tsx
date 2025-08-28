@@ -1,6 +1,7 @@
+// src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Navigation from './components/ui/Navigation';
+import Navigation from './components/ui/Navigation'; // ONLY import Navigation, not Header
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import { useEffect } from 'react';
@@ -37,60 +38,69 @@ function App() {
   return (
     <Router>
       <div className="bg-slate-900 min-h-screen">
+        {/* SINGLE NAVIGATION COMPONENT - No duplication */}
         <Navigation />
         <ScrollToTop />
+        
         <Routes>
           <Route path="/" element={
-            <div className="pt-16 sm:pt-20">
+            <div className="pt-[70px]"> {/* Fixed padding to match navbar height */}
               <Hero />
               <WhatWeDo />
               <WhoIsThisFor />
               <FAQ />
-              {/* TEMPORARILY HIDDEN: Final CTA section "Gotowy na Transformację Biznesu z AI?" */}
+              {/* TEMPORARILY HIDDEN: Final CTA section */}
               {/* <FinalCTA /> */}
               <ContactForm />
               <Footer />
               <SmartConsultationButton />
             </div>
           } />
+          
           <Route path="/o-nas" element={
-            <div className="pt-16 sm:pt-20">
+            <div className="pt-[70px]">
               <AboutUs />
               <Footer />
             </div>
           } />
+          
           <Route path="/uslugi" element={
-            <div className="pt-16 sm:pt-20">
+            <div className="pt-[70px]">
               <Services />
               <Footer />
             </div>
           } />
+          
           <Route path="/kontakt" element={
-            <div className="pt-16 sm:pt-20">
+            <div className="pt-[70px]">
               <Contact />
             </div>
           } />
+          
           {/* TEMPORARILY HIDDEN: Demo route - uncomment to restore */}
           {/* <Route path="/demo" element={
-            <div className="pt-16 sm:pt-20">
+            <div className="pt-[70px]">
               <Demo />
               <Footer />
             </div>
           } /> */}
+          
           <Route path="/regulamin" element={
-            <div className="pt-16 sm:pt-20">
+            <div className="pt-[70px]">
               <Terms />
               <Footer />
             </div>
           } />
+          
           <Route path="/polityka-prywatnosci" element={
-            <div className="pt-16 sm:pt-20">
+            <div className="pt-[70px]">
               <Privacy />
               <Footer />
             </div>
           } />
+          
           <Route path="/polityka-cookies" element={
-            <div className="pt-16 sm:pt-20">
+            <div className="pt-[70px]">
               <Cookies />
               <Footer />
             </div>
