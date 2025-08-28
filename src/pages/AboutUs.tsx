@@ -16,11 +16,11 @@ const AboutUs = () => {
           {/* Hero Image Section */}
           <div className="mb-12 lg:mb-16">
             <div className="relative overflow-hidden rounded-2xl glass border border-slate-700/50">
-              <div className="aspect-video lg:aspect-[21/9] relative">
+              <div className="aspect-[4/3] sm:aspect-video lg:aspect-[21/9] relative">
                 <img
                   src="/aboutus-image.png"
                   alt="Nasz zespół ekspertów AI i automatyzacji"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain sm:object-cover object-center bg-slate-800/20"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
@@ -49,6 +49,22 @@ const AboutUs = () => {
                     Nasz zespół tworzą eksperci w zakresie AI oraz automatyzacji. 
                     Doświadczenie w programowaniu pomaga nam lepiej zrozumieć działanie sztucznej inteligencji, a w tym agentów AI. Dzięki temu jesteśmy w stanie projektować i wdrażać systemy dla naszych klientów, które mają realne przełożenie na ich oszczędności czasu oraz pieniędzy.
                   </p>
+                </div>
+
+                {/* Stats or Highlights */}
+                <div className="space-y-4">
+                  <div className="glass rounded-lg p-6 border border-slate-700/30">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold gradient-text-primary mb-2">100+</div>
+                      <p className="text-brand-light text-sm">Wdrożonych rozwiązań</p>
+                    </div>
+                  </div>
+                  <div className="glass rounded-lg p-6 border border-slate-700/30">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold gradient-text-primary mb-2">95%</div>
+                      <p className="text-brand-light text-sm">Zadowolonych klientów</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
