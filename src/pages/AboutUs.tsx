@@ -15,6 +15,7 @@ const AboutUs = () => {
           
           <div className="glass rounded-xl spacing-responsive-lg border border-slate-700/50">
             <div className="prose prose-invert max-w-none">
+              <h2 className="text-responsive-xl font-semibold text-brand-white">Nasz Zespół</h2>
               <p className="text-responsive-lg text-brand-light leading-relaxed mb-6">
                 Nasz zespół tworzą eksperci w zakresie AI oraz automatyzacji. 
 Doświadczenie w programowaniu pomaga nam lepiej zrozumieć działanie sztucznej inteligencji, a w tym agentów AI. Dzięki temu jesteśmy w stanie projektować i wdrażać systemy dla naszych klientów, które mają realne przełożenie na ich oszczędności czasu oraz pieniędzy.
