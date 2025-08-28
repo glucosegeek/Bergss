@@ -25,12 +25,6 @@ const AboutUs = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">
-                    Eksperci w dziedzinie AI i automatyzacji
-                  </h2>
-                  <p className="text-slate-200 text-lg max-w-2xl">
-                    Łączymy doświadczenie w programowaniu z głęboką wiedzą o sztucznej inteligencji
-                  </p>
                 </div>
               </div>
             </div>
