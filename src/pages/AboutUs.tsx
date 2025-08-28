@@ -31,8 +31,7 @@ Doświadczenie w programowaniu pomaga nam lepiej zrozumieć działanie sztucznej
                 <div className="space-y-4">
                   <h2 className="text-responsive-xl font-semibold text-brand-white">Nasza Wizja</h2>
                   <p className="text-brand-light">
-                    Przyszłość, w której każda firma ma dostęp do inteligentnych asystentów AI, 
-                    które pracują 24/7 na rzecz rozwoju biznesu i satysfakcji klientów.
+                    Wierzymy w przyszłość, gdzie sztuczna inteligencja i automatyzacja uwalniają przedsiębiorców od powtarzalnych obowiązków, dając im wolność, by budować biznes i życie na własnych zasadach.
                   </p>
                 </div>
               </div>
