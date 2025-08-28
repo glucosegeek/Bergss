@@ -1,3 +1,4 @@
+// src/components/ui/Navigation.tsx
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Bot, Menu, X } from 'lucide-react';
@@ -44,12 +45,6 @@ const Navigation: React.FC = () => {
       label: 'Strona główna',
       ariaLabel: 'Przejdź do strony głównej'
     },
-    // TEMPORARILY HIDDEN: Demo navigation link - uncomment to restore
-    // { 
-    //   path: '/demo', 
-    //   label: 'Demo',
-    //   ariaLabel: 'Przejdź do strony demo'
-    // },
     { 
       path: '/uslugi', 
       label: 'Usługi',
@@ -74,60 +69,32 @@ const Navigation: React.FC = () => {
     return location.pathname === path;
   };
 
-  const mobileMenuVariants = {
-    closed: {
-      opacity: 0,
-      height: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    },
-    open: {
-      opacity: 1,
-      height: "auto",
-      transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }
-  };
-
   const linkVariants = {
     hover: {
       scale: 1.05,
-      transition: {
-        duration: 0.2,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.2, ease: "easeOut" }
     },
     tap: {
       scale: 0.95,
-      transition: {
-        duration: 0.1
-      }
+      transition: { duration: 0.1 }
     }
   };
 
   return (
-    <header 
-      className="fixed top-0 left-0 right-0 z-[1000] w-full"
-      style={{ zIndex: 1000 }}
-    >
+    <header className="fixed top-0 left-0 right-0 z-[1000] w-full">
       <nav
         className={`transition-all duration-300 ${
           isScrolled 
             ? 'bg-slate-900/95 backdrop-blur-lg border-b border-slate-700/50 shadow-lg shadow-slate-900/20' 
             : 'bg-slate-900/90 backdrop-blur-sm border-b border-slate-700/30'
         }`}
-        style={{ 
-          height: window.innerWidth >= 768 ? '70px' : '60px'
-        }}
+        style={{ height: '70px' }}
         role="navigation"
         aria-label="Główna nawigacja"
       >
         <div className="container-responsive h-full">
           <div className="flex items-center justify-between h-full">
+            
             {/* Logo/Brand - Left side */}
             <div className="flex items-center">
               <ScrollToTopLink 
@@ -135,13 +102,21 @@ const Navigation: React.FC = () => {
                 className="flex items-center gap-3 group hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg p-1"
                 aria-label="Bergss - Przejdź do strony głównej"
               >
-                <motion.img
-                  src="/logo.png"
-                  alt="Bergss - Rozwiązania AI"
+                <motion.div
+                  className="gradient-primary rounded-lg p-2.5 group-hover:shadow-lg group-hover:shadow-brand transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
-                  className="h-12 w-auto sm:h-14 md:h-16 object-contain group-hover:drop-shadow-lg transition-all duration-300"
-                />
+                >
+                  <Bot className="w-6 h-6 text-white" />
+                </motion.div>
+                <div className="flex flex-col">
+                  <span className="text-responsive-xl font-bold text-brand-white group-hover:gradient-text-primary transition-all duration-300">
+                    Bergss
+                  </span>
+                  <span className="text-xs text-slate-400 hidden sm:block">
+                    Rozwiązania AI
+                  </span>
+                </div>
               </ScrollToTopLink>
             </div>
 
@@ -171,18 +146,10 @@ const Navigation: React.FC = () => {
                         <motion.div
                           className="absolute bottom-1 left-4 right-4 h-0.5 bg-brand-primary origin-left"
                           initial={{ scaleX: isActiveLink(link.path) ? 1 : 0 }}
+                          animate={{ scaleX: isActiveLink(link.path) ? 1 : 0 }}
                           whileHover={{ scaleX: 1 }}
-                          transition={{ duration: 0.3 }}
+                          transition={{ duration: 0.2 }}
                         />
-                        
-                        {/* Active page indicator */}
-                        {isActiveLink(link.path) && (
-                          <motion.div
-                            layoutId="activeIndicator"
-                            className="absolute bottom-1 left-4 right-4 h-0.5 bg-brand-primary"
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                          />
-                        )}
                       </ScrollToTopLink>
                     </motion.div>
                   </li>
@@ -191,102 +158,68 @@ const Navigation: React.FC = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="btn-touch text-brand-white hover:bg-slate-800/50 rounded-lg p-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900"
-                aria-label={isMobileMenuOpen ? 'Zamknij menu mobilne' : 'Otwórz menu mobilne'}
-                aria-expanded={isMobileMenuOpen}
-                aria-controls="mobile-menu"
-              >
-                <AnimatePresence mode="wait">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden btn-touch text-brand-white hover:bg-slate-800/50 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900"
+              aria-label={isMobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={isMobileMenuOpen ? 'close' : 'menu'}
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
                   {isMobileMenuOpen ? (
-                    <motion.div
-                      key="close"
-                      initial={{ rotate: -90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: 90, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <X className="w-6 h-6" aria-hidden="true" />
-                    </motion.div>
+                    <X className="w-6 h-6" />
                   ) : (
-                    <motion.div
-                      key="menu"
-                      initial={{ rotate: 90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: -90, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Menu className="w-6 h-6" aria-hidden="true" />
-                    </motion.div>
+                    <Menu className="w-6 h-6" />
                   )}
-                </AnimatePresence>
-              </motion.button>
-            </div>
+                </motion.div>
+              </AnimatePresence>
+            </button>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu - Smooth slide-in from top */}
+        {/* Mobile Navigation Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <>
-              {/* Mobile overlay */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="mobile-nav-overlay md:hidden"
-                onClick={() => setIsMobileMenuOpen(false)}
-              />
-              
             <motion.div
-              id="mobile-menu"
-              variants={mobileMenuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="mobile-nav-menu md:hidden shadow-lg overflow-hidden"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="mobile-menu-button"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden border-t border-slate-700/50 bg-slate-900/95 backdrop-blur-lg overflow-hidden"
             >
-              <div className="container-responsive py-4 safe-area-bottom">
-                <ul role="none" className="space-y-2">
+              <div className="container-responsive py-4">
+                <nav className="flex flex-col gap-2" role="menu">
                   {navigationLinks.map((link, index) => (
-                    <motion.li 
-                      key={link.path} 
-                      role="none"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ 
-                        opacity: 1, 
-                        x: 0,
-                        transition: { 
-                          delay: index * 0.1,
-                          duration: 0.3
-                        }
-                      }}
+                    <motion.div
+                      key={link.path}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: index * 0.1, duration: 0.2 }}
                     >
                       <ScrollToTopLink
                         to={link.path}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        aria-label={link.ariaLabel}
                         role="menuitem"
-                        className={`block w-full px-4 py-3 text-responsive-base font-medium transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-slate-900 ${
+                        aria-label={link.ariaLabel}
+                        className={`block px-4 py-3 rounded-lg text-responsive-base font-medium transition-all duration-300 hover:bg-slate-800/50 hover:text-brand-white ${
                           isActiveLink(link.path)
                             ? 'text-brand-white bg-slate-800/50 font-semibold' 
-                            : 'text-slate-300 hover:text-brand-white hover:bg-slate-800/30'
+                            : 'text-slate-300'
                         }`}
                       >
                         {link.label}
                       </ScrollToTopLink>
-                    </motion.li>
+                    </motion.div>
                   ))}
-                </ul>
+                </nav>
               </div>
             </motion.div>
-            </>
           )}
         </AnimatePresence>
       </nav>
