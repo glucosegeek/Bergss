@@ -16,7 +16,7 @@ const AboutUs = () => {
           {/* Hero Image Section */}
           <div className="mb-12 lg:mb-16">
             <div className="relative overflow-hidden rounded-2xl glass border border-slate-700/50">
-              <div className="h-96 sm:h-[500px] lg:h-[750px] xl:h-[8000px] relative">
+              <div className="h-96 sm:h-[500px] lg:h-[750px] xl:h-[800px] relative">
                 <img
                   src="/aboutus-image.png"
                   alt="Nasz zespół ekspertów AI i automatyzacji"
