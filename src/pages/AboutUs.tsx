@@ -24,8 +24,7 @@ Doświadczenie w programowaniu pomaga nam lepiej zrozumieć działanie sztucznej
                 <div className="space-y-4">
                   <h2 className="text-responsive-xl font-semibold text-brand-white">Nasza Misja</h2>
                   <p className="text-brand-light">
-                    Demokratyzujemy dostęp do zaawansowanych technologii AI, umożliwiając firmom każdej wielkości 
-                    automatyzację procesów sprzedażowych i osiąganie lepszych wyników biznesowych.
+                    Naszą misją jest uwalnianie przedsiębiorców od rutyny dzięki automatyzacji i sztucznej inteligencji, aby mogli w pełni skupić się na rozwoju, innowacjach i tym, co naprawdę kochają w swoim biznesie.
                   </p>
                 </div>
                 
