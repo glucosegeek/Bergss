@@ -20,7 +20,7 @@ const AboutUs = () => {
                 <img
                   src="/aboutus-image.png"
                   alt="Nasz zespół ekspertów AI i automatyzacji"
-                  className="w-full h-full object-center"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
