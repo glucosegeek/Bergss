@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -11,7 +10,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, className = '' }) => 
     <div className={`min-h-screen gradient-secondary relative ${className}`}>
       {/* Grid background overlay */}
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
-      <Header />
       <main className="relative z-10 pt-16 sm:pt-20">
         {children}
       </main>
