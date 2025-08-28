@@ -38,7 +38,7 @@ Doświadczenie w programowaniu pomaga nam lepiej zrozumieć działanie sztucznej
               
               <div className="mt-8 pt-8 border-t border-slate-700/50 text-center">
                 <p className="text-brand-light">
-                  Zapraszamy do kontaktu i poznania naszych rozwiązań AI dla Twojego biznesu.
+                  Zapraszamy do kontaktu. Wspólnie sprawdzimy czy możemy Ci pomóc.
                 </p>
               </div>
             </div>
